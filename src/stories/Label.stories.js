@@ -1,4 +1,4 @@
-import Label from "../components/Label";
+import Label from "../components/AppLabel";
 
 export default {
   component: Label,

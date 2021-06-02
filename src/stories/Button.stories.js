@@ -1,4 +1,4 @@
-import MyButton from "../components/Label.vue";
+import MyButton from "../components/AppLabel.vue";
 import "../styles/index.css";
 
 export default {
