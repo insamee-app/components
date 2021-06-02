@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "vue": "^2.6.13"
+  },
+  "peerDependencies": {
+    "vue-template-compiler": "^2.6.13"
   }
 }
