@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false
       - name: Install and Build 🔧
         run: | # Install npm packages and build the Storybook files
-          yarn install install-peers
+          yarn add --dev --ignore-scripts install-peers
           yarn install
           yarn build-storybook
       - name: Deploy 🚀
