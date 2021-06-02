@@ -1,4 +1,4 @@
-import AppError from "../components/Atoms/AppError";
+import AppError from "../components/atoms/AppError";
 
 export default {
   component: AppError,
@@ -11,7 +11,7 @@ const Template = (args, { argTypes }) => ({
   template: '<AppError :full="full" :errors="errors" />',
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   errors: [{ message: "This is error 1" }, { message: "This is error 2" }],
 };

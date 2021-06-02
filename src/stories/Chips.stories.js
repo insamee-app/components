@@ -1,4 +1,4 @@
-import AppChips from "../components/Molecules/AppChips";
+import AppChips from "../components/molecules/AppChips";
 
 export default {
   component: AppChips,
@@ -11,7 +11,7 @@ const Template = (args, { argTypes }) => ({
   template: "<AppChips :texts='texts' />",
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   texts: ["football", "swimming", "climbing", "cricket", "running"],
 };

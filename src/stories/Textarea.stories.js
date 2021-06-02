@@ -1,10 +1,12 @@
 import { action } from "@storybook/addon-actions";
-import AppTextarea from "../components/Atoms/AppTextarea";
+import AppTextarea from "../components/atoms/AppTextarea";
 
 export default {
   component: AppTextarea,
   title: "Atoms/AppTextarea",
-  argTypes: { input: { action: "input" } },
+  argTypes: {
+    input: { action: "input", table: { type: { summary: "string" } } },
+  },
 };
 
 const Template = (args, { argTypes }) => ({
@@ -16,5 +18,5 @@ const Template = (args, { argTypes }) => ({
   template: `<AppTextarea :value="value" :name='name' @input='action' />`,
 });
 
-export const Primary = Template.bind({});
-Primary.args = { value: "This is the text !", name: "text" };
+export const Default = Template.bind({});
+Default.args = { value: "This is the text !", name: "text" };

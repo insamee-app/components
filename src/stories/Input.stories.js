@@ -1,9 +1,12 @@
 import { action } from "@storybook/addon-actions";
-import AppInput from "../components/Atoms/AppInput";
+import AppInput from "../components/atoms/AppInput";
 
 export default {
   component: AppInput,
   title: "Atoms/AppInput",
+  argTypes: {
+    input: { action: "input", table: { type: { summary: "string" } } },
+  },
 };
 
 const Template = (args, { argTypes }) => ({
@@ -15,5 +18,5 @@ const Template = (args, { argTypes }) => ({
   template: '<AppInput :value="value" @input="action" />',
 });
 
-export const Primary = Template.bind({});
-Primary.args = { value: "Try it!" };
+export const Default = Template.bind({});
+Default.args = { value: "Try it!" };

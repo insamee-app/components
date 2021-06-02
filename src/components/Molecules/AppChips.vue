@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import AppChip from '../Atoms/AppChip'
+import AppChip from '../atoms/AppChip'
 
 export default {
   components: { AppChip },

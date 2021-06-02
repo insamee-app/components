@@ -1,5 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.vue"],
+  mode: "jit",
   theme: {
     colors: {
       primary: {

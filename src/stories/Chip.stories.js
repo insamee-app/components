@@ -1,4 +1,4 @@
-import AppChip from "../components/Atoms/AppChip";
+import AppChip from "../components/atoms/AppChip";
 
 export default {
   component: AppChip,
@@ -26,5 +26,5 @@ const Template = (args, { argTypes }) => ({
   template: "<AppChip :component='component'> {{ args.default }} </AppChip>",
 });
 
-export const Primary = Template.bind({});
-Primary.args = { default: "football" };
+export const Default = Template.bind({});
+Default.args = { default: "football" };

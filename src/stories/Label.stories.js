@@ -1,4 +1,4 @@
-import AppLabel from "../components/Atoms/AppLabel";
+import AppLabel from "../components/atoms/AppLabel";
 
 export default {
   component: AppLabel,
@@ -11,5 +11,5 @@ const Template = (args, { argTypes }) => ({
   template: "<AppLabel :name='name' :label='label' />",
 });
 
-export const Primary = Template.bind({});
-Primary.args = { name: "name", label: "your name" };
+export const Default = Template.bind({});
+Default.args = { name: "name", label: "your name" };
