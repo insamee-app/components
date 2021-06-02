@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'AppInput',
   props: {
     value: {
       type: String,

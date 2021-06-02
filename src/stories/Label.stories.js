@@ -1,14 +1,14 @@
-import Label from "../components/AppLabel";
+import AppLabel from "../components/AppLabel";
 
 export default {
-  component: Label,
-  title: "Atoms/Label",
+  component: AppLabel,
+  title: "Atoms/AppLabel",
 };
 
 const Template = (args, { argTypes }) => ({
-  components: { Label },
+  components: { AppLabel },
   props: Object.keys(argTypes),
-  template: "<Label :name='name' :label='label' />",
+  template: "<AppLabel :name='name' :label='label' />",
 });
 
 export const Primary = Template.bind({});

@@ -1,14 +1,14 @@
-import Input from "../components/AppInput";
+import AppInput from "../components/AppInput";
 
 export default {
-  component: Input,
-  title: "Atoms/Input",
+  component: AppInput,
+  title: "Atoms/AppInput",
 };
 
 const Template = (args, { argTypes }) => ({
-  components: { Input },
+  components: { AppInput },
   props: Object.keys(argTypes),
-  template: '<Input v-model="value" />',
+  template: '<AppInput v-model="value" />',
 });
 
 export const Primary = Template.bind({});
