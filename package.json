@@ -1,0 +1,26 @@
+{
+  "name": "insamee-components",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/vue": "^6.2.9",
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
+    "postcss": "^8",
+    "tailwindcss": "^2.1.2",
+    "vue-loader": "^15.9.7"
+  },
+  "dependencies": {}
+}
