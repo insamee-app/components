@@ -1,7 +1,7 @@
 <template>
   <component
     :is="component"
-    class="bg-grey-base text-white text-sm rounded-full px-2 py-1 list-none"
+    class="bg-grey-base text-white text-sm rounded-full px-2 py-1 mb-0 list-none"
   >
     <slot></slot>
   </component>

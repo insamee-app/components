@@ -1,4 +1,4 @@
-import AppError from "../components/AppError";
+import AppError from "../components/Atoms/AppError";
 
 export default {
   component: AppError,

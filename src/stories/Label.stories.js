@@ -1,4 +1,4 @@
-import AppLabel from "../components/AppLabel";
+import AppLabel from "../components/Atoms/AppLabel";
 
 export default {
   component: AppLabel,

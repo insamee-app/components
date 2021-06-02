@@ -1,4 +1,4 @@
-import AppChip from "../components/AppChip";
+import AppChip from "../components/Atoms/AppChip";
 
 export default {
   component: AppChip,

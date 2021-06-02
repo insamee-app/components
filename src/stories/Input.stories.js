@@ -1,4 +1,4 @@
-import AppInput from "../components/AppInput";
+import AppInput from "../components/Atoms/AppInput";
 
 export default {
   component: AppInput,
