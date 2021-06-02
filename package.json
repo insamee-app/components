@@ -20,9 +20,7 @@
     "babel-loader": "^8.2.2",
     "postcss": "^8",
     "tailwindcss": "^2.1.2",
-    "vue-loader": "^15.9.7"
-  },
-  "peerDependencies": {
+    "vue-loader": "^15.9.7",
     "vue": "^2.6.13",
     "vue-template-compiler": "^2.6.13"
   }
