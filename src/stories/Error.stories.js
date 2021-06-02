@@ -2,7 +2,7 @@ import AppError from "../components/Atoms/AppError";
 
 export default {
   component: AppError,
-  title: "Atoms/Error",
+  title: "Atoms/AppError",
 };
 
 const Template = (args, { argTypes }) => ({

@@ -1,3 +1,4 @@
+import { action } from "@storybook/addon-actions";
 import AppInput from "../components/Atoms/AppInput";
 
 export default {
@@ -8,7 +9,10 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppInput },
   props: Object.keys(argTypes),
-  template: '<AppInput v-model="value" />',
+  methods: {
+    action: action("input"),
+  },
+  template: '<AppInput :value="value" @input="action" />',
 });
 
 export const Primary = Template.bind({});
