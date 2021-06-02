@@ -52,7 +52,7 @@
 
 <script>
 import './header.css'
-import MyButton from '../components/Button.vue'
+import MyButton from '../components/Label.vue'
 
 export default {
   name: 'my-header',
