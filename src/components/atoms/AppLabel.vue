@@ -1,5 +1,10 @@
 <template>
-  <label :for="name">{{ label }}</label>
+  <component
+    :is="name ? 'label' : 'div'"
+    :for="name ? name : undefined"
+    class="text-grey-base font-light"
+    >{{ label }}</component
+  >
 </template>
 
 <script>
@@ -8,7 +13,7 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      default: '',
     },
     label: {
       type: String,

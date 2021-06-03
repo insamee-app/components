@@ -1,8 +1,6 @@
 <template>
-  <ul class="flex flex-row w-full overflow-x-auto">
-    <AppChip v-for="text in texts" :key="text" component="li">{{
-      text
-    }}</AppChip>
+  <ul class="flex flex-row w-full overflow-x-auto space-x-2">
+    <AppChip v-for="text in texts" :key="text" component="li">{{ text }}</AppChip>
   </ul>
 </template>
 
@@ -20,9 +18,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-ul li + li {
-  @apply ml-2;
-}
-</style>

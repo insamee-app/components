@@ -1,21 +1,21 @@
-import { join } from "path";
+import { join } from 'path'
 
 export default function () {
-  const { nuxt } = this;
+  const { nuxt } = this
 
   // Make sure components is enabled
   if (!nuxt.options.components) {
     throw new Error(
-      "please set `components: true` inside `nuxt.config` and ensure using `nuxt >= 2.13.0`"
-    );
+      'please set `components: true` inside `nuxt.config` and ensure using `nuxt >= 2.13.0`'
+    )
   }
 
-  this.nuxt.hook("components:dirs", (dirs) => {
+  this.nuxt.hook('components:dirs', (dirs) => {
     // Add ./components dir to the list
     // TODO: il faut adapter les folders
     dirs.push({
-      path: join(__dirname, "../src/components"),
-      prefix: "insamee",
-    });
-  });
+      path: join(__dirname, '../src/components'),
+      prefix: 'insamee',
+    })
+  })
 }

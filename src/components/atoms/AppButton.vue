@@ -2,17 +2,19 @@
   <component
     :is="getComponentType"
     :disabled="disabled || loading"
-    class="rounded flex justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
+    class="
+      rounded
+      flex
+      justify-center
+      focus:outline-none
+      focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark
+    "
     :class="classButton"
     :to="to"
     :href="href"
     @click="to ? '' : $emit('click', $event)"
   >
-    <IconSpinner
-      v-if="loading"
-      class="animate-spin h-6 w-6 fill-current"
-      :class="classSpinner"
-    />
+    <IconSpinner v-if="loading" class="animate-spin h-6 w-6 fill-current" :class="classSpinner" />
     <slot></slot>
   </component>
 </template>
@@ -56,12 +58,10 @@ export default {
       if (this.large) classNames.push('p-2 text-lg')
       else classNames.push('py-1 px-2 text-base')
 
-      if (this.border)
-        classNames.push('border border-primary-dark text-primary-base bg-white')
+      if (this.border) classNames.push('border border-primary-dark text-primary-base bg-white')
       else classNames.push('bg-primary-base text-white')
 
-      if (this.disabled || this.loading)
-        classNames.push('bg-grey-base cursor-not-allowed')
+      if (this.disabled || this.loading) classNames.push('bg-grey-base cursor-not-allowed')
 
       if (this.to) classNames.push('block text-center cursor-pointer')
 

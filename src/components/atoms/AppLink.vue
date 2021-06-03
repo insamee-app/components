@@ -26,8 +26,7 @@ export default {
     component() {
       if (typeof this.link === 'object') return 'NuxtLink'
 
-      if (typeof this.link === 'string' && this.link.includes('http'))
-        return 'a'
+      if (typeof this.link === 'string' && this.link.includes('http')) return 'a'
 
       return 'a'
     },
