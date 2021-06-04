@@ -11,11 +11,12 @@ export default function () {
   }
 
   this.nuxt.hook('components:dirs', (dirs) => {
-    // Add ./components dir to the list
-    // TODO: il faut adapter les folders
-    dirs.push({
-      path: join(__dirname, '../src/components'),
-      prefix: 'insamee',
+    const dirsNames = ['/atoms/icons', '/atoms', '/molecules', '/organisms']
+    dirsNames.forEach((dir) => {
+      dirs.push({
+        path: join(__dirname, '../src/components' + dir),
+        prefix: 'insamee',
+      })
     })
   })
 }

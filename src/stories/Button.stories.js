@@ -8,11 +8,13 @@ export default {
     default: {
       control: 'text',
       description: 'Slot content',
-      defaultValue: 'button',
+      defaultValue: '',
     },
     click: { action: 'click', table: { type: { summary: 'string' } } },
   },
 }
+
+const slotValue = 'button'
 
 const Template = (args, { argTypes }) => ({
   components: { AppButton },
@@ -30,15 +32,16 @@ const Template = (args, { argTypes }) => ({
 })
 
 export const Default = Template.bind({})
+Default.args = { default: slotValue }
 
 export const Large = Template.bind({})
-Large.args = { large: true }
+Large.args = { large: true, default: slotValue }
 
 export const Border = Template.bind({})
-Border.args = { border: true }
+Border.args = { border: true, default: slotValue }
 
 export const Loading = Template.bind({})
-Loading.args = { loading: true }
+Loading.args = { loading: true, default: slotValue }
 
 export const Disabled = Template.bind({})
-Disabled.args = { disabled: true }
+Disabled.args = { disabled: true, default: slotValue }

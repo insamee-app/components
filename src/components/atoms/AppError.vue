@@ -1,23 +1,16 @@
 <template>
-  <ul v-if="errors.length" class="text-sm text-primary-dark text-center">
-    <template v-if="full">
-      <li v-for="error in errors" :key="error.message">{{ error.message }}</li>
-    </template>
-    <li v-else>{{ errors[0].message }}</li>
-  </ul>
+  <div v-if="errorMessage" class="text-primary-dark text-xs">
+    {{ errorMessage }}
+  </div>
 </template>
 
 <script>
 export default {
   name: 'AppError',
   props: {
-    errors: {
-      type: Array,
+    errorMessage: {
+      type: String,
       required: true,
-    },
-    full: {
-      type: Boolean,
-      default: false,
     },
   },
 }

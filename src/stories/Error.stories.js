@@ -8,10 +8,8 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppError },
   props: Object.keys(argTypes),
-  template: '<AppError :full="full" :errors="errors" />',
+  template: '<AppError :error-message="errorMessage" />',
 })
 
 export const Default = Template.bind({})
-Default.args = {
-  errors: [{ message: 'This is error 1' }, { message: 'This is error 2' }],
-}
+Default.args = { errorMessage: 'This is an error' }

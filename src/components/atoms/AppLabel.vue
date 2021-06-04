@@ -1,10 +1,7 @@
 <template>
-  <component
-    :is="name ? 'label' : 'div'"
-    :for="name ? name : undefined"
-    class="text-grey-base font-light"
-    >{{ label }}</component
-  >
+  <component :is="name ? 'label' : 'div'" :for="name ? name : undefined" class="font-light">{{
+    label
+  }}</component>
 </template>
 
 <script>

@@ -5,7 +5,7 @@ export default {
   component: AppCheck,
   title: 'Atoms/AppCheck',
   argTypes: {
-    input: { action: 'input', table: { type: { summary: 'boolean' } } },
+    input: { action: 'change', table: { type: { summary: 'boolean' } } },
   },
 }
 
@@ -13,12 +13,9 @@ const Template = (args, { argTypes }) => ({
   components: { AppCheck },
   props: Object.keys(argTypes),
   methods: {
-    action(value) {
-      this.value = value
-      action('input')(value)
-    },
+    action: action('change'),
   },
-  template: "<AppCheck :value='value' :name='name' @input='action' />",
+  template: "<AppCheck :value='value' :name='name' @change='action' />",
 })
 
 export const Unchecked = Template.bind({})
