@@ -34,6 +34,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    empty: {
+      type: Boolean,
+      default: false,
+    },
     to: {
       type: Object,
       default: undefined,
@@ -50,20 +54,30 @@ export default {
       type: Boolean,
       default: false,
     },
+    fit: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classButton() {
       const classNames = []
 
-      if (this.large) classNames.push('p-2 text-lg')
-      else classNames.push('py-1 px-2 text-base')
+      if (!this.empty) {
+        if (this.large) classNames.push('p-2 text-lg')
+        else if (this.fit) classNames.push('')
+        else classNames.push('py-1 px-2 text-base')
 
-      if (this.border) classNames.push('border border-primary-dark text-primary-base bg-white')
-      else classNames.push('bg-primary-base text-white')
+        if (this.border) classNames.push('border border-primary-dark text-primary-base bg-white')
+        else classNames.push('bg-primary-base text-white')
 
-      if (this.disabled || this.loading) classNames.push('bg-grey-base cursor-not-allowed')
+        if (this.disabled || this.loading) classNames.push('bg-grey-base cursor-not-allowed')
 
-      if (this.to) classNames.push('block text-center cursor-pointer')
+        if (this.to) classNames.push('block text-center cursor-pointer')
+      } else {
+        if (!this.fit) classNames.push('py-1 px-1')
+        classNames.push('bg-white')
+      }
 
       return classNames.join(' ')
     },

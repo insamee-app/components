@@ -13,3 +13,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = { name: 'name', label: 'your name' }
+
+export const ForInput = Template.bind({})
+ForInput.args = { ...Default.args, input: true }

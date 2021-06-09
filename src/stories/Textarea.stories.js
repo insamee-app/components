@@ -15,8 +15,11 @@ const Template = (args, { argTypes }) => ({
   methods: {
     action: action('input'),
   },
-  template: `<AppTextarea :value="value" :name='name' @input='action' />`,
+  template: `<AppTextarea :value="value" :name='name' :placeholder="placeholder" @input='action' />`,
 })
 
 export const Default = Template.bind({})
 Default.args = { value: 'This is the text !', name: 'text' }
+
+export const Placeholder = Template.bind({})
+Placeholder.args = { value: '', name: 'Text', placeholder: 'this is the placeholder' }

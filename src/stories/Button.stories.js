@@ -28,7 +28,7 @@ const Template = (args, { argTypes }) => ({
     action: action('click'),
   },
   template:
-    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' @click='action'> {{ args.default }} </AppButton>",
+    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' :empty='empty' @click='action'> {{ args.default }} </AppButton>",
 })
 
 export const Default = Template.bind({})
@@ -45,3 +45,6 @@ Loading.args = { loading: true, default: slotValue }
 
 export const Disabled = Template.bind({})
 Disabled.args = { disabled: true, default: slotValue }
+
+export const Empty = Template.bind({})
+Empty.args = { empty: true, default: slotValue }

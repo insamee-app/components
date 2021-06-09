@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'AppError',
+  name: 'AppListError',
   props: {
     errors: {
       type: Array,

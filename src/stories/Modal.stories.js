@@ -14,7 +14,7 @@ export default {
   },
 }
 
-const slotValue = 'inside a model'
+const slotValue = 'inside a modal'
 
 const Template = (args, { argTypes }) => ({
   components: { AppModal },

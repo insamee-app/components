@@ -6,13 +6,11 @@
         <slot name="addon"></slot>
       </span>
     </div>
-    <AppInput
+    <AppTextarea
       :value="value"
       @input="$emit('input', $event)"
       :placeholder="placeholder"
-      :type="type"
       :name="name"
-      :autocomplete="autocomplete"
     />
     <AppError :error-message="errorMessage" />
   </div>
@@ -21,14 +19,14 @@
 <script>
 import AppLabel from '../atoms/AppLabel'
 import AppError from '../atoms/AppError'
-import AppInput from '../atoms/AppInput'
+import AppTextarea from '../atoms/AppTextarea.vue'
 
 export default {
-  components: { AppError, AppLabel, AppInput },
-  name: 'LabeledInput',
+  components: { AppError, AppLabel, AppTextarea },
+  name: 'LabeledTextarea',
   props: {
     value: {
-      type: [String, Number],
+      type: String,
       required: true,
     },
     label: {
@@ -39,15 +37,7 @@ export default {
       type: String,
       required: true,
     },
-    type: {
-      type: String,
-      default: 'text',
-    },
     placeholder: {
-      type: String,
-      default: '',
-    },
-    autocomplete: {
       type: String,
       default: '',
     },
