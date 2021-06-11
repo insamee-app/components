@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: 🐛 Bug report
 about: Report identified bugs
 ---
 
