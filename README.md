@@ -61,6 +61,10 @@ colors: {
 },
 ```
 
+## FAQ
+
+You can use the **discussions** to ask for help or to suggest an idea.
+
 ## Authors
 
 - [@barbapapazes](https://www.github.com/barbapapazes)
