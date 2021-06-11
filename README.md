@@ -63,7 +63,7 @@ colors: {
 
 ## FAQ
 
-You can use the **discussions** to ask for help or to suggest an idea.
+You can use the **discussions** tab to ask for help or to suggest an idea.
 
 ## Authors
 
