@@ -3,6 +3,13 @@ import AppLabel from '../components/atoms/AppLabel'
 export default {
   component: AppLabel,
   title: 'Atoms/AppLabel',
+  argTypes: {
+    default: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: '',
+    },
+  },
 }
 
 const Template = (args, { argTypes }) => ({

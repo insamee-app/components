@@ -1,7 +1,7 @@
 <template>
-  <component :is="name ? 'label' : 'div'" :for="name ? name : undefined" :class="classNames">{{
-    label
-  }}</component>
+  <component :is="name ? 'label' : 'div'" :for="name ? name : undefined" :class="classNames"
+    ><slot>{{ label }}</slot></component
+  >
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      default: '',
     },
     input: {
       type: Boolean,
