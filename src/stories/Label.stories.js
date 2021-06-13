@@ -15,7 +15,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppLabel },
   props: Object.keys(argTypes),
-  template: "<AppLabel :name='name' :label='label' />",
+  template: "<AppLabel :name='name' :label='label' :input='input' />",
 })
 
 export const Default = Template.bind({})
