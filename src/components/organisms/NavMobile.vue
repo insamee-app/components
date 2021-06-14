@@ -3,9 +3,9 @@
     <div class="absolute w-full h-full" @click="close"></div>
     <div class="relative h-full w-8/12 bg-white space-y-8">
       <div class="flex justify-end pt-4 px-4">
-        <div @click="close" class="cursor-pointer">
+        <AppButton empty @click="close">
           <IconDismiss class="text-primary-base h-8 w-8 fill-current" />
-        </div>
+        </AppButton>
       </div>
       <AppList class="px-4" :list="list"></AppList>
       <div class="flex justify-center">
@@ -17,10 +17,11 @@
 
 <script>
 import AppList from '../molecules/AppList'
+import AppButton from '../atoms/AppButton.vue'
 import IconDismiss from '../atoms/icons/IconDismiss'
 
 export default {
-  components: { AppList, IconDismiss },
+  components: { AppList, IconDismiss, AppButton },
   name: 'TheNavMobile',
   props: {
     value: {
