@@ -1,8 +1,11 @@
 <template>
-  <div v-if="value" class="fixed top-0 left-0 right-0 bottom-0 z-30 flex flex-col justify-center">
+  <div
+    v-if="value"
+    class="fixed top-0 left-0 right-0 bottom-0 z-30 flex flex-col justify-center items-center"
+  >
     <div class="absolute bg-grey-light opacity-70 w-full h-full" @click="clickOutside"></div>
     <div class="relative overflow-y-auto">
-      <div class="flex flex-col justify-center p-4">
+      <div class="flex flex-col justify-center p-4 sm:px-0 w-screen sm:w-[500px] overscroll-none">
         <slot></slot>
       </div>
     </div>
