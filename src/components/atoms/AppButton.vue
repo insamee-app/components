@@ -72,12 +72,12 @@ export default {
         else classNames.push('bg-primary-base text-white')
 
         if (this.disabled || this.loading) classNames.push('bg-grey-base cursor-not-allowed')
-
-        if (this.to) classNames.push('block text-center cursor-pointer')
       } else {
         if (!this.fit) classNames.push('py-1 px-1')
         classNames.push('bg-white')
       }
+
+      if (this.to) classNames.push('block text-center cursor-pointer')
 
       return classNames.join(' ')
     },
