@@ -7,12 +7,18 @@
           INSAMEE
         </AppButton>
       </slot>
+      <!-- TODO: faire des sous composants ça permet de mettre le nav dedans et que ça soit transparent pour le user -->
+      <nav v-if="$slots.nav" class="ml-6 flex flex-col justify-center">
+        <slot name="nav"></slot>
+      </nav>
     </div>
     <div class="flex items-center flex-row space-x-4">
       <slot name="actions"></slot>
-      <AppButton empty @click="$emit('open', true)">
-        <IconLineHorizontal class="w-8 h-8 text-primary-base fill-current cursor-pointer" />
-      </AppButton>
+      <client-only>
+        <AppButton empty @click="$emit('open', true)" v-if="iconNav">
+          <IconLineHorizontal class="w-8 h-8 text-primary-base fill-current cursor-pointer" />
+        </AppButton>
+      </client-only>
     </div>
   </header>
 </template>
@@ -29,6 +35,10 @@ export default {
     iconLink: {
       type: Object,
       required: true,
+    },
+    iconNav: {
+      type: Boolean,
+      default: false,
     },
   },
 }
