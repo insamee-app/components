@@ -10,7 +10,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppList },
   props: Object.keys(argTypes),
-  template: '<AppList :list="list"/>',
+  template: '<AppList :list="list" :row="row"/>',
 })
 
 export const Default = Template.bind({})
@@ -22,3 +22,6 @@ Default.args = {
     { name: ListItemStories.Default.args.default, path: 'contact' },
   ],
 }
+
+export const Row = Template.bind({})
+Row.args = { ...Default.args, row: true }
