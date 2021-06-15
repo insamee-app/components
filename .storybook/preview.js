@@ -24,4 +24,8 @@ Vue.component('NuxtLink', {
   template: '<a href="#" @click.prevent="log()"><slot>NuxtLink</slot></a>',
 })
 
+Vue.component('ClientOnly', {
+  template: '<span><slot></slot></span>',
+})
+
 configure(require.context('../src/components', true, /\.stories\.js$/), module)
