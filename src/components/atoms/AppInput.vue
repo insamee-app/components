@@ -1,10 +1,9 @@
 <template>
   <input
-    :value="value"
     :id="name"
+    :value="value"
     :type="type"
     :placeholder="placeholder"
-    @input="$emit('input', $event.target.value)"
     class="
       border border-primary-dark
       rounded
@@ -15,6 +14,7 @@
       focus:
       outline-none
     "
+    @input="$emit('input', $event.target.value)"
   />
 </template>
 

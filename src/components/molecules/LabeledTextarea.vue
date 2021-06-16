@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-1 flex row justify-between" v-if="label || $slots.addon">
+    <div v-if="label || $slots.addon" class="mb-1 flex row justify-between">
       <AppLabel :name="name" :label="label" input />
       <span v-if="$slots.addon" :for="name" class="text-primary-base">
         <slot name="addon"></slot>
@@ -8,9 +8,9 @@
     </div>
     <AppTextarea
       :value="value"
-      @input="$emit('input', $event)"
       :placeholder="placeholder"
       :name="name"
+      @input="$emit('input', $event)"
     />
     <AppError :error-message="errorMessage" />
   </div>
@@ -22,8 +22,8 @@ import AppError from '../atoms/AppError'
 import AppTextarea from '../atoms/AppTextarea.vue'
 
 export default {
-  components: { AppError, AppLabel, AppTextarea },
   name: 'LabeledTextarea',
+  components: { AppError, AppLabel, AppTextarea },
   props: {
     value: {
       type: String,

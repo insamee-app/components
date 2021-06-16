@@ -15,7 +15,7 @@
     <div class="flex items-center flex-row space-x-4">
       <slot name="actions"></slot>
       <client-only>
-        <AppButton empty @click="$emit('open', true)" v-if="iconNav">
+        <AppButton v-if="iconNav" empty @click="$emit('open', true)">
           <IconLineHorizontal class="w-8 h-8 text-primary-base fill-current cursor-pointer" />
         </AppButton>
       </client-only>
@@ -29,8 +29,8 @@ import IconLineHorizontal from '../atoms/icons/IconLineHorizontal'
 import IconInsamee from '../atoms/icons/IconInsamee'
 
 export default {
-  components: { AppButton, IconLineHorizontal, IconInsamee },
   name: 'Header',
+  components: { AppButton, IconLineHorizontal, IconInsamee },
   props: {
     iconLink: {
       type: Object,

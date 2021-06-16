@@ -23,8 +23,8 @@
 import IconSpinner from './icons/IconSpinner'
 
 export default {
-  components: { IconSpinner },
   name: 'AppButton',
+  components: { IconSpinner },
   props: {
     large: {
       type: Boolean,

@@ -14,8 +14,8 @@ export default {
     component: {
       type: String,
       default: 'span',
-      validator: function (value) {
-        return ['li', 'span'].indexOf(value) !== -1
+      validator(value) {
+        return ['li', 'span'].includes(value)
       },
     },
   },

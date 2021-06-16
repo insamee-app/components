@@ -15,7 +15,7 @@
 import IconHeart from '../atoms/icons/IconHeart'
 
 export default {
-  components: { IconHeart },
   name: 'TheFooter',
+  components: { IconHeart },
 }
 </script>

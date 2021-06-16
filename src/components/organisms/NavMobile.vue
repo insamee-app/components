@@ -21,8 +21,8 @@ import AppButton from '../atoms/AppButton.vue'
 import IconDismiss from '../atoms/icons/IconDismiss'
 
 export default {
-  components: { AppList, IconDismiss, AppButton },
   name: 'TheNavMobile',
+  components: { AppList, IconDismiss, AppButton },
   props: {
     value: {
       type: Boolean,

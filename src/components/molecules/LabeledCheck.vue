@@ -10,8 +10,8 @@ import AppCheck from '../atoms/AppCheck'
 import AppLabel from '../atoms/AppLabel'
 
 export default {
-  components: { AppCheck, AppLabel },
   name: 'LabeledCheck',
+  components: { AppCheck, AppLabel },
   props: {
     value: {
       type: Boolean,

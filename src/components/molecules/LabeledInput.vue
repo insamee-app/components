@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-1 flex row justify-between" v-if="label || $slots.addon">
+    <div v-if="label || $slots.addon" class="mb-1 flex row justify-between">
       <AppLabel :name="name" :label="label" input />
       <span v-if="$slots.addon" :for="name" class="text-primary-base">
         <slot name="addon"></slot>
@@ -8,11 +8,11 @@
     </div>
     <AppInput
       :value="value"
-      @input="$emit('input', $event)"
       :placeholder="placeholder"
       :type="type"
       :name="name"
       :autocomplete="autocomplete"
+      @input="$emit('input', $event)"
     />
     <AppError :error-message="errorMessage" />
   </div>
@@ -24,8 +24,8 @@ import AppError from '../atoms/AppError'
 import AppInput from '../atoms/AppInput'
 
 export default {
-  components: { AppError, AppLabel, AppInput },
   name: 'LabeledInput',
+  components: { AppError, AppLabel, AppInput },
   props: {
     value: {
       type: [String, Number],

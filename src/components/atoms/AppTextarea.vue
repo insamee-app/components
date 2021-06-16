@@ -6,8 +6,8 @@
     name="text"
     cols="30"
     rows="10"
-    @input="$emit('input', $event.target.value)"
     :placeholder="placeholder"
+    @input="$emit('input', $event.target.value)"
   />
 </template>
 

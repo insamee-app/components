@@ -2,8 +2,8 @@
   <ul :class="classNames">
     <AppListItem v-for="item in list" :key="item.path" :row="row"
       ><component
-        :class="itemClassNames(item)"
         :is="item.path ? 'NuxtLink' : 'span'"
+        :class="itemClassNames(item)"
         :to="item.path ? { name: item.path } : undefined"
         >{{ item.name }}</component
       ></AppListItem
@@ -15,8 +15,8 @@
 import AppListItem from './AppListItem'
 
 export default {
-  components: { AppListItem },
   name: 'AppList',
+  components: { AppListItem },
   props: {
     list: {
       type: Array,

@@ -11,8 +11,8 @@
 import AppLabel from '../atoms/AppLabel'
 
 export default {
-  components: { AppLabel },
   name: 'LabeledItem',
+  components: { AppLabel },
   props: {
     label: {
       type: String,

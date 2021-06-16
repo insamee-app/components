@@ -1,5 +1,5 @@
-import LabeledCheck from '../components/molecules/LabeledCheck'
 import { action } from '@storybook/addon-actions'
+import LabeledCheck from '../components/molecules/LabeledCheck'
 
 export default {
   component: LabeledCheck,

@@ -20,8 +20,8 @@
 import IconCheck from '../atoms/icons/IconCheck'
 
 export default {
-  components: { IconCheck },
   name: 'AppCheck',
+  components: { IconCheck },
   props: {
     value: {
       type: Boolean,

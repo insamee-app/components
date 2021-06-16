@@ -8,8 +8,8 @@
 import AppChip from '../atoms/AppChip'
 
 export default {
-  components: { AppChip },
   name: 'AppChips',
+  components: { AppChip },
   props: {
     texts: {
       type: Array,

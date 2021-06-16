@@ -15,8 +15,6 @@ export default {
   },
 }
 
-const slotValue = 'actions'
-
 const Template = (args, { argTypes }) => ({
   components: { NavMobile, AppButton },
   props: Object.keys(argTypes),
