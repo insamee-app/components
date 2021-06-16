@@ -7,7 +7,10 @@
     "build-storybook": "build-storybook -o docs-build",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "commitlint": "commitlint",
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "author": "",
   "license": "ISC",
@@ -25,16 +28,36 @@
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
     "babel-preset-vue": "^2.0.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.11.1",
+    "husky": "^6.0.0",
     "postcss": "^8",
     "prettier": "^2.3.0",
     "tailwindcss": "^2.1.2",
     "vue": "^2.6.13",
     "vue-loader": "^15.9.7",
     "vue-template-compiler": "^2.6.13"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.vue": [
+      "yarn lint"
+    ],
+    "*.js": [
+      "yarn lint"
+    ]
+  },
+  "dependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "lint-staged": "^11.0.0"
   }
 }
