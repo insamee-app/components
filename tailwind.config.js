@@ -3,18 +3,30 @@ module.exports = {
   mode: 'jit',
   theme: {
     colors: {
-      primary: {
-        dark: '#7B0000',
-        base: '#B20000',
-        light: '#EC492C',
+      'primary': {
+        base: '#0073E6',
+        dark: '#0049B3',
+        light: '#63A1FF',
       },
-      grey: {
-        dark: '#6E5353',
-        base: '#B59B9B',
-        light: '#EBE0E0',
+      'secondary': {
+        base: '#4FBE8E',
+        dark: '#088D60',
+        light: '#83F1BE',
       },
-      white: '#FCFCFC',
-      black: '#221B1B',
+      'grey': {
+        base: '#839199',
+        dark: '#142130',
+        light: '#DCDEE4',
+      },
+      'grey-secondary': {
+        base: '#889490',
+        dark: '#182C25',
+        light: '#DEE2E1',
+      },
+      'white': '#FCFDFD',
+      'black': '#000517',
+      'negative': '#F33C3C',
+      'positive': '#63ED92',
     },
   },
 }
