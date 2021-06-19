@@ -1,13 +1,5 @@
 <template>
-  <component
-    :is="component"
-    :to="component === 'NuxtLink' ? link : undefined"
-    :href="isAnchor ? link : undefined"
-    :target="isAnchor ? '_blank' : undefined"
-    :rel="isAnchor ? 'noreferrer noopener' : undefined"
-    class="text-primary-base font-light"
-    ><slot></slot
-  ></component>
+  <a :href="link" target="_blank" rel="noreferrer noopener" :class="classLink"><slot></slot></a>
 </template>
 
 <script>
@@ -15,20 +7,17 @@ export default {
   name: 'AppLink',
   props: {
     link: {
-      type: [Object, String],
+      type: String,
       required: true,
     },
   },
   computed: {
-    isAnchor() {
-      return this.component === 'a'
-    },
-    component() {
-      if (typeof this.link === 'object') return 'NuxtLink'
+    classLink() {
+      const classNames = []
 
-      if (typeof this.link === 'string' && this.link.includes('http')) return 'a'
+      classNames.push('text-primary-base')
 
-      return 'a'
+      return classNames.join(' ')
     },
   },
 }
