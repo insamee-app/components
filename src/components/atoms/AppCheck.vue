@@ -11,7 +11,7 @@
       class="w-4 h-4 rounded border border-primary-dark flex flex-col justify-center items-center"
       :class="classCheckBox"
     >
-      <IconCheck v-if="value" class="w-3 h-3 text-white fill-current" />
+      <IconCheck v-if="value" class="w-3 h-3 text-grey-light fill-current" />
     </div>
   </div>
 </template>
@@ -37,6 +37,7 @@ export default {
       const classNames = []
 
       if (this.value) classNames.push('bg-primary-dark')
+      else classNames.push('bg-grey-light')
 
       return classNames.join(' ')
     },
