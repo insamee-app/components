@@ -14,7 +14,7 @@ export default {
   },
 }
 
-const slotValue = 'button'
+const slotValue = 'lorem ipsum'
 
 const Template = (args, { argTypes }) => ({
   components: { AppButton },
@@ -28,23 +28,59 @@ const Template = (args, { argTypes }) => ({
     action: action('click'),
   },
   template:
-    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' :empty='empty' @click='action'> {{ args.default }} </AppButton>",
+    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' :empty='empty' @click='action' :type='type' > {{ args.default }} </AppButton>",
 })
 
-export const Default = Template.bind({})
-Default.args = { default: slotValue }
+export const PrimaryEmpty = Template.bind({})
+PrimaryEmpty.args = { empty: true, default: slotValue }
 
-export const Large = Template.bind({})
-Large.args = { large: true, default: slotValue }
+export const PrimaryBorder = Template.bind({})
+PrimaryBorder.args = { border: true, default: slotValue }
 
-export const Border = Template.bind({})
-Border.args = { border: true, default: slotValue }
+export const PrimaryBorderLarge = Template.bind({})
+PrimaryBorderLarge.args = { border: true, default: slotValue, large: true }
 
-export const Loading = Template.bind({})
-Loading.args = { loading: true, default: slotValue }
+export const Primary = Template.bind({})
+Primary.args = { default: slotValue }
 
-export const Disabled = Template.bind({})
-Disabled.args = { disabled: true, default: slotValue }
+export const PrimaryLarge = Template.bind({})
+PrimaryLarge.args = { default: slotValue, large: true }
 
-export const Empty = Template.bind({})
-Empty.args = { empty: true, default: slotValue }
+export const PrimaryDisabled = Template.bind({})
+PrimaryDisabled.args = { default: slotValue, disabled: true }
+
+export const PrimaryDisabledLarge = Template.bind({})
+PrimaryDisabledLarge.args = { default: slotValue, large: true, disabled: true }
+
+export const PrimaryLoading = Template.bind({})
+PrimaryLoading.args = { default: slotValue, loading: true }
+
+export const PrimaryLoadingLarge = Template.bind({})
+PrimaryLoadingLarge.args = { default: slotValue, large: true, loading: true }
+
+export const SecondaryEmpty = Template.bind({})
+SecondaryEmpty.args = { empty: true, default: slotValue, type: 'secondary' }
+
+export const SecondaryBorder = Template.bind({})
+SecondaryBorder.args = { border: true, default: slotValue, type: 'secondary' }
+
+export const SecondaryBorderLarge = Template.bind({})
+SecondaryBorderLarge.args = { border: true, default: slotValue, large: true, type: 'secondary' }
+
+export const Secondary = Template.bind({})
+Secondary.args = { default: slotValue, type: 'secondary' }
+
+export const SecondaryLarge = Template.bind({})
+SecondaryLarge.args = { default: slotValue, large: true, type: 'secondary' }
+
+export const SecondaryDisabled = Template.bind({})
+SecondaryDisabled.args = { default: slotValue, disabled: true, type: 'secondary' }
+
+export const SecondaryDisabledLarge = Template.bind({})
+SecondaryDisabledLarge.args = { default: slotValue, large: true, disabled: true, type: 'secondary' }
+
+export const SecondaryLoading = Template.bind({})
+SecondaryLoading.args = { default: slotValue, loading: true, type: 'secondary' }
+
+export const SecondaryLoadingLarge = Template.bind({})
+SecondaryLoadingLarge.args = { default: slotValue, large: true, loading: true, type: 'secondary' }
