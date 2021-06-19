@@ -15,6 +15,8 @@ export default {
   },
 }
 
+const slotValue = 'lorem ipsum'
+
 const Template = (args, { argTypes }) => ({
   components: { AppChip },
   props: Object.keys(argTypes),
@@ -23,8 +25,18 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: "<AppChip :component='component'> {{ args.default }} </AppChip>",
+  template:
+    "<AppChip :component='component' :small='small' :variant='variant'> {{ args.default }} </AppChip>",
 })
 
-export const Default = Template.bind({})
-Default.args = { default: 'football' }
+export const Primary = Template.bind({})
+Primary.args = { default: slotValue }
+
+export const PrimarySmall = Template.bind({})
+PrimarySmall.args = { default: slotValue, small: true }
+
+export const Secondary = Template.bind({})
+Secondary.args = { default: slotValue, variant: 'secondary' }
+
+export const SecondarySmall = Template.bind({})
+SecondarySmall.args = { default: slotValue, small: true, variant: 'secondary' }
