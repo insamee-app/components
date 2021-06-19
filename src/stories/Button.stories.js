@@ -28,7 +28,7 @@ const Template = (args, { argTypes }) => ({
     action: action('click'),
   },
   template:
-    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' :empty='empty' @click='action' :type='type' > {{ args.default }} </AppButton>",
+    "<AppButton :large='large' :border='border' :to='to' :href='href' :disabled='disabled' :loading='loading' :empty='empty' @click='action' :variant='variant' > {{ args.default }} </AppButton>",
 })
 
 export const PrimaryEmpty = Template.bind({})
@@ -59,28 +59,38 @@ export const PrimaryLoadingLarge = Template.bind({})
 PrimaryLoadingLarge.args = { default: slotValue, large: true, loading: true }
 
 export const SecondaryEmpty = Template.bind({})
-SecondaryEmpty.args = { empty: true, default: slotValue, type: 'secondary' }
+SecondaryEmpty.args = { empty: true, default: slotValue, variant: 'secondary' }
 
 export const SecondaryBorder = Template.bind({})
-SecondaryBorder.args = { border: true, default: slotValue, type: 'secondary' }
+SecondaryBorder.args = { border: true, default: slotValue, variant: 'secondary' }
 
 export const SecondaryBorderLarge = Template.bind({})
-SecondaryBorderLarge.args = { border: true, default: slotValue, large: true, type: 'secondary' }
+SecondaryBorderLarge.args = { border: true, default: slotValue, large: true, variant: 'secondary' }
 
 export const Secondary = Template.bind({})
-Secondary.args = { default: slotValue, type: 'secondary' }
+Secondary.args = { default: slotValue, variant: 'secondary' }
 
 export const SecondaryLarge = Template.bind({})
-SecondaryLarge.args = { default: slotValue, large: true, type: 'secondary' }
+SecondaryLarge.args = { default: slotValue, large: true, variant: 'secondary' }
 
 export const SecondaryDisabled = Template.bind({})
-SecondaryDisabled.args = { default: slotValue, disabled: true, type: 'secondary' }
+SecondaryDisabled.args = { default: slotValue, disabled: true, variant: 'secondary' }
 
 export const SecondaryDisabledLarge = Template.bind({})
-SecondaryDisabledLarge.args = { default: slotValue, large: true, disabled: true, type: 'secondary' }
+SecondaryDisabledLarge.args = {
+  default: slotValue,
+  large: true,
+  disabled: true,
+  variant: 'secondary',
+}
 
 export const SecondaryLoading = Template.bind({})
-SecondaryLoading.args = { default: slotValue, loading: true, type: 'secondary' }
+SecondaryLoading.args = { default: slotValue, loading: true, variant: 'secondary' }
 
 export const SecondaryLoadingLarge = Template.bind({})
-SecondaryLoadingLarge.args = { default: slotValue, large: true, loading: true, type: 'secondary' }
+SecondaryLoadingLarge.args = {
+  default: slotValue,
+  large: true,
+  loading: true,
+  variant: 'secondary',
+}

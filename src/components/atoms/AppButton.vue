@@ -14,11 +14,13 @@
 </template>
 
 <script>
+import vaiant from '../../mixins/variant'
 import IconSpinner from './icons/IconSpinner'
 
 export default {
   name: 'AppButton',
   components: { IconSpinner },
+  mixins: [vaiant],
   props: {
     large: {
       type: Boolean,
@@ -52,21 +54,8 @@ export default {
       type: Boolean,
       default: false,
     },
-    type: {
-      type: String,
-      default: 'primary',
-      validator(value) {
-        return ['primary', 'secondary'].includes(value)
-      },
-    },
   },
   computed: {
-    isPrimary() {
-      return this.type === 'primary'
-    },
-    isSecondary() {
-      return this.type === 'secondary'
-    },
     classButton() {
       const classNames = []
 
