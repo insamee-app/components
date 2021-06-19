@@ -2,13 +2,7 @@
   <component
     :is="getComponentType"
     :disabled="disabled || loading"
-    class="
-      rounded
-      flex
-      justify-center
-      focus:outline-none
-      focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark
-    "
+    class="rounded flex justify-center focus:outline-none"
     :class="classButton"
     :to="to"
     :href="href"
@@ -58,26 +52,54 @@ export default {
       type: Boolean,
       default: false,
     },
+    type: {
+      type: String,
+      default: 'primary',
+      validator(value) {
+        return ['primary', 'secondary'].includes(value)
+      },
+    },
   },
   computed: {
+    isPrimary() {
+      return this.type === 'primary'
+    },
+    isSecondary() {
+      return this.type === 'secondary'
+    },
     classButton() {
       const classNames = []
 
-      if (!this.empty) {
-        if (this.large) classNames.push('p-2 text-lg')
-        else if (this.fit) classNames.push('')
-        else classNames.push('py-1 px-2 text-base')
-
-        if (this.border) classNames.push('border border-primary-dark text-primary-base bg-white')
-        else classNames.push('bg-primary-base text-white')
-
-        if (this.disabled || this.loading) classNames.push('bg-grey-base cursor-not-allowed')
-      } else {
-        if (!this.fit) classNames.push('py-1 px-1')
-        classNames.push('bg-[#FFF]')
+      if (this.empty) {
+        if (this.isPrimary) {
+          classNames.push('text-primary-base')
+        } else if (this.isSecondary) {
+          classNames.push('text-secondary-base')
+        }
+        return classNames.join(' ')
       }
 
-      if (this.to) classNames.push('block text-center cursor-pointer')
+      if (this.large) classNames.push('p-2 text-lg')
+      else classNames.push('py-1 px-2 text-base')
+
+      if (this.border) {
+        classNames.push('border bg-white')
+        if (this.isPrimary) {
+          classNames.push('border-primary-dark text-primary-base')
+        } else if (this.isSecondary) {
+          classNames.push('border-secondary-dark text-secondary-base')
+        }
+      } else if (this.disabled || this.loading) {
+        if (this.isPrimary) {
+          classNames.push('bg-grey-base text-white')
+        } else if (this.isSecondary) {
+          classNames.push('bg-grey-secondary-base text-white')
+        }
+      } else if (this.isPrimary) {
+        classNames.push('bg-primary-base text-white')
+      } else if (this.isSecondary) {
+        classNames.push('bg-secondary-base text-white')
+      }
 
       return classNames.join(' ')
     },
