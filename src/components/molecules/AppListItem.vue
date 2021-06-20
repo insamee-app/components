@@ -1,5 +1,9 @@
 <template>
-  <li :class="classNames"><slot></slot></li>
+  <li>
+    <component :is="to ? 'NuxtLink' : 'div'" :class="clasLink" :to="to">
+      <slot></slot>
+    </component>
+  </li>
 </template>
 
 <script>
@@ -10,30 +14,30 @@ export default {
       type: Boolean,
       default: false,
     },
-    // TODO: il est possible que le active doit être mis dans le parent via la classe automatique
-    active: {
-      type: Boolean,
-      default: false,
-    },
-    link: {
-      type: Boolean,
-      default: false,
+    to: {
+      type: Object,
+      default: undefined,
     },
   },
   computed: {
-    classNames() {
+    clasLink() {
       const classNames = []
 
       if (this.row) classNames.push('py-1 px-2 border-r-2 inline')
-      else classNames.push('border-b-2 p-4')
+      else classNames.push('border-b-2 p-4 block')
 
-      if (this.active) classNames.push('border-grey-base text-primary-dark')
-      else classNames.push('border-grey-light')
+      classNames.push('border-grey-light')
 
-      if (this.link) classNames.push('text-primary-base')
+      if (this.to) classNames.push('text-primary-base')
 
       return classNames.join(' ')
     },
   },
 }
 </script>
+
+<style scoped>
+.nuxt-link-exact-active {
+  @apply border-grey-base text-primary-dark;
+}
+</style>

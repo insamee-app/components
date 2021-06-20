@@ -19,24 +19,17 @@ const Template = (args, { argTypes }) => ({
   data() {
     return { args }
   },
-  template:
-    '<AppListItem :row="row" :active="active" :link="true"> {{ args.default }} </AppListItem>',
+  template: '<AppListItem :row="row" :to="to"> {{ args.default }} </AppListItem>',
 })
 
 export const Primary = Template.bind({})
 Primary.args = { default: 'a list item' }
 
-export const PrimaryLink = Template.bind({})
-PrimaryLink.args = { default: 'a list item', link: true }
-
-export const PrimaryLinkActive = Template.bind({})
-PrimaryLinkActive.args = { default: 'a list item', active: true, link: true }
+export const PrimaryTo = Template.bind({})
+PrimaryTo.args = { default: 'a list item', to: { name: 'index' } }
 
 export const PrimaryRow = Template.bind({})
 PrimaryRow.args = { default: 'a list item', row: true }
 
-export const PrimaryRowLink = Template.bind({})
-PrimaryRowLink.args = { default: 'a list item', row: true, link: true }
-
-export const PrimaryRowLinkActive = Template.bind({})
-PrimaryRowLinkActive.args = { default: 'a list item', row: true, active: true, link: true }
+export const PrimaryRowTo = Template.bind({})
+PrimaryRowTo.args = { default: 'a list item', row: true, to: { name: 'index' } }
