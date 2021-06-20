@@ -16,10 +16,10 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({})
 Default.args = {
   list: [
-    { name: ListItemStories.Primary.args.default, path: 'home' },
+    { name: ListItemStories.Primary.args.default, path: { name: 'index' } },
     { name: ListItemStories.Primary.args.default },
-    { name: ListItemStories.Primary.args.default, path: 'me' },
-    { name: ListItemStories.Primary.args.default, path: 'contact' },
+    { name: ListItemStories.Primary.args.default, path: { name: 'me' } },
+    { name: ListItemStories.Primary.args.default, path: { name: 'contact' } },
   ],
 }
 
