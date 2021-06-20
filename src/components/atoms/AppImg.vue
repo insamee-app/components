@@ -1,21 +1,20 @@
 <template>
   <component
-    :is="name ? 'img' : 'div'"
-    :src="url"
-    :alt="name ? alt : undefined"
-    :class="name ? '' : 'bg-primary-dark w-full h-full'"
+    :is="link ? 'img' : 'div'"
+    :src="link"
+    :alt="link ? alt : undefined"
+    :class="classAppImg"
   />
 </template>
 
 <script>
+import variant from '../../mixins/variant'
+
 export default {
   name: 'AppImg',
+  mixins: [variant],
   props: {
-    baseUrl: {
-      type: String,
-      default: undefined,
-    },
-    name: {
+    link: {
       type: String,
       default: undefined,
     },
@@ -25,9 +24,19 @@ export default {
     },
   },
   computed: {
-    url() {
-      if (!this.name) return undefined
-      return this.baseUrl + this.name
+    classAppImg() {
+      const classNames = []
+
+      if (!this.link) {
+        classNames.push('w-full h-full')
+        if (this.isPrimary) {
+          classNames.push('bg-primary-dark')
+        } else if (this.isSecondary) {
+          classNames.push('bg-secondary-dark')
+        }
+      }
+
+      return classNames.join(' ')
     },
   },
 }

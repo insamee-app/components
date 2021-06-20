@@ -9,14 +9,17 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppImg },
   props: Object.keys(argTypes),
-  template: "<AppImg :baseUrl='baseUrl' :name='name' :alt='alt' />",
+  template: "<AppImg :link='link' :alt='alt' :variant='variant' />",
 })
 
-export const Empty = Template.bind({})
+export const Primary = Template.bind({})
+Primary.args = { variant: 'primary' }
+
+export const Secondary = Template.bind({})
+Secondary.args = { variant: 'secondary' }
 
 export const Img = Template.bind({})
 Img.args = {
-  baseUrl: 'https://cdn.pixabay.com/photo/2017/05/09/03/46/',
-  name: 'alberta-2297204_960_720.jpg',
+  link: 'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg',
   alt: 'Beautiful image',
 }
