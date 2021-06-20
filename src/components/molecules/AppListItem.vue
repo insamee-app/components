@@ -28,7 +28,8 @@ export default {
 
       classNames.push('border-grey-light')
 
-      if (this.to) classNames.push('text-primary-base')
+      if (this.to)
+        classNames.push('text-primary-base hover:text-primary-dark hover:border-grey-base')
 
       return classNames.join(' ')
     },
