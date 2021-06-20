@@ -1,15 +1,15 @@
 <template>
-  <ul v-if="errors.length" class="text-sm text-primary-dark text-center">
-    <template v-if="full">
-      <li v-for="error in errors" :key="error.message">{{ error.message }}</li>
-    </template>
-    <li v-else>{{ errors[0].message }}</li>
+  <ul v-if="errors.length" class="text-center">
+    <li v-for="error in list" :key="error.message"><AppError :error-message="error.message" /></li>
   </ul>
 </template>
 
 <script>
+import AppError from '../atoms/AppError'
+
 export default {
   name: 'AppListError',
+  components: { AppError },
   props: {
     errors: {
       type: Array,
@@ -18,6 +18,13 @@ export default {
     full: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    list() {
+      if (this.full) return this.errors
+
+      return [this.errors[0]]
     },
   },
 }

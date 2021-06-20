@@ -15,3 +15,9 @@ export const Default = Template.bind({})
 Default.args = {
   errors: [{ message: 'This is error 1' }, { message: 'This is error 2' }],
 }
+
+export const Full = Template.bind({})
+Full.args = {
+  errors: Default.args.errors,
+  full: true,
+}
