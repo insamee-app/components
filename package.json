@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.14.3",
+    "@babel/core": "^7.14.6",
     "@babel/eslint-parser": "^7.14.5",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
@@ -29,18 +29,18 @@
     "babel-loader": "^8.2.2",
     "babel-preset-vue": "^2.0.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.11.1",
     "husky": "^6.0.0",
     "postcss": "^8",
-    "prettier": "^2.3.0",
-    "tailwindcss": "^2.1.2",
-    "vue": "^2.6.13",
+    "prettier": "^2.3.1",
+    "tailwindcss": "^2.2.2",
+    "vue": "^2.6.14",
     "vue-loader": "^15.9.7",
-    "vue-template-compiler": "^2.6.13"
+    "vue-template-compiler": "^2.6.14"
   },
   "config": {
     "commitizen": {
