@@ -1,10 +1,13 @@
 import { action } from '@storybook/addon-actions'
-import AppCard from '../components/organisms/AppCard'
+import Card from '../components/organisms/Card'
+import CardHeader from '../components/organisms/CardHeader'
+import CardTitle from '../components/organisms/CardTitle'
+import CardContent from '../components/organisms/CardContent'
 import AppButton from '../components/atoms/AppButton'
 
 export default {
-  component: AppCard,
-  title: 'Organisms/AppCard',
+  component: Card,
+  title: 'Organisms/Card',
   argTypes: {
     header: {
       control: 'text',
@@ -26,40 +29,37 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { AppCard, AppButton },
+  components: { Card, AppButton, CardTitle, CardHeader, CardContent },
   props: Object.keys(argTypes),
-  data() {
-    return {
-      args,
-    }
-  },
   methods: {
     action: action('close'),
   },
-  template: `<AppCard :closable="closable" @close="action"> ${args.header} ${args.default} ${args.actions} </AppCard>`,
+  template: `<Card> ${args.header} ${args.default} ${args.actions} </Card>`,
 })
 
 export const Empty = Template.bind({})
 Empty.args = {}
 
 export const Closable = Template.bind({})
-Closable.args = { closable: true }
-
-export const Header = Template.bind({})
-Header.args = { header: '<template #header> This is the title </template>' }
+Closable.args = {
+  header:
+    '<template #header> <CardHeader @close="action" closable> <CardTitle> This is the title </CardTitle> </CardHeader> </template>',
+}
 
 export const Text = Template.bind({})
-Text.args = { default: 'This is the text from the card !' }
+Text.args = {
+  default: '<template> <CardContent> This is the text from the card ! </CardContent> </template>',
+}
 
 export const Actions = Template.bind({})
 Actions.args = {
   actions:
-    '<template #actions> <div class="flex justify-end"> <AppButton>Actions</AppButton> </div> </template>',
+    '<template #actions> <div class="flex justify-end"> <AppButton> Actions </AppButton> </div> </template>',
 }
 
 export const Full = Template.bind({})
 Full.args = {
-  header: Header.args.header,
+  header: Closable.args.header,
   default: Text.args.default,
   actions: Actions.args.actions,
 }
