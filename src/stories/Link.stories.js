@@ -20,8 +20,11 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: "<AppLink :link='link'> {{ args.default }} </AppLink>",
+  template: "<AppLink :link='link' :variant='variant'> {{ args.default }} </AppLink>",
 })
 
-export const Default = Template.bind({})
-Default.args = { link: 'https://exemple.com' }
+export const Primary = Template.bind({})
+Primary.args = { link: 'https://exemple.com' }
+
+export const Secondary = Template.bind({})
+Secondary.args = { link: 'https://exemple.com', variant: 'secondary' }

@@ -1,10 +1,15 @@
 <template>
-  <a :href="link" target="_blank" rel="noreferrer noopener" :class="classLink"><slot></slot></a>
+  <a :href="link" target="_blank" rel="noreferrer noopener" :class="classAppLink">
+    <slot></slot>
+  </a>
 </template>
 
 <script>
+import variant from '../../mixins/variant'
+
 export default {
   name: 'AppLink',
+  mixins: [variant],
   props: {
     link: {
       type: String,
@@ -12,11 +17,14 @@ export default {
     },
   },
   computed: {
-    classLink() {
+    classAppLink() {
       const classNames = []
 
-      classNames.push('text-primary-base')
-
+      if (this.isPrimary) {
+        classNames.push('text-primary-base hover:text-primary-dark')
+      } else if (this.isSecondary) {
+        classNames.push('text-secondary-base hover:text-secondary-dark')
+      }
       return classNames.join(' ')
     },
   },
