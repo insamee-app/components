@@ -7,10 +7,7 @@
           INSAMEE
         </AppButton>
       </slot>
-      <!-- TODO: faire des sous composants ça permet de mettre le nav dedans et que ça soit transparent pour le user -->
-      <nav v-if="$slots.nav" class="ml-6 flex flex-col justify-center">
-        <slot name="nav"></slot>
-      </nav>
+      <slot name="nav"></slot>
     </div>
     <div class="flex items-center flex-row space-x-4">
       <slot name="actions"></slot>
