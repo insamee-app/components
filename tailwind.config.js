@@ -28,5 +28,10 @@ module.exports = {
       'negative': '#F33C3C',
       'positive': '#63ED92',
     },
+    extend: {
+      animation: {
+        'bounce-slow': 'bounce 2s ease-in-out infinite',
+      },
+    },
   },
 }
