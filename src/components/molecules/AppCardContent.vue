@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'CardContent',
+  name: 'AppCardContent',
   props: {
     justify: {
       type: Boolean,

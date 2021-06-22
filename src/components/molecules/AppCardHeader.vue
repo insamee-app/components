@@ -12,7 +12,7 @@ import IconDismiss from '../atoms/icons/IconDismiss.vue'
 import AppButton from '../atoms/AppButton.vue'
 
 export default {
-  name: 'CardHeader',
+  name: 'AppCardHeader',
   components: { IconDismiss, AppButton },
   props: {
     closable: {
