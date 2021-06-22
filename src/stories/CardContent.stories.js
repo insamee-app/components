@@ -1,8 +1,8 @@
-import AppCard from '../components/molecules/AppCard'
+import AppCardContent from '../components/molecules/AppCardContent'
 
 export default {
-  component: AppCard,
-  title: 'Molecules/AppCard',
+  component: AppCardContent,
+  title: 'Molecules/AppCardContent',
   argTypes: {
     default: {
       control: 'text',
@@ -13,9 +13,9 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { AppCard },
+  components: { AppCardContent },
   props: Object.keys(argTypes),
-  template: `<AppCard :justify="justify"> ${args.default} </AppCard>`,
+  template: `<AppCardContent :justify="justify"> ${args.default} </AppCardContent>`,
 })
 
 export const Default = Template.bind({})
