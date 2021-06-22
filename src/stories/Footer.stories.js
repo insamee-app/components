@@ -31,4 +31,4 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({})
 
 export const Item = Template.bind({})
-Item.args = { default: 'a list of items' }
+Item.args = { default: '<div> a list of items </div' }

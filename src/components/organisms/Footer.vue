@@ -1,8 +1,8 @@
 <template>
-  <footer class="p-4 text-center grey-dark bg-grey-secondary-light">
+  <footer class="p-4 text-center grey-dark bg-grey-secondary-light space-y-6">
     <slot></slot>
     <slot name="by">
-      <div :class="$slots.default ? 'mt-6' : undefined">
+      <div>
         Réalisé avec
         <IconHeart class="w-6 h-6 text-secondary-base fill-current inline" />
         par des étudiants pour les étudiants
