@@ -16,7 +16,7 @@ export default {
       description: 'Slot content',
       defaultValue: '',
     },
-    graphics: {
+    graphic: {
       control: 'text',
       description: 'Slot content',
       defaultValue: '',
@@ -32,13 +32,13 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: `<HeroBanner> ${args.title} ${args.graphics} ${args.subtitle} </HeroBanner>`,
+  template: `<HeroBanner> ${args.title} ${args.graphic} ${args.subtitle} </HeroBanner>`,
 })
 
 export const Default = Template.bind({})
 Default.args = {
   title: '<template #title> <HeroBannerTitle> this is the title </HeroBannerTitle> </template>',
-  graphics: '<template #graphics> this is for the graphic </template>',
+  graphic: '<template #graphic> this is for the graphic </template>',
   subtitle:
     '<template #subtitle> <HeroBannerSubtitle> this is the subtitle of this super hero banner </HeroBannerSubtitle> </template>',
 }

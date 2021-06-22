@@ -3,7 +3,7 @@
     class="h-screen flex flex-col overflow-x-hidden relative"
     :class="around ? 'justify-around' : 'justify-center'"
   >
-    <slot></slot>
+    <slot :graphicStyle="graphicClass"></slot>
   </section>
 </template>
 
@@ -14,6 +14,11 @@ export default {
     around: {
       type: Boolean,
       default: false,
+    },
+  },
+  computed: {
+    graphicClass() {
+      return 'h-auto w-full md:w-1/2 mx-auto'
     },
   },
 }
