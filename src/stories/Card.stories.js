@@ -1,13 +1,13 @@
 import { action } from '@storybook/addon-actions'
-import Card from '../components/organisms/Card'
-import CardHeader from '../components/organisms/CardHeader'
-import CardTitle from '../components/organisms/CardTitle'
-import CardContent from '../components/organisms/CardContent'
+import AppCard from '../components/molecules/AppCard'
+import AppCardHeader from '../components/molecules/AppCardHeader'
+import AppCardTitle from '../components/molecules/AppCardTitle'
+import AppCardContent from '../components/molecules/AppCardContent'
 import AppButton from '../components/atoms/AppButton'
 
 export default {
-  component: Card,
-  title: 'Organisms/Card',
+  component: AppCard,
+  title: 'Molecules/AppCard',
   argTypes: {
     header: {
       control: 'text',
@@ -29,12 +29,12 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { Card, AppButton, CardTitle, CardHeader, CardContent },
+  components: { AppCard, AppButton, AppCardTitle, AppCardHeader, AppCardContent },
   props: Object.keys(argTypes),
   methods: {
     action: action('close'),
   },
-  template: `<Card> ${args.header} ${args.default} ${args.actions} </Card>`,
+  template: `<AppCard> ${args.header} ${args.default} ${args.actions} </AppCard>`,
 })
 
 export const Empty = Template.bind({})
@@ -43,12 +43,13 @@ Empty.args = {}
 export const Closable = Template.bind({})
 Closable.args = {
   header:
-    '<template #header> <CardHeader @close="action" closable> <CardTitle> This is the title </CardTitle> </CardHeader> </template>',
+    '<template #header> <AppCardHeader @close="action" closable> <AppCardTitle> This is the title </AppCardTitle> </AppCardHeader> </template>',
 }
 
 export const Text = Template.bind({})
 Text.args = {
-  default: '<template> <CardContent> This is the text from the card ! </CardContent> </template>',
+  default:
+    '<template> <AppCardContent> This is the text from the card ! </AppCardContent> </template>',
 }
 
 export const Actions = Template.bind({})

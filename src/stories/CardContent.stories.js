@@ -1,8 +1,8 @@
-import CardContent from '../components/organisms/CardContent'
+import AppCard from '../components/molecules/AppCard'
 
 export default {
-  component: CardContent,
-  title: 'Organisms/CardContent',
+  component: AppCard,
+  title: 'Molecules/AppCard',
   argTypes: {
     default: {
       control: 'text',
@@ -13,9 +13,9 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { CardContent },
+  components: { AppCard },
   props: Object.keys(argTypes),
-  template: `<CardContent :justify="justify"> ${args.default} </CardContent>`,
+  template: `<AppCard :justify="justify"> ${args.default} </AppCard>`,
 })
 
 export const Default = Template.bind({})

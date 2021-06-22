@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions'
-import CardHeader from '../components/organisms/CardHeader'
+import AppCardHeader from '../components/molecules/AppCardHeader'
 
 export default {
-  component: CardHeader,
-  title: 'Organisms/CardHeader',
+  component: AppCardHeader,
+  title: 'Molecules/AppCardHeader',
   argTypes: {
     default: {
       control: 'text',
@@ -14,12 +14,12 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { CardHeader },
+  components: { AppCardHeader },
   props: Object.keys(argTypes),
   methods: {
     action: action('close'),
   },
-  template: `<CardHeader @close="action" :closable="closable"> ${args.default} </CardHeader>`,
+  template: `<AppCardHeader @close="action" :closable="closable"> ${args.default} </AppCardHeader>`,
 })
 
 export const Default = Template.bind({})
