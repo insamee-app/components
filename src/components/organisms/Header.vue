@@ -1,12 +1,12 @@
 <template>
   <header class="flex flex-row justify-between p-4 absolute w-full z-10">
     <div class="flex flex-row">
-      <slot name="icon">
-        <AppButton empty :to="iconLink" class="flex items-center">
+      <AppButton empty :to="iconLink" class="flex items-center">
+        <slot name="icon">
           <IconInsamee class="h-8 w-8 mr-2" />
           INSAMEE
-        </AppButton>
-      </slot>
+        </slot>
+      </AppButton>
       <slot name="nav"></slot>
     </div>
     <div class="flex items-center flex-row space-x-4">
