@@ -34,6 +34,9 @@ const Template = (args, { argTypes }) => ({
 export const PrimaryEmpty = Template.bind({})
 PrimaryEmpty.args = { empty: true, default: slotValue }
 
+export const PrimaryEmptyExternal = Template.bind({})
+PrimaryEmptyExternal.args = { empty: true, default: slotValue, href: 'http://example.com' }
+
 export const PrimaryBorder = Template.bind({})
 PrimaryBorder.args = { border: true, default: slotValue }
 

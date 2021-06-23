@@ -1,14 +1,24 @@
 <template>
   <li>
-    <component :is="to ? 'NuxtLink' : 'div'" :class="clasLink" :to="to">
+    <component
+      :is="to || href ? 'AppButton' : 'div'"
+      :class="clasLink"
+      :to="to"
+      :href="href"
+      :empty="href || to ? true : false"
+      :inline="href || to ? true : false"
+    >
       <slot></slot>
     </component>
   </li>
 </template>
 
 <script>
+import AppButton from '../atoms/AppButton'
+
 export default {
   name: 'AppListItem',
+  components: { AppButton },
   props: {
     row: {
       type: Boolean,
@@ -16,6 +26,10 @@ export default {
     },
     to: {
       type: Object,
+      default: undefined,
+    },
+    href: {
+      type: String,
       default: undefined,
     },
   },
@@ -28,7 +42,7 @@ export default {
 
       classNames.push('border-grey-light')
 
-      if (this.to)
+      if (this.to || this.href)
         classNames.push('text-primary-base hover:text-primary-dark hover:border-grey-base')
 
       return classNames.join(' ')

@@ -2,7 +2,7 @@
   <component
     :is="getComponentType"
     :disabled="disabled || loading"
-    class="rounded flex justify-center focus:outline-none"
+    class="focus:outline-none"
     :class="classButton"
     :to="to"
     :href="href"
@@ -12,16 +12,18 @@
   >
     <IconSpinner v-if="loading" class="animate-spin h-6 w-6 fill-current" :class="classSpinner" />
     <slot></slot>
+    <IconOpen v-if="href" class="ml-1 w-4 h-4 fill-current" :class="classOpen" />
   </component>
 </template>
 
 <script>
 import vaiant from '../../mixins/variant'
 import IconSpinner from './icons/IconSpinner'
+import IconOpen from './icons/IconOpen'
 
 export default {
   name: 'AppButton',
-  components: { IconSpinner },
+  components: { IconSpinner, IconOpen },
   mixins: [vaiant],
   props: {
     large: {
@@ -61,6 +63,8 @@ export default {
     classButton() {
       const classNames = []
 
+      if (this.href) classNames.push('flex flex-row items-center')
+
       if (this.empty) {
         if (this.isPrimary) {
           classNames.push('text-primary-base')
@@ -94,6 +98,8 @@ export default {
 
       if (this.inline) classNames.push('inline')
 
+      classNames.push('flex justify-center rounded')
+
       return classNames.join(' ')
     },
     classSpinner() {
@@ -103,6 +109,14 @@ export default {
       else classNames.push('text-white')
 
       if (this.$slots.default) classNames.push('mr-2')
+
+      return classNames.join(' ')
+    },
+    classOpen() {
+      const classNames = []
+
+      if (this.isPrimary) classNames.push('text-grey-base')
+      else if (this.isSecondary) classNames.push('text-grey-secondary-base')
 
       return classNames.join(' ')
     },

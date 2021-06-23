@@ -1,6 +1,12 @@
 <template>
   <ul :class="classNames">
-    <AppListItem v-for="(item, index) in list" :key="index" :row="row" :to="item.path">
+    <AppListItem
+      v-for="(item, index) in list"
+      :key="index"
+      :row="row"
+      :to="item.to"
+      :href="item.href"
+    >
       {{ item.name }}
     </AppListItem>
   </ul>
@@ -26,7 +32,7 @@ export default {
     classNames() {
       const classNames = []
 
-      if (this.row) classNames.push('flex flex-row')
+      if (this.row) classNames.push('flex flex-row items-center')
       else classNames.push('')
 
       return classNames.join(' ')
