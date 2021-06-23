@@ -1,8 +1,8 @@
-import Error from '../components/template/404'
+import Error from '../components/templates/404'
 
 export default {
   component: Error,
-  title: 'Template/404',
+  title: 'Templates/404',
   argTypes: {
     default: {
       control: 'text',

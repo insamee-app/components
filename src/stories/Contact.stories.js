@@ -1,8 +1,8 @@
-import Contact from '../components/template/Contact'
+import Contact from '../components/templates/Contact'
 
 export default {
   component: Contact,
-  title: 'Template/Contact',
+  title: 'Templates/Contact',
   argTypes: {
     default: {
       control: 'text',

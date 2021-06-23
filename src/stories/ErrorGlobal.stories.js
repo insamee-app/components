@@ -1,8 +1,8 @@
-import ErrorGlobal from '../components/template/ErrorGlobal'
+import ErrorGlobal from '../components/templates/ErrorGlobal'
 
 export default {
   component: ErrorGlobal,
-  title: 'Template/ErrorGlobal',
+  title: 'Templates/ErrorGlobal',
   argTypes: {
     default: {
       control: 'text',
