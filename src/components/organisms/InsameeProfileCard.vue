@@ -1,10 +1,10 @@
 <template>
   <AppInsameeProfileCard class="w-full" :to="{ name: 'mee-id', params: { id: userId } }">
     <template #avatar>
-      <AppProfileAvatar :link="link" />
+      <AppProfileAvatar :link="link" :label="currentRole" />
     </template>
     <template #title>
-      <AppCardTitle :label="currentRole" :link="link" :alt="alt">
+      <AppCardTitle :link="link" :alt="alt">
         <span>{{ firstName }}</span>
         <span>{{ lastName }}</span>
       </AppCardTitle>
