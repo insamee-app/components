@@ -12,7 +12,7 @@
   >
     <IconSpinner v-if="loading" class="animate-spin h-6 w-6 fill-current" :class="classSpinner" />
     <slot></slot>
-    <IconOpen v-if="href" class="ml-1 w-4 h-4 fill-current" :class="classOpen" />
+    <IconOpen v-if="href" class="ml-1 w-4 h-4 fill-current" />
   </component>
 </template>
 
@@ -109,14 +109,6 @@ export default {
       else classNames.push('text-white')
 
       if (this.$slots.default) classNames.push('mr-2')
-
-      return classNames.join(' ')
-    },
-    classOpen() {
-      const classNames = []
-
-      if (this.isPrimary) classNames.push('text-grey-base')
-      else if (this.isSecondary) classNames.push('text-grey-secondary-base')
 
       return classNames.join(' ')
     },
