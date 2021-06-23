@@ -8,7 +8,7 @@
         </AppButton>
       </div>
       <AppList class="px-4" :list="list"></AppList>
-      <div class="flex justify-center">
+      <div class="flex justify-center space-x-4">
         <slot name="actions"></slot>
       </div>
     </div>
