@@ -4,7 +4,7 @@
       <AppProfileAvatar :link="link" :label="currentRole" />
     </template>
     <template #title>
-      <AppCardTitle :link="link" :alt="alt">
+      <AppCardTitle :link="link" :alt="alt" class="ml-8">
         <span>{{ firstName }}</span>
         <span>{{ lastName }}</span>
       </AppCardTitle>
