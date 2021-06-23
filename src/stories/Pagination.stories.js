@@ -23,7 +23,7 @@ const Template = (args, { argTypes }) => ({
 })
 
 export const Default = Template.bind({})
-Default.args = { lastPage: 15, firstPage: 1, currentPage: 10, nextPage: 11, previousPage: 10 }
+Default.args = { lastPage: 115, firstPage: 1, currentPage: 110, nextPage: 111, previousPage: 19 }
 
 export const Small = Template.bind({})
 Small.args = { ...Default.args, small: true }
