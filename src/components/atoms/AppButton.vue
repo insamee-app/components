@@ -6,6 +6,8 @@
     :class="classButton"
     :to="to"
     :href="href"
+    :target="href ? '_blank' : undefined"
+    :rel="href ? 'noreferrer noopener' : undefined"
     @click="to ? '' : $emit('click', $event)"
   >
     <IconSpinner v-if="loading" class="animate-spin h-6 w-6 fill-current" :class="classSpinner" />
@@ -50,7 +52,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    fit: {
+    inline: {
       type: Boolean,
       default: false,
     },
@@ -89,6 +91,8 @@ export default {
       } else if (this.isSecondary) {
         classNames.push('bg-secondary-base text-white')
       }
+
+      if (this.inline) classNames.push('inline')
 
       return classNames.join(' ')
     },
