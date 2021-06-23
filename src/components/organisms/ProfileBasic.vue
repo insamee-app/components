@@ -1,30 +1,25 @@
 <template>
   <div class="space-y-4">
     <div class="flex flex-row">
-      <!-- TODO: il faut créer l'avatar url dans le schema -->
-      <AppProfileAvatar
-        :variant="variant"
-        :label="profile.current_role"
-        :link="profile.avatar_url"
-      />
-      <div class="flex flex-col justify-between">
+      <AppProfileAvatar variant="secondary" :label="currentRole" :link="avatarUrl" />
+      <div class="flex flex-col justify-between ml-8">
         <LabeledItem label="NOM" :variant="variant">
-          {{ profile.last_name | handleUndefined }}
+          {{ lastName | handleUndefined }}
         </LabeledItem>
         <LabeledItem label="Prénom" :variant="variant">
-          {{ profile.first_name | handleUndefined }}
+          {{ firstName | handleUndefined }}
         </LabeledItem>
       </div>
     </div>
     <LabeledItem label="Adresse électronique" :variant="variant">
-      {{ getEmail | handleUndefined }}
+      {{ email | handleUndefined }}
     </LabeledItem>
     <div class="flex flex-row space">
       <LabeledItem class="flex-1" label="Ecole" :variant="variant">
-        {{ getSchoolName | handleUndefined }}
+        {{ schoolName | handleUndefined }}
       </LabeledItem>
       <LabeledItem class="flex-1" label="Année de diplomation" :variant="variant">
-        {{ profile.graduation_year | handleUndefined }}
+        {{ graduationYear | handleUndefined }}
       </LabeledItem>
     </div>
   </div>
@@ -45,17 +40,33 @@ export default {
   },
   mixins: [variant],
   props: {
-    profile: {
-      type: Object,
-      default: () => {},
+    lastName: {
+      type: String,
+      default: undefined,
     },
-  },
-  computed: {
-    getSchoolName() {
-      return this.profile.school?.name
+    firstName: {
+      type: String,
+      default: undefined,
     },
-    getEmail() {
-      return this.profile.user?.email
+    email: {
+      type: String,
+      default: undefined,
+    },
+    schoolName: {
+      type: String,
+      default: undefined,
+    },
+    graduationYear: {
+      type: Number,
+      default: undefined,
+    },
+    currentRole: {
+      type: String,
+      default: undefined,
+    },
+    avatarUrl: {
+      type: String,
+      default: undefined,
     },
   },
 }
