@@ -1,12 +1,12 @@
 <template>
-  <div class="relative mr-8" :class="classAppProfileAvatar">
+  <div class="relative" :class="classAppProfileAvatar">
     <div
       class="w-full h-full overflow-hidden rounded-full flex flex-row justify-center items-center"
     >
       <AppImg :variant="variant" :link="link" :alt="alt" />
     </div>
     <div v-if="label" class="absolute flex flex-row" :class="classAppChip">
-      <AppChip class="border-white border-2" :small="small" :variant="variant">
+      <AppChip class="border-white border-2" :small="size === 'small'" :variant="variant">
         {{ label }}
       </AppChip>
     </div>
@@ -23,9 +23,12 @@ export default {
   components: { AppChip, AppImg },
   mixins: [variant],
   props: {
-    small: {
-      type: Boolean,
-      default: false,
+    size: {
+      type: String,
+      default: 'large',
+      validator(value) {
+        return ['small', 'medium', 'large'].includes(value)
+      },
     },
     label: {
       type: String,
@@ -44,8 +47,9 @@ export default {
     classAppProfileAvatar() {
       const classNames = []
 
-      if (this.small) classNames.push('w-16 h-16')
-      else classNames.push('w-32 h-32')
+      if (this.size === 'small') classNames.push('w-16 h-16')
+      else if (this.size === 'medium') classNames.push('w-24 h-24')
+      else if (this.size === 'large') classNames.push('w-32 h-32')
 
       return classNames.join(' ')
     },
