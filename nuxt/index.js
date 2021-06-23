@@ -11,7 +11,7 @@ export default function () {
   }
 
   this.nuxt.hook('components:dirs', (dirs) => {
-    const dirsNames = ['/atoms/icons', '/atoms', '/molecules', '/organisms']
+    const dirsNames = ['/atoms/icons', '/atoms', '/molecules', '/organisms', '/templates']
     dirsNames.forEach((dir) => {
       dirs.push({
         path: join(__dirname, '../src/components' + dir),
