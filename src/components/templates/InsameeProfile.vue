@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppContainer class="space-y-4">
+    <AppContainer class="space-y-4 max-w-4xl mx-auto">
       <ProfileBasic
         :last-name="lastName"
         :first-name="firstName"
