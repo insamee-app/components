@@ -31,7 +31,7 @@ export default {
       if (this.actif) classNames.push('bg-primary-dark text-white')
       else classNames.push('border border-primary-dark text-primary-base')
 
-      if (this.small) classNames.push('w-6')
+      if (this.small) classNames.push('px-1')
       else classNames.push('w-9')
 
       return classNames.join(' ')
