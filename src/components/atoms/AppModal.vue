@@ -5,8 +5,8 @@
   >
     <div class="absolute bg-grey-light opacity-70 w-full h-full" @click="clickOutside"></div>
     <div class="relative overflow-y-auto">
-      <div class="flex flex-col justify-center p-4 sm:px-0 w-screen sm:w-[500px] overscroll-none">
-        <slot></slot>
+      <div class="relative p-4 sm:px-0 overscroll-none">
+        <slot size="max-w-md"></slot>
       </div>
     </div>
   </div>

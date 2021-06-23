@@ -23,8 +23,8 @@
         <AppButton large> Contacter </AppButton>
       </div>
     </AppContainer>
-    <AppModal :value="dialog" @outside="dialog = false">
-      <AppCard>
+    <AppModal v-slot="{ size }" :value="dialog" @outside="dialog = false">
+      <AppCard :class="size">
         <AppCardHeader closable @close="dialog = false">
           <AppCardTitle> Contacter </AppCardTitle>
         </AppCardHeader>
