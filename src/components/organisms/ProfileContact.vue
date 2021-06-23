@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <LabeledItem :variant="variant" label="Me Contacter">
-      <AppContact :links="links" :variant="variant" />
-    </LabeledItem>
-  </div>
+  <LabeledItem :variant="variant" label="Me Contacter">
+    <AppContact :links="links" :variant="variant" />
+  </LabeledItem>
 </template>
 
 <script>
