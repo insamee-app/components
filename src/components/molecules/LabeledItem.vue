@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppLabel :class="classLabeledItem" :label="label" />
-    <div class="text-xl">
+    <div class="text-xl" :class="className">
       <slot></slot>
     </div>
   </div>
@@ -19,6 +19,10 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    className: {
+      type: String,
+      default: '',
     },
   },
   computed: {
