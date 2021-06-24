@@ -2,7 +2,7 @@
   <component
     :is="getComponentType"
     :disabled="disabled || loading"
-    class="focus:outline-none"
+    class="focus:outline-none cursor-pointer"
     :class="classButton"
     :to="to"
     :href="href"
