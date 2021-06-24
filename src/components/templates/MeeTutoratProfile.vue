@@ -47,7 +47,7 @@ import AppContainer from '../organisms/AppContainer'
 import AppContact from '../molecules/AppContact'
 
 export default {
-  name: 'InsameeProfile',
+  name: 'MeeTutoratProfile',
   components: {
     AppContact,
     AppChips,

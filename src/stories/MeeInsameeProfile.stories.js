@@ -1,8 +1,8 @@
-import InsameeProfile from '../components/organisms/InsameeProfile'
+import MeeInsameeProfile from '../components/templates/MeeInsameeProfile'
 
 export default {
-  component: InsameeProfile,
-  title: 'Organisms/InsameeProfile',
+  component: MeeInsameeProfile,
+  title: 'Templates/MeeInsameeProfile',
   argTypes: {
     default: {
       control: 'text',
@@ -13,10 +13,10 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { InsameeProfile },
+  components: { MeeInsameeProfile },
   props: Object.keys(argTypes),
   template:
-    '<InsameeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations" :avatar-url="avatarUrl"  />',
+    '<MeeInsameeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations"   :socials="socials"   :avatar-url="avatarUrl"  />',
 })
 
 export const Default = Template.bind({})
@@ -27,6 +27,10 @@ Default.args = {
   graduationYear: 2023,
   email: 'this is a super email',
   schoolName: ' this is a school name',
+  socials: {
+    facebook: 'facebook',
+    instagram: undefined,
+  },
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac purus erat. Mauris in fringilla orci. Duis maximus dictum urna sed interdum. Pellentesque faucibus tellus risus, in tempus nunc rhoncus a. Mauris non metus feugiat, mattis mauris et, dictum orci. Vivamus vitae porta metus. Nulla ut fringilla justo. Aliquam lobortis gravida ligula, et pretium ex euismod id. Nam ut consectetur mauris, id vestibulum elit. Aenean non libero sed diam facilisis lacinia. Curabitur nec turpis consectetur est condimentum convallis sit amet vitae lacus. Maecenas mattis porta tortor eu elementum. Nulla rhoncus turpis felis, imperdiet convallis magna viverra pretium. Quisque ac mauris semper, tempus est vel, tincidunt risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum at libero eu sem rhoncus gravida ut lacinia leo.',
   focusInterests: ['lorem', 'upsum', 'dolor', 'sit amet'],
   skills: ['lorem', 'upsum', 'dolor', 'sit amet'],

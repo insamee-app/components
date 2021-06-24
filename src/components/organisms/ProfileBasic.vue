@@ -22,6 +22,7 @@
         {{ graduationYear | handleUndefined }}
       </LabeledItem>
     </div>
+    <slot></slot>
   </div>
 </template>
 

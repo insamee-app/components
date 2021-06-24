@@ -3,6 +3,13 @@ import ProfileBasic from '../components/organisms/ProfileBasic'
 export default {
   component: ProfileBasic,
   title: 'Organisms/ProfileBasic',
+  argTypes: {
+    default: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: '',
+    },
+  },
 }
 
 const profile = {
