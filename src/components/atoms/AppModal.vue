@@ -6,7 +6,7 @@
     <div class="absolute bg-grey-light opacity-70 w-full h-full" @click="clickOutside"></div>
     <div class="relative overflow-y-auto">
       <div class="relative p-4 sm:px-0 overscroll-none">
-        <slot size="max-w-md"></slot>
+        <slot size="sm:w-96"></slot>
       </div>
     </div>
   </div>
