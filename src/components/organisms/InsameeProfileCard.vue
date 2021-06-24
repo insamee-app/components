@@ -1,23 +1,25 @@
 <template>
   <AppInsameeProfileCard class="w-full" :to="{ name: 'mee-id', params: { id: userId } }">
     <template #avatar>
-      <AppProfileAvatar :link="link" :label="currentRole" />
+      <AppProfileAvatar :link="link" :label="currentRole" class="flex-shrink-0" />
     </template>
     <template #title>
-      <AppCardTitle :link="link" :alt="alt" class="ml-8">
+      <AppCardTitle :link="link" :alt="alt">
         <span>{{ firstName }}</span>
         <span>{{ lastName }}</span>
       </AppCardTitle>
     </template>
     <template v-if="associations" #associations>
-      <div class="flex flex-row justify-end space-x-2">
-        <AppImg
-          v-for="association in associations"
-          :key="association.name"
-          class="w-8 h-8"
-          :link="association.image_id"
-          :alt="association.name"
-        />
+      <div class="overflow-x-auto text-right">
+        <div class="inline-flex space-x-2">
+          <AppImg
+            v-for="association in associations"
+            :key="association.name"
+            class="w-8 h-8"
+            :link="association.image_id"
+            :alt="association.name"
+          />
+        </div>
       </div>
     </template>
     <template v-if="skills" #chips>
