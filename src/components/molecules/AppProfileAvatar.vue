@@ -3,7 +3,7 @@
     <div
       class="w-full h-full overflow-hidden rounded-full flex flex-row justify-center items-center"
     >
-      <AppImg :variant="variant" :link="link" :alt="alt" />
+      <AppImg :variant="variant" :link="link" :alt="alt" full />
     </div>
     <div v-if="label" class="absolute flex flex-row" :class="classAppChip">
       <AppChip class="border-white border-2" :small="size === 'small'" :variant="variant">
