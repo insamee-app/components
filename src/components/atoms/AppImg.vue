@@ -22,13 +22,19 @@ export default {
       type: String,
       default: undefined,
     },
+    full: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classAppImg() {
       const classNames = []
 
       if (!this.link) {
-        classNames.push('w-full h-full')
+        if (this.full) {
+          classNames.push('w-full h-full')
+        }
         if (this.isPrimary) {
           classNames.push('bg-primary-dark')
         } else if (this.isSecondary) {
