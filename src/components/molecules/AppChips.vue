@@ -1,6 +1,8 @@
 <template>
   <ul class="flex flex-row w-full overflow-x-auto space-x-2">
-    <AppChip v-for="text in texts" :key="text" component="li">{{ text }}</AppChip>
+    <AppChip v-for="text in texts" :key="text" component="li" class="whitespace-nowrap">{{
+      text
+    }}</AppChip>
   </ul>
 </template>
 
