@@ -4,7 +4,7 @@ export default {
       type: String,
       default: 'primary',
       validator(value) {
-        return ['primary', 'secondary'].includes(value)
+        return ['primary', 'secondary', 'negative'].includes(value)
       },
     },
   },
@@ -14,6 +14,9 @@ export default {
     },
     isSecondary() {
       return this.variant === 'secondary'
+    },
+    isNegative() {
+      return this.variant === 'negative'
     },
   },
 }
