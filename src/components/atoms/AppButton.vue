@@ -2,7 +2,7 @@
   <component
     :is="getComponentType"
     :disabled="disabled || loading"
-    class="focus:outline-none cursor-pointer"
+    class="focus:outline-none"
     :class="classButton"
     :to="to"
     :href="href"
@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import vaiant from '../../mixins/variant'
+import variant from '../../mixins/variant'
 import IconSpinner from './icons/IconSpinner'
 import IconOpen from './icons/IconOpen'
 
 export default {
   name: 'AppButton',
   components: { IconSpinner, IconOpen },
-  mixins: [vaiant],
+  mixins: [variant],
   props: {
     large: {
       type: Boolean,
@@ -63,6 +63,9 @@ export default {
     classButton() {
       const classNames = []
 
+      if (!this.disabled && !this.loading) classNames.push('cursor-pointer')
+      else classNames.push('cursor-not-allowed')
+
       if (this.href) classNames.push('flex flex-row items-center')
 
       if (this.empty) {
@@ -70,6 +73,8 @@ export default {
           classNames.push('text-primary-base')
         } else if (this.isSecondary) {
           classNames.push('text-secondary-base')
+        } else if (this.isNegative) {
+          classNames.push('text-negative')
         }
         return classNames.join(' ')
       }
@@ -94,6 +99,8 @@ export default {
         classNames.push('bg-primary-base text-white')
       } else if (this.isSecondary) {
         classNames.push('bg-secondary-base text-white')
+      } else if (this.isNegative) {
+        classNames.push('bg-negative text-white')
       }
 
       if (this.inline) classNames.push('inline')
