@@ -8,26 +8,14 @@
     :school-name="schoolName"
     :avatar-url="avatarUrl"
   >
-    <LabeledItem v-if="focusInterests.length" label="Centre d'intérêt">
-      <AppChips :texts="focusInterests" />
+    <LabeledItem label="Matières préférées">
+      <AppChips :texts="preferredSubjects" />
     </LabeledItem>
-    <LabeledItem v-if="skills.length" label="Compétences">
-      <AppChips :texts="skills" />
+    <LabeledItem label="Matières en difficultés">
+      <AppChips :texts="difficultiesSubjects" />
     </LabeledItem>
     <LabeledItem class="text-justify" label="Description">
       {{ text | handleUndefined }}
-    </LabeledItem>
-    <LabeledItem v-if="associations.length" label="Associations" class-name="space-y-2">
-      <AppAssociation
-        v-for="association in associations"
-        :key="association.id"
-        :link="association.image_url"
-        :name="association.name"
-      >
-        <span class="uppercase">
-          {{ association.name }}
-        </span>
-      </AppAssociation>
     </LabeledItem>
     <slot></slot>
   </ProfileBasic>
@@ -37,15 +25,13 @@
 import AppChips from '../molecules/AppChips'
 import LabeledItem from '../molecules/LabeledItem'
 import ProfileBasic from '../organisms/ProfileBasic'
-import AppAssociation from '../molecules/AppAssociation'
 
 export default {
-  name: 'InsameeProfile',
+  name: 'TutoratProfile',
   components: {
     AppChips,
     LabeledItem,
     ProfileBasic,
-    AppAssociation,
   },
   filters: {
     handleUndefined(value) {
@@ -85,17 +71,13 @@ export default {
       type: String,
       default: undefined,
     },
-    skills: {
+    preferredSubjects: {
       type: Array,
-      default: () => [],
+      default: undefined,
     },
-    focusInterests: {
+    difficultiesSubjects: {
       type: Array,
-      default: () => [],
-    },
-    associations: {
-      type: Array,
-      default: () => [],
+      default: undefined,
     },
     socials: {
       type: Object,

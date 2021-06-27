@@ -1,5 +1,18 @@
 <template>
-  <header class="flex flex-row justify-between p-4 absolute w-full z-10">
+  <header
+    class="
+      flex flex-row
+      justify-between
+      p-4
+      absolute
+      w-full
+      z-10
+      max-w-7xl
+      left-1/2
+      transform
+      -translate-x-1/2
+    "
+  >
     <div class="flex flex-row">
       <AppButton empty :to="iconLink" class="flex items-center">
         <slot name="icon">

@@ -5,5 +5,6 @@
 <script>
 export default {
   name: 'AppContainer',
+  // TODO: il faut ajouter une taille intermédiaire pour les plus petites pages
 }
 </script>

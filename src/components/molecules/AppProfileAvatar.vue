@@ -56,7 +56,8 @@ export default {
     classAppChip() {
       const classNames = []
 
-      if (this.small) classNames.push('top-full left-1/2 transform -translate-y-1/2 w-full')
+      if (this.size === 'small')
+        classNames.push('top-full left-1/2 transform -translate-y-1/2 w-full')
       else classNames.push('-right-4 bottom-0')
 
       return classNames.join(' ')

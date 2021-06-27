@@ -8,8 +8,13 @@
         </AppButton>
       </div>
       <AppList class="px-4" :list="list"></AppList>
-      <div class="flex justify-center space-x-4">
-        <slot name="actions"></slot>
+      <div class="space-y-2">
+        <div class="flex justify-center space-x-4">
+          <slot name="actions"></slot>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+          <slot name="errors"></slot>
+        </div>
       </div>
     </div>
   </div>

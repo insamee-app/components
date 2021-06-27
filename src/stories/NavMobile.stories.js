@@ -11,6 +11,11 @@ export default {
       description: 'Slot content',
       defaultValue: '',
     },
+    errors: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: '',
+    },
     close: { action: 'close', table: { type: { summary: 'boolean' } } },
   },
 }
