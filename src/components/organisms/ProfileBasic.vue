@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 import LabeledItem from '../molecules/LabeledItem'
 import AppProfileAvatar from '../molecules/AppProfileAvatar'
 

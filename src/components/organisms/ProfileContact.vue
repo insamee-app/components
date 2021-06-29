@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 import AppContact from '../molecules/AppContact'
 import LabeledItem from '../molecules/LabeledItem'
 

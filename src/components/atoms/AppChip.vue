@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import vairant from '../../mixins/variant'
+import { variant } from '../../mixins'
 
 export default {
   name: 'AppChip',
-  mixins: [vairant],
+  mixins: [variant],
   props: {
     component: {
       type: String,

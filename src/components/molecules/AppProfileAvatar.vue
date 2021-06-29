@@ -16,7 +16,7 @@
 <script>
 import AppChip from '../atoms/AppChip'
 import AppImg from '../atoms/AppImg.vue'
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 
 export default {
   name: 'AppProfileAvatar',

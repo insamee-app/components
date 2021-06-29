@@ -1,4 +1,4 @@
-export default {
+export const variant = {
   props: {
     variant: {
       type: String,

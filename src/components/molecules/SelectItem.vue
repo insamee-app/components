@@ -1,14 +1,7 @@
 <template>
   <li
-    class="
-      focus:outline-none
-      hover:bg-grey-light hover:text-primary-dark
-      focus:bg-grey-light focus:text-primary-dark
-      py-1
-      px-2
-      rounded
-      cursor-pointer
-    "
+    class="focus:outline-none py-1 px-2 rounded cursor-pointer"
+    :class="classSelectItem"
     @click="selected"
   >
     <slot :item="item">{{ item.text }}</slot>
@@ -16,12 +9,34 @@
 </template>
 
 <script>
+import { variant } from '../../mixins'
+
 export default {
   name: 'SelectItem',
+  mixins: [variant],
   props: {
     item: {
       type: Object,
       default: () => {},
+    },
+    border: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    classSelectItem() {
+      const classNames = []
+
+      if (this.isPrimary) {
+        if (this.border) classNames.push('hover:bg-grey-light hover:text-primary-dark')
+        else classNames.push('hover:bg-grey-dark')
+      } else if (this.isSecondary) {
+        if (this.border) classNames.push('hover:bg-grey-secondary-light hover:text-secondary-dark')
+        else classNames.push('hover:bg-grey-secondary-dark')
+      }
+
+      return classNames.join(' ')
     },
   },
   methods: {
