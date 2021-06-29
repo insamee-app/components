@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 
 export default {
   name: 'AppImg',

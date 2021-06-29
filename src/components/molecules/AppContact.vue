@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 import AppLink from '../atoms/AppLink.vue'
 
 export default {

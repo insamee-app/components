@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 import IconSpinner from './icons/IconSpinner'
 import IconOpen from './icons/IconOpen'
 

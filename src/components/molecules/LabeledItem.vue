@@ -9,7 +9,7 @@
 
 <script>
 import AppLabel from '../atoms/AppLabel'
-import variant from '../../mixins/variant'
+import { variant } from '../../mixins'
 
 export default {
   name: 'LabeledItem',
