@@ -14,7 +14,7 @@ export default {
       description: 'Slot content',
       defaultValue: '',
     },
-    icon: {
+    name: {
       control: 'text',
       description: 'Slot content',
       defaultValue: '',
