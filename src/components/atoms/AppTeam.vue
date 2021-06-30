@@ -1,15 +1,15 @@
 <template>
   <div class="flex flex-row space-x-1">
-    <AppButton empty :to="to(linkTutorat)" :href="href(linkTutorat)" no-external>
+    <AppButton empty :to="to(linkTutorat)" :href="href(linkTutorat)">
       <IconTutorat :class="classIcon" />
     </AppButton>
-    <AppButton empty :to="to(linkEvenements)" :href="href(linkEvenements)" no-external>
+    <AppButton empty :to="to(linkEvenements)" :href="href(linkEvenements)">
       <IconEvenements :class="classIcon" />
     </AppButton>
-    <AppButton empty :to="to(linkAssociations)" :href="href(linkAssociations)" no-external>
+    <AppButton empty :to="to(linkAssociations)" :href="href(linkAssociations)">
       <IconAssociations :class="classIcon" />
     </AppButton>
-    <AppButton empty :to="to(linkInsamee)" :href="href(linkInsamee)" no-external>
+    <AppButton empty :to="to(linkInsamee)" :href="href(linkInsamee)">
       <IconInsamee :class="classIcon" />
     </AppButton>
   </div>

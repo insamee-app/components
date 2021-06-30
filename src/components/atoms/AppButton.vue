@@ -7,12 +7,12 @@
     :to="to"
     :href="href"
     :target="href ? '_blank' : undefined"
-    :rel="href && !noExternal ? 'noreferrer noopener' : undefined"
+    :rel="href && external ? 'noreferrer noopener' : undefined"
     @click="to ? '' : $emit('click', $event)"
   >
     <IconSpinner v-if="loading" class="animate-spin h-6 w-6 fill-current" :class="classSpinner" />
     <slot></slot>
-    <IconOpen v-if="href && !noExternal" class="ml-1 w-4 h-4 fill-current" />
+    <IconOpen v-if="href && iconExternal" class="ml-1 w-4 h-4 fill-current" />
   </component>
 </template>
 
@@ -59,7 +59,11 @@ export default {
       default: false,
     },
     // Remove ref to have better analyse for internal platform
-    noExternal: {
+    external: {
+      type: Boolean,
+      default: false,
+    },
+    iconExternal: {
       type: Boolean,
       default: false,
     },
