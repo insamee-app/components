@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AppLabel :class="classLabeledItem" :label="label" />
-    <div class="text-xl" :class="className">
+    <AppLabel :class="classLabeledItem" :label="label" :variant="variant" />
+    <div :class="className">
       <slot></slot>
     </div>
   </div>
@@ -22,17 +22,7 @@ export default {
     },
     className: {
       type: String,
-      default: '',
-    },
-  },
-  computed: {
-    classLabeledItem() {
-      const classNames = []
-
-      if (this.isPrimary) classNames.push('text-grey-base')
-      else if (this.isSecondary) classNames.push('text-grey-secondary-base')
-
-      return classNames.join(' ')
+      default: 'text-xl',
     },
   },
 }

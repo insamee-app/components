@@ -5,8 +5,10 @@
 </template>
 
 <script>
+import { variant } from '../../mixins'
 export default {
   name: 'AppLabel',
+  mixins: [variant],
   props: {
     name: {
       type: String,
@@ -30,6 +32,9 @@ export default {
       } else {
         classNames.push('font-light')
       }
+
+      if (this.isPrimary) classNames.push('text-grey-base')
+      else if (this.isSecondary) classNames.push('text-grey-secondary-base')
 
       return classNames.join(' ')
     },

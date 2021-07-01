@@ -28,7 +28,7 @@
       :is-visible="isVisible"
       :border="border"
       :variant="variant"
-      class="absolute left-0 right-0 top-full"
+      class="absolute left-0 right-0 top-full z-10"
     >
       <template v-if="items.length">
         <SelectItem
