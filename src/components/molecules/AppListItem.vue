@@ -7,6 +7,8 @@
       :href="href"
       :empty="href || to ? true : false"
       :inline="href || to ? true : false"
+      :external="external"
+      :icon-external="iconExternal"
     >
       <slot></slot>
     </component>
@@ -21,6 +23,14 @@ export default {
   components: { AppButton },
   props: {
     row: {
+      type: Boolean,
+      default: false,
+    },
+    external: {
+      type: Boolean,
+      default: false,
+    },
+    iconExternal: {
       type: Boolean,
       default: false,
     },

@@ -6,6 +6,8 @@
       :row="row"
       :to="item.to"
       :href="item.href"
+      :external="item.external"
+      :icon-external="item.iconExternal"
     >
       {{ item.name }}
     </AppListItem>

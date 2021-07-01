@@ -15,7 +15,7 @@
     "
   >
     <div class="flex flex-row">
-      <AppButton empty :to="iconLink" class="flex items-center">
+      <AppButton empty :to="nameLink" class="flex items-center text-primary-base">
         <slot name="name"> Insamee </slot>
       </AppButton>
       <slot name="nav"></slot>
@@ -39,7 +39,7 @@ export default {
   name: 'Header',
   components: { AppButton, IconLineHorizontal },
   props: {
-    iconLink: {
+    nameLink: {
       type: Object,
       required: true,
     },

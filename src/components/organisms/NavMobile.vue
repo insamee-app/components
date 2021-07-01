@@ -9,7 +9,7 @@
       </div>
       <AppList class="px-4" :list="list"></AppList>
       <div class="space-y-2">
-        <div class="flex justify-center space-x-4">
+        <div class="flex justify-center space-x-4 space-y-4">
           <slot name="actions"></slot>
         </div>
         <div class="flex flex-col items-center space-y-2">
