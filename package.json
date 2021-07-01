@@ -13,6 +13,16 @@
     "commit": "cz",
     "release": "np"
   },
+  "files": [
+    "src/mixins",
+    "src/directives",
+    "src/components/atoms/icons",
+    "src/components/atoms",
+    "src/components/molecules",
+    "src/components/organisms",
+    "src/components/templates",
+    "nuxt"
+  ],
   "author": "Estéban S",
   "license": "ISC",
   "devDependencies": {
