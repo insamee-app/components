@@ -1,6 +1,6 @@
 {
-  "name": "insamee-components",
-  "version": "0.0.0",
+  "name": "@insamee-app/components",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "storybook": "start-storybook -p 6006",
