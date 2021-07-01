@@ -9,7 +9,7 @@
         ref="input"
         v-model="search"
         type="text"
-        class="focus:outline-none rounded-none placeholder-grey-light flex-1"
+        class="focus:outline-none rounded-none flex-1"
         :class="classInput"
         :placeholder="placeholder"
       />
@@ -56,8 +56,9 @@ export default {
 
       if (this.border) classNames.push('bg-white')
       else {
-        if (this.isPrimary) classNames.push('bg-primary-base')
-        else if (this.isSecondary) classNames.push('bg-secondary-base')
+        if (this.isPrimary) classNames.push('bg-primary-base placeholder-grey-light')
+        else if (this.isSecondary)
+          classNames.push('bg-secondary-base placeholder-grey-secondary-light')
 
         classNames.push('text-white')
       }
