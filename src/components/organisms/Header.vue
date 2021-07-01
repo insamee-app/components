@@ -7,7 +7,6 @@
       -translate-x-1/2
       w-full
       max-w-7xl
-      bg-white
       flex flex-row
       justify-between
       p-4
