@@ -8,11 +8,11 @@
       <div class="flex flex-row items-center flex-1 mr-1 space-x-1">
         <slot name="prepend" :classIcon="classIcon"></slot>
         <slot>
-          <div v-if="!selectedItem" :class="classPlaceholder">{{ placeholder }}</div>
-          <div v-else :class="classText">{{ selectedItem.text }}</div>
+          <div v-if="!value" :class="classPlaceholder">{{ placeholder }}</div>
+          <div v-else :class="classText">{{ value.text }}</div>
         </slot>
       </div>
-      <div v-if="!selectedItem">
+      <div v-if="!dismissValue">
         <IconCaret class="fill-current" :class="[reverseCaret, classIcon].join(' ')" />
       </div>
       <div
@@ -40,7 +40,7 @@
           @selected="selected"
         />
       </template>
-      <template v-else>Rien ne correpond à votre recherche</template>
+      <template v-else>Il n'y a rien à afficher</template>
     </SelectItems>
   </div>
 </template>
@@ -61,6 +61,14 @@ export default {
   },
   mixins: [variant],
   props: {
+    value: {
+      type: Object,
+      required: true,
+    },
+    dismissValue: {
+      type: String,
+      required: true,
+    },
     border: {
       type: Boolean,
       default: false,
@@ -77,8 +85,6 @@ export default {
   data() {
     return {
       isVisible: false,
-      search: '',
-      selectedItem: undefined,
     }
   },
   computed: {
@@ -152,15 +158,10 @@ export default {
   methods: {
     selected(item) {
       this.isVisible = false
-      this.selectedItem = item
       this.$emit('selected', item)
-    },
-    toggleVisibility() {
-      this.isVisible = !this.isVisible
     },
     clear() {
       this.isVisible = true
-      this.selectedItem = undefined
       this.$emit('selected', undefined)
     },
   },

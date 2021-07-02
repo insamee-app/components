@@ -1,7 +1,7 @@
 <template>
   <ul
     v-if="isVisible"
-    class="shadow-lg rounded-b p-2 space-y-1 overflow-y-scroll max-h-60"
+    class="shadow-lg rounded-b p-2 space-y-1 overflow-y-auto max-h-60"
     :class="classSelectItems"
   >
     <slot></slot>

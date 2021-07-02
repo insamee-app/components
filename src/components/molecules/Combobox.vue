@@ -1,5 +1,12 @@
 <template>
-  <Select :border="border" :variant="variant" :items="filteredItems" @selected="selected">
+  <Select
+    :border="border"
+    :variant="variant"
+    :items="filteredItems"
+    :value="value"
+    :dismiss-value="search"
+    @selected="selected"
+  >
     <template #prepend="{ classIcon }">
       <IconSearch class="fill-current" :class="classIcon" />
     </template>
@@ -27,6 +34,10 @@ export default {
   components: { IconSearch, Select },
   mixins: [variant],
   props: {
+    value: {
+      type: Object,
+      required: true,
+    },
     placeholder: {
       type: String,
       default: '',
@@ -36,6 +47,10 @@ export default {
       default: () => [],
     },
     border: {
+      type: Boolean,
+      default: false,
+    },
+    unsetSearch: {
       type: Boolean,
       default: false,
     },
@@ -69,7 +84,7 @@ export default {
   methods: {
     selected(item) {
       if (item) {
-        this.search = item.text
+        if (!this.unsetSearch) this.search = item.text
         this.$emit('selected', item)
       } else {
         this.search = ''
