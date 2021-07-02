@@ -8,7 +8,7 @@
       <div class="flex flex-row items-center flex-1 mr-1 space-x-1">
         <slot name="prepend" :classIcon="classIcon"></slot>
         <slot>
-          <div v-if="!value" :class="classPlaceholder">{{ placeholder }}</div>
+          <div v-if="!value.text" :class="classPlaceholder">{{ placeholder }}</div>
           <div v-else :class="classText">{{ value.text }}</div>
         </slot>
       </div>
@@ -67,7 +67,7 @@ export default {
     },
     dismissValue: {
       type: String,
-      required: true,
+      default: undefined,
     },
     border: {
       type: Boolean,
@@ -162,7 +162,7 @@ export default {
     },
     clear() {
       this.isVisible = true
-      this.$emit('selected', undefined)
+      this.$emit('selected', {})
     },
   },
 }

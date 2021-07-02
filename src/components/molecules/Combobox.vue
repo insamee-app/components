@@ -83,13 +83,13 @@ export default {
   },
   methods: {
     selected(item) {
-      if (item) {
+      if (item.text) {
         if (!this.unsetSearch) this.search = item.text
         this.$emit('selected', item)
       } else {
         this.search = ''
         this.$refs.input.focus()
-        this.$emit('selected', undefined)
+        this.$emit('selected', {})
       }
     },
   },

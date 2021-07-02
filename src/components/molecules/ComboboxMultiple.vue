@@ -50,12 +50,12 @@ export default {
   },
   data() {
     return {
-      selectedItem: undefined,
+      selectedItem: {},
     }
   },
   methods: {
     select(item) {
-      if (item && !this.value.includes(item)) {
+      if (item.text && !this.value.includes(item)) {
         const data = this.value
         data.push(item)
         this.emit(data)

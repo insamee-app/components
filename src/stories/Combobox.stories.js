@@ -13,7 +13,7 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       args,
-      selectedItem: undefined,
+      selectedItem: {},
     }
   },
   methods: {
