@@ -5,3 +5,6 @@ git checkout master
 git merge develop
 git push origin master
 npm run release
+git checkout develop
+git merge master
+git push origin develops
