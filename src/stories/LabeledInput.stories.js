@@ -10,6 +10,11 @@ export default {
       description: 'Slot content',
       defaultValue: '',
     },
+    prepend: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: '',
+    },
     input: { action: 'input', table: { type: { summary: 'string' } } },
   },
 }

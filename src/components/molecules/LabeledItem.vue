@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppLabel :class="classLabeledItem" :label="label" :variant="variant" />
+    <AppLabel :label="label" :variant="variant" />
     <div :class="className">
       <slot></slot>
     </div>

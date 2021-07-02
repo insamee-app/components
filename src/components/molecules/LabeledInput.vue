@@ -11,9 +11,13 @@
       :placeholder="placeholder"
       :type="type"
       :name="name"
+      :border="border"
+      :variant="variant"
       :autocomplete="autocomplete"
       @input="$emit('input', $event)"
-    />
+    >
+      <slot name="prepend"></slot>
+    </AppInput>
     <AppError :error-message="errorMessage" />
   </div>
 </template>
@@ -22,10 +26,12 @@
 import AppLabel from '../atoms/AppLabel'
 import AppError from '../atoms/AppError'
 import AppInput from '../atoms/AppInput'
+import { variant } from '../../mixins'
 
 export default {
   name: 'LabeledInput',
   components: { AppError, AppLabel, AppInput },
+  mixins: [variant],
   props: {
     value: {
       type: [String, Number],
@@ -42,6 +48,10 @@ export default {
     type: {
       type: String,
       default: 'text',
+    },
+    border: {
+      type: Boolean,
+      default: false,
     },
     placeholder: {
       type: String,

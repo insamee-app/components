@@ -8,7 +8,7 @@
   >
     <template #selected>
       <ComboboxMultipleItem
-        v-for="item in selectedItems"
+        v-for="item in value"
         :key="item.value"
         :variant="variant"
         :border="border"
@@ -41,27 +41,25 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  data() {
-    return {
-      selectedItems: [],
-    }
+    value: {
+      type: Array,
+      default: () => [],
+    },
   },
   methods: {
     select(item) {
-      if (item && !this.selectedItems.includes(item)) {
-        this.selectedItems.push(item)
-        this.emit()
+      if (item && !this.value.includes(item)) {
+        const data = this.value
+        data.push(item)
+        this.emit(data)
       }
     },
     remove(item) {
-      this.selectedItems = this.selectedItems.filter(
-        (selectedItem) => selectedItem.value !== item.value
-      )
-      this.emit()
+      const data = this.value.filter((selectedItem) => selectedItem.value !== item.value)
+      this.emit(data)
     },
-    emit() {
-      this.$emit('selected', this.selectedItems)
+    emit(data) {
+      this.$emit('selected', data)
     },
   },
 }
