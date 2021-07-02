@@ -3,7 +3,7 @@
     <template #prepend="{ classIcon }">
       <IconSearch class="fill-current" :class="classIcon" />
     </template>
-    <div class="flex flex-wrap space-x-1">
+    <div class="flex flex-wrap space-x-1 w-full">
       <slot name="selected"></slot>
       <input
         ref="input"

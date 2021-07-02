@@ -13,12 +13,16 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       args,
+      selectedItems: [],
     }
   },
   methods: {
-    action: action('selected'),
+    action(value) {
+      this.selectedItems = value
+      action('selected')(value)
+    },
   },
-  template: `<ComboboxMultiple :placeholder="placeholder" :items="items" :variant="variant" :border="border" @selected="action" />`,
+  template: `<ComboboxMultiple :placeholder="placeholder" :items="items" :variant="variant" :border="border" @selected="action" :value="selectedItems" />`,
 })
 
 export const Primary = Template.bind({})
