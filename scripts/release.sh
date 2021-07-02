@@ -7,4 +7,4 @@ git push origin master
 npm run release
 git checkout develop
 git merge master
-git push origin develops
+git push origin develop
