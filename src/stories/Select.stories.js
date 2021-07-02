@@ -24,12 +24,18 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       args,
+      selectedItem: undefined,
+      dismissValue: undefined,
     }
   },
   methods: {
-    action: action('selected'),
+    action(value) {
+      this.selectedItem = value
+      this.dismissValue = value
+      action('selected')(value)
+    },
   },
-  template: `<Select :placeholder="placeholder" :items="items" :border="border" :variant="variant" @selected="action" />`,
+  template: `<Select :placeholder="placeholder" :items="items" :border="border" :variant="variant" @selected="action" :value="selectedItem" :dismiss-value="dismissValue"/>`,
 })
 
 export const Primary = Template.bind({})

@@ -1,9 +1,11 @@
 <template>
   <Combobox
+    unset-search
     :placeholder="placeholder"
     :items="items"
     :variant="variant"
     :border="border"
+    :value="selectedItem"
     @selected="select"
   >
     <template #selected>
@@ -45,6 +47,11 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      selectedItem: undefined,
+    }
   },
   methods: {
     select(item) {
