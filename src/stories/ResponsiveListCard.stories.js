@@ -5,7 +5,12 @@ export default {
   component: ResponsiveListCards,
   title: 'Templates/ResponsiveListCards',
   argTypes: {
-    default: {
+    skeletons: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: '',
+    },
+    cards: {
       control: 'text',
       description: 'Slot content',
       defaultValue: '',
