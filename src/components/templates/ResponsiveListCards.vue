@@ -20,7 +20,7 @@
         </div>
       </template>
     </section>
-    <template v-if="pagination && paginationTotal">
+    <template v-if="paginationTotal && itemsTotal && !loading">
       <slot name="pagination"></slot>
     </template>
   </div>
