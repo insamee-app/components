@@ -72,5 +72,7 @@
       "yarn lint"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "v-scroll-lock": "^1.3.1"
+  }
 }

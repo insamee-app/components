@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VScrollLock from 'v-scroll-lock'
 import { configure } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
@@ -13,6 +14,8 @@ export const parameters = {
     },
   },
 }
+
+Vue.use(VScrollLock)
 
 Vue.component('NuxtLink', {
   props: ['to'],
