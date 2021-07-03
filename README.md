@@ -30,7 +30,7 @@ To setup in a project, add the package to the build modules in your `nuxt.config
 
 ```js
 export default {
-  buildModules: ['@nuxt/components', 'insamee-components/nuxt'],
+  buildModules: ['@insamee-app/components/nuxt'],
 }
 ```
 
@@ -38,7 +38,24 @@ Then, you have to tell to TailwindCSS to purge these components in your `tailwin
 
 ```js
 purge: {
-    content: ['node_modules/insamee-components/src/components/**'],
+    content: ['node_modules/@insamee-app/components/src/components/**'],
+}
+```
+
+add plugin for `VScrollLock` in `plugins/vue-scroll-lock.js` :
+
+```js
+import Vue from 'vue'
+import VScrollLock from 'v-scroll-lock'
+
+Vue.use(VScrollLock)
+```
+
+and in `nuxt.config.js` :
+
+```js
+export default {
+  plugins: ['~/plugins/vue-scroll-lock.js'],
 }
 ```
 
