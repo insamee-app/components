@@ -1,10 +1,15 @@
 <template>
   <div
     v-if="value"
-    class="absolute inset-0 flex flex-col items-center bg-grey-light/70 z-30 overflow-y-scroll p-4"
+    class="flex items-center justify-center left-0 top-0 fixed w-full h-full bg-grey-light/70 z-30"
   >
-    <div v-clickoutside="() => clickOutside()" v-scroll-lock="value">
-      <slot size="sm:w-96"></slot>
+    <div
+      v-clickoutside="() => clickOutside()"
+      v-scroll-lock="value"
+      class="max-h-[90%] rounded m-6"
+      :class="{ 'overflow-y-auto': overflow }"
+    >
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -21,6 +26,10 @@ export default {
     value: {
       type: Boolean,
       required: true,
+    },
+    overflow: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
