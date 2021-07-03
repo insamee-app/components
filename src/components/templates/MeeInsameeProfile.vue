@@ -17,8 +17,8 @@
         <AppButton large @click="dialog = true"> Contacter </AppButton>
       </div>
     </InsameeProfile>
-    <AppModal v-slot="{ size }" :value="dialog" @outside="dialog = false">
-      <AppCard :class="size">
+    <AppModal :value="dialog" @outside="dialog = false">
+      <AppCard>
         <AppCardHeader closable @close="dialog = false">
           <AppCardTitle> Contacter </AppCardTitle>
         </AppCardHeader>
