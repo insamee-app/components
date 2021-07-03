@@ -8,3 +8,4 @@ npm run release
 git checkout develop
 git merge master
 git push origin develop
+yarn format
