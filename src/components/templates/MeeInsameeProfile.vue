@@ -13,8 +13,8 @@
       :focus-interests="focusInterests"
       :associations="associations"
     >
-      <div class="flex flex-row justify-end sticky bottom-4" @click="dialog = true">
-        <AppButton large> Contacter </AppButton>
+      <div class="flex flex-row justify-end sticky bottom-4">
+        <AppButton large @click="dialog = true"> Contacter </AppButton>
       </div>
     </InsameeProfile>
     <AppModal v-slot="{ size }" :value="dialog" @outside="dialog = false">
