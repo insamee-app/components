@@ -36,8 +36,8 @@ export default {
     classCard() {
       const classNames = []
 
-      if (this.reduced) classNames.push('space-y-1')
-      else classNames.push('space-y-4')
+      if (this.reduced) classNames.push('space-y-2')
+      else classNames.push('space-y-6')
 
       if (this.shadow) classNames.push('shadow-md')
 

@@ -17,13 +17,14 @@ const Template = (args, { argTypes }) => ({
     InsameeProfileCard,
   },
   props: Object.keys(argTypes),
-  template: `<InsameeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :skills="skills" :associations="associations" :link="link"> </InsameeProfileCard>`,
+  template: `<InsameeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :skills="skills" :current-role="currentRole" :associations="associations" :link="link" :type="type"> </InsameeProfileCard>`,
 })
 
 export const Primary = Template.bind({})
 Primary.args = {
   lastName: 'Lorem',
   firstName: 'Ipsum',
+  currentRole: 'étudiant',
   userId: 1,
   link: 'https://images.unsplash.com/photo-1621871908119-295c8ce5cee4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
 }
@@ -34,7 +35,7 @@ PrimaryText.args = { ...Primary.args, text: 'This is the text' }
 export const PrimaryLongText = Template.bind({})
 PrimaryLongText.args = {
   ...Primary.args,
-  text: 'This is a very long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam magna ultricies, sagittis velit eu, porta nulla. Nulla vestibulum placerat purus non blandit. Mauris vestibulum lacinia libero, non consectetur lacus rhoncus in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;',
+  text: 'This is a very long text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam magna ultricies, sagittis velit eu...',
 }
 
 export const PrimarySkills = Template.bind({})
@@ -59,4 +60,10 @@ PrimaryFull.args = {
   ...PrimaryLongText.args,
   ...PrimarySkills.args,
   ...PrimaryAssociations.args,
+}
+
+export const PrimarySmallFull = Template.bind({})
+PrimarySmallFull.args = {
+  ...PrimaryFull.args,
+  type: 'small',
 }

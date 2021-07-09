@@ -1,33 +1,37 @@
 <template>
-  <AppInsameeProfileCard class="w-full" :to="{ name: 'mee-id', params: { id: userId } }">
+  <AppInsameeProfileCard
+    class="w-full"
+    :to="{ name: 'mee-id', params: { id: userId } }"
+    :type="type"
+  >
     <template #avatar>
-      <AppProfileAvatar :link="link" :label="currentRole" class="flex-shrink-0" />
+      <AppProfileAvatar
+        :link="link"
+        :alt="alt"
+        :label="currentRole"
+        class="flex-shrink-0"
+        :size="isSmall ? 'small' : 'large'"
+      />
     </template>
     <template #title>
-      <AppCardTitle :link="link" :alt="alt">
+      <AppCardTitle :row="isSmall" class="self-start">
         <span>{{ firstName }}</span>
         <span>{{ lastName }}</span>
       </AppCardTitle>
     </template>
     <template v-if="associations" #associations>
-      <div class="overflow-x-auto text-right">
-        <div class="inline-flex space-x-2">
-          <AppImg
-            v-for="association in associations"
-            :key="association.name"
-            class="w-8 h-8"
-            :link="association.image_id"
-            :alt="association.name"
-          />
-        </div>
-      </div>
+      <ul class="flex flex-row overflow-x-auto space-x-2">
+        <li v-for="association in associations" :key="association.name" class="flex-shrink-0">
+          <AppImg class="h-8" :link="association.image_id" :alt="association.name" />
+        </li>
+      </ul>
     </template>
     <template v-if="skills" #chips>
       <AppChips :texts="skills" />
     </template>
     <template #text>
       <div>
-        {{ text | cutText }}
+        {{ text }}
       </div>
     </template>
   </AppInsameeProfileCard>
@@ -43,14 +47,6 @@ import AppProfileAvatar from '../molecules/AppProfileAvatar'
 export default {
   name: 'InsameeProfileCard',
   components: { AppInsameeProfileCard, AppChips, AppCardTitle, AppProfileAvatar, AppImg },
-  filters: {
-    cutText(value) {
-      if (!value) return
-      const length = 120
-      const text = value.slice(0, length)
-      return text.length === length ? text + '...' : text
-    },
-  },
   props: {
     userId: {
       type: Number,
@@ -84,8 +80,18 @@ export default {
       type: String,
       default: undefined,
     },
+    type: {
+      type: String,
+      default: 'medium',
+      validator(value) {
+        return ['small', 'medium'].includes(value)
+      },
+    },
   },
   computed: {
+    isSmall() {
+      return this.type === 'small'
+    },
     alt() {
       return `Image de ${this.firstName} ${this.lastName}`
     },
