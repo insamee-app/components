@@ -38,6 +38,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    shadow: {
+      type: Boolean,
+      default: false,
+    },
     to: {
       type: Object,
       default: undefined,
@@ -111,6 +115,8 @@ export default {
       } else if (this.isNegative) {
         classNames.push('bg-negative text-white')
       }
+
+      if (this.shadow) classNames.push('shadow-xl')
 
       if (this.inline) classNames.push('inline')
 
