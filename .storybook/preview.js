@@ -13,6 +13,15 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  backgrounds: {
+    default: 'grey',
+    values: [
+      {
+        name: 'grey',
+        value: '#F7F7F7',
+      },
+    ],
+  },
 }
 
 Vue.use(VScrollLock)

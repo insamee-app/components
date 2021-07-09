@@ -83,7 +83,10 @@ colors: {
       dark: '#182C25',
       light: '#DEE2E1',
     },
-    'white': '#FCFDFD',
+    'white': {
+        base: '#FCFDFD',
+        dark: '#F7F7F7',
+    },
     'black': '#000517',
     'negative': '#F33C3C',
     'positive': '#63ED92',
