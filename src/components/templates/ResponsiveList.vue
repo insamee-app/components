@@ -2,7 +2,7 @@
   <div>
     <client-only>
       <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
-        <div class="lg:row-span-2">
+        <div v-if="fullFilters" class="lg:row-span-2">
           <div
             class="
               space-y-4
@@ -11,12 +11,11 @@
               lg:items-start lg:flex-col lg:sticky lg:top-4
             "
           >
-            <slot name="filter"></slot>
+            <slot name="filters-full" class-names="w-full"></slot>
           </div>
         </div>
         <slot name="cards"></slot>
       </AppContainer>
-      <slot name="modal"></slot>
     </client-only>
   </div>
 </template>
@@ -27,5 +26,11 @@ import AppContainer from '../organisms/AppContainer'
 export default {
   name: 'ResponsiveFilterList',
   components: { AppContainer },
+  props: {
+    fullFilters: {
+      type: Boolean,
+      default: false,
+    },
+  },
 }
 </script>

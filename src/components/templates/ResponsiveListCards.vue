@@ -20,6 +20,9 @@
         </div>
       </template>
     </section>
+    <div v-if="actionFilters" class="flex justify-center sticky bottom-10">
+      <slot name="filters-action"></slot>
+    </div>
     <template v-if="paginationTotal && itemsTotal && !loading">
       <slot name="pagination"></slot>
     </template>
@@ -30,6 +33,10 @@
 export default {
   name: 'ResponsiveListCards',
   props: {
+    actionFilters: {
+      type: Boolean,
+      default: false,
+    },
     loading: {
       type: Boolean,
       default: false,
