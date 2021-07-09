@@ -3,6 +3,11 @@ import Error from '../components/templates/404'
 export default {
   component: Error,
   title: 'Templates/404',
+  decorators: [
+    () => ({
+      template: '<div class="relative w-full h-screen overflow-hidden"><story/></div>',
+    }),
+  ],
   argTypes: {
     default: {
       control: 'text',

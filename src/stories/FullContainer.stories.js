@@ -22,7 +22,7 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: `<FullContainer> ${args.default} </FullContainer>`,
+  template: `<FullContainer :type="type"> ${args.default} </FullContainer>`,
 })
 
 export const Default = Template.bind({})
@@ -36,3 +36,12 @@ Text.args = { default: '<FullContainerText> Hello, this is the text </FullContai
 
 export const TitleText = Template.bind({})
 TitleText.args = { default: Title.args.default + Text.args.default }
+
+export const TopLeft = Template.bind({})
+TopLeft.args = { type: 'top-left' }
+
+export const Right = Template.bind({})
+Right.args = { type: 'right' }
+
+export const BottomLeft = Template.bind({})
+BottomLeft.args = { type: 'bottom-left' }

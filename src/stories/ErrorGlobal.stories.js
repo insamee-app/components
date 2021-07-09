@@ -3,6 +3,11 @@ import ErrorGlobal from '../components/templates/ErrorGlobal'
 export default {
   component: ErrorGlobal,
   title: 'Templates/ErrorGlobal',
+  decorators: [
+    () => ({
+      template: '<div class="relative w-full h-screen overflow-hidden"><story/></div>',
+    }),
+  ],
   argTypes: {
     default: {
       control: 'text',
