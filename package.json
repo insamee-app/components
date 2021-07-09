@@ -17,6 +17,7 @@
     "src/mixins",
     "src/directives",
     "src/components/atoms/icons",
+    "src/components/atoms/graphics",
     "src/components/atoms",
     "src/components/molecules",
     "src/components/organisms",
