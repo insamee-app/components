@@ -23,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    shadow: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classCard() {
@@ -30,6 +34,8 @@ export default {
 
       if (this.reduced) classNames.push('space-y-1')
       else classNames.push('space-y-4')
+
+      if (this.shadow) classNames.push('shadow-md')
 
       return classNames.join(' ')
     },
