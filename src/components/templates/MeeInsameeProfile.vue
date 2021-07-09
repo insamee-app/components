@@ -13,8 +13,12 @@
       :focus-interests="focusInterests"
       :associations="associations"
     >
-      <div class="flex flex-row justify-end sticky bottom-4">
-        <AppButton large @click="dialog = true"> Contacter </AppButton>
+      <div class="flex flex-row justify-center sticky bottom-4">
+        <AppButton shadow large @click="dialog = true">
+          <span class="text-white-base">
+            {{ contact }}
+          </span>
+        </AppButton>
       </div>
     </InsameeProfile>
     <AppModal :value="dialog" @outside="dialog = false">
@@ -109,6 +113,11 @@ export default {
     return {
       dialog: false,
     }
+  },
+  computed: {
+    contact() {
+      return this.firstName ? `Contacter ${this.firstName}` : 'Contacter'
+    },
   },
 }
 </script>

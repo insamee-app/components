@@ -6,7 +6,7 @@
       <AppImg :variant="variant" :link="link" :alt="alt" full />
     </div>
     <div v-if="label" class="absolute flex flex-row" :class="classAppChip">
-      <AppChip class="border-white border-2" :small="size === 'small'" :variant="variant">
+      <AppChip class="border-white-base border-2" :small="size === 'small'" :variant="variant">
         {{ label }}
       </AppChip>
     </div>
