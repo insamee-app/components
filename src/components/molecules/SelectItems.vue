@@ -28,8 +28,8 @@ export default {
     classSelectItems() {
       const classNames = []
 
-      if (this.border) classNames.push('bg-white')
-      else classNames.push('text-white')
+      if (this.border) classNames.push('bg-white-base')
+      else classNames.push('text-white-base')
 
       if (this.isPrimary) {
         if (!this.border) classNames.push('bg-primary-dark')

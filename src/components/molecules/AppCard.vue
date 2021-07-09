@@ -1,7 +1,7 @@
 <template>
   <component
     :is="to ? 'NuxtLink' : 'div'"
-    class="flex flex-col p-4 bg-white rounded-lg"
+    class="flex flex-col p-4 bg-white-base rounded-lg"
     :to="to"
     :class="classCard"
   >

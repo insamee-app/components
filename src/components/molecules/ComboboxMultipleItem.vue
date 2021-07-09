@@ -38,7 +38,7 @@ export default {
     classComboboxMultipleItem() {
       const classNames = []
 
-      classNames.push('text-white')
+      classNames.push('text-white-base')
 
       if (this.isPrimary) {
         if (this.border) classNames.push('bg-primary-base')

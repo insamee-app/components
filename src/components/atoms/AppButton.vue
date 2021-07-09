@@ -96,7 +96,7 @@ export default {
       else classNames.push('py-1 px-2 text-base')
 
       if (this.border) {
-        classNames.push('border bg-white')
+        classNames.push('border bg-white-base')
         if (this.isPrimary) {
           classNames.push('border-primary-dark text-primary-base')
         } else if (this.isSecondary) {
@@ -104,16 +104,16 @@ export default {
         }
       } else if (this.disabled || this.loading) {
         if (this.isPrimary) {
-          classNames.push('bg-grey-base text-white')
+          classNames.push('bg-grey-base text-white-base')
         } else if (this.isSecondary) {
-          classNames.push('bg-grey-secondary-base text-white')
+          classNames.push('bg-grey-secondary-base text-white-base')
         }
       } else if (this.isPrimary) {
-        classNames.push('bg-primary-base text-white')
+        classNames.push('bg-primary-base text-white-base')
       } else if (this.isSecondary) {
-        classNames.push('bg-secondary-base text-white')
+        classNames.push('bg-secondary-base text-white-base')
       } else if (this.isNegative) {
-        classNames.push('bg-negative text-white')
+        classNames.push('bg-negative text-white-base')
       }
 
       if (this.shadow) classNames.push('shadow-xl')
@@ -128,7 +128,7 @@ export default {
       const classNames = []
 
       if (this.border) classNames.push('')
-      else classNames.push('text-white')
+      else classNames.push('text-white-base')
 
       if (this.$slots.default) classNames.push('mr-2')
 

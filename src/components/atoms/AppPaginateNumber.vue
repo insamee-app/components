@@ -28,7 +28,7 @@ export default {
     classPaginateNumber() {
       const classNames = []
 
-      if (this.actif) classNames.push('bg-primary-dark text-white')
+      if (this.actif) classNames.push('bg-primary-dark text-white-base')
       else classNames.push('border border-primary-dark text-primary-base')
 
       if (this.small) classNames.push('px-1')

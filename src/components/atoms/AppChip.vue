@@ -1,7 +1,7 @@
 <template>
   <component
     :is="component"
-    class="text-white text-sm rounded-full px-2 py-1 mb-0 list-none"
+    class="text-white-base text-sm rounded-full px-2 py-1 mb-0 list-none"
     :class="classChip"
   >
     <slot></slot>

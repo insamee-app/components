@@ -63,7 +63,7 @@ export default {
         if (this.isPrimary) classNames.push('border-primary-dark')
         else if (this.isSecondary) classNames.push('border-secondary-dark')
       } else {
-        classNames.push('text-white')
+        classNames.push('text-white-base')
         if (this.isPrimary) classNames.push('bg-primary-base')
         else if (this.isSecondary) classNames.push(' bg-secondary-base')
       }

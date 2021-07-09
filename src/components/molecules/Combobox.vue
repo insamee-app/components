@@ -69,13 +69,13 @@ export default {
     classInput() {
       const classNames = []
 
-      if (this.border) classNames.push('bg-white')
+      if (this.border) classNames.push('bg-white-base')
       else {
         if (this.isPrimary) classNames.push('bg-primary-base placeholder-grey-light')
         else if (this.isSecondary)
           classNames.push('bg-secondary-base placeholder-grey-secondary-light')
 
-        classNames.push('text-white')
+        classNames.push('text-white-base')
       }
 
       return classNames.join(' ')

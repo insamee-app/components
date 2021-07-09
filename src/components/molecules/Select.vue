@@ -121,7 +121,7 @@ export default {
       const classNames = []
 
       if (this.border) classNames.push('text-black')
-      else classNames.push('text-white')
+      else classNames.push('text-white-base')
 
       return classNames.join(' ')
     },
@@ -131,7 +131,7 @@ export default {
       if (this.border) {
         if (this.isPrimary) classNames.push('text-primary-base')
         else if (this.isSecondary) classNames.push('text-secondary-base')
-      } else classNames.push('text-white')
+      } else classNames.push('text-white-base')
 
       return classNames.join(' ')
     },
