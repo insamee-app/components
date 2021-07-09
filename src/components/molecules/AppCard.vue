@@ -27,6 +27,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    border: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classCard() {
@@ -36,6 +40,8 @@ export default {
       else classNames.push('space-y-4')
 
       if (this.shadow) classNames.push('shadow-md')
+
+      if (this.border) classNames.push('border border-grey-light')
 
       return classNames.join(' ')
     },

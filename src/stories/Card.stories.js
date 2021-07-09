@@ -34,7 +34,7 @@ const Template = (args, { argTypes }) => ({
   methods: {
     action: action('close'),
   },
-  template: `<AppCard> ${args.header} ${args.default} ${args.actions} </AppCard>`,
+  template: `<AppCard :shadow="shadow" :border="border"> ${args.header} ${args.default} ${args.actions} </AppCard>`,
 })
 
 export const Empty = Template.bind({})
@@ -57,6 +57,12 @@ Actions.args = {
   actions:
     '<template #actions> <div class="flex justify-end"> <AppButton> Actions </AppButton> </div> </template>',
 }
+
+export const Shadow = Template.bind({})
+Shadow.args = { shadow: true, ...Text.args }
+
+export const Border = Template.bind({})
+Border.args = { border: true, ...Text.args }
 
 export const Full = Template.bind({})
 Full.args = {
