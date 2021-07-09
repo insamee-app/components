@@ -39,11 +39,11 @@ const Template = (args, { argTypes }) => ({
   methods: {
     action: action('close'),
   },
-  template: `<Header @open="action" :icon-link='iconLink' :icon-nav="iconNav"> ${args.nav} ${args.actions} </Header>`,
+  template: `<Header @open="action" :name-link='nameLink' :icon-nav="iconNav"> ${args.nav} ${args.actions} </Header>`,
 })
 
 export const Primary = Template.bind({})
-Primary.args = { iconLink: { name: 'Home' } }
+Primary.args = { nameLink: { name: 'Home' } }
 
 export const PrimaryMobile = Template.bind({})
 PrimaryMobile.args = { ...Primary.args, iconNav: true }
