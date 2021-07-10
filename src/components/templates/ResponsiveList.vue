@@ -14,7 +14,28 @@
             <slot name="filters-full" class-names="w-full"></slot>
           </div>
         </div>
-        <slot name="cards"></slot>
+        <template v-if="totalPagination">
+          <slot name="cards" :loading="loading"></slot>
+        </template>
+        <template v-else>
+          <div class="lg:row-span-2 lg:col-span-2 relative">
+            <GraphicPlants class="absolute left-0 -bottom-4 w-full md:px-4 md:h-20" />
+            <GraphicLeaves class="w-full md:h-40" />
+            <GraphicWind class="absolute bottom-1/3 right-0 md:h-32 md:w-32" />
+            <div class="text-center max-w-md">
+              <slot name="error"></slot>
+            </div>
+          </div>
+        </template>
+        <div
+          v-if="actionFilters"
+          class="sticky bottom-10 place-self-end justify-self-center col-span-2"
+        >
+          <slot name="filters-action"></slot>
+        </div>
+        <template v-if="totalPagination && !loading">
+          <slot name="pagination" classNames="col-span-2"></slot>
+        </template>
       </AppContainer>
     </client-only>
   </div>
@@ -22,12 +43,27 @@
 
 <script>
 import AppContainer from '../organisms/AppContainer'
+import GraphicPlants from '~/components/atoms/graphics/GraphicPlants'
+import GraphicLeaves from '~/components/atoms/graphics/GraphicLeaves'
+import GraphicWind from '~/components/atoms/graphics/GraphicWind'
 
 export default {
   name: 'ResponsiveFilterList',
-  components: { AppContainer },
+  components: { AppContainer, GraphicPlants, GraphicLeaves, GraphicWind },
   props: {
     fullFilters: {
+      type: Boolean,
+      default: false,
+    },
+    actionFilters: {
+      type: Boolean,
+      default: false,
+    },
+    totalPagination: {
+      type: Number,
+      default: 0,
+    },
+    loading: {
       type: Boolean,
       default: false,
     },
