@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8">
+      <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8 relative">
         <div v-if="fullFilters" class="lg:row-span-2">
           <div
             class="
@@ -18,11 +18,11 @@
           <slot name="cards" :loading="loading"></slot>
         </template>
         <template v-else>
-          <div class="lg:row-span-2 lg:col-span-2 relative">
-            <GraphicPlants class="absolute left-0 -bottom-4 w-full md:px-4 md:h-20" />
+          <div class="lg:row-span-2 lg:col-span-2">
+            <GraphicPlants class="absolute left-0 bottom-0 w-full md:px-4 md:h-20" />
             <GraphicLeaves class="w-full md:h-40" />
             <GraphicWind class="absolute bottom-1/3 right-0 md:h-32 md:w-32" />
-            <div class="text-center max-w-md">
+            <div class="text-center max-w-md mx-auto">
               <slot name="error"></slot>
             </div>
           </div>
