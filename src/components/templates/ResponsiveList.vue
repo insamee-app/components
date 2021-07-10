@@ -43,9 +43,9 @@
 
 <script>
 import AppContainer from '../organisms/AppContainer'
-import GraphicPlants from '../components/atoms/graphics/GraphicPlants'
-import GraphicLeaves from '../components/atoms/graphics/GraphicLeaves'
-import GraphicWind from '../components/atoms/graphics/GraphicWind'
+import GraphicPlants from '../atoms/graphics/GraphicPlants'
+import GraphicLeaves from '../atoms/graphics/GraphicLeaves'
+import GraphicWind from '../atoms/graphics/GraphicWind'
 
 export default {
   name: 'ResponsiveFilterList',
