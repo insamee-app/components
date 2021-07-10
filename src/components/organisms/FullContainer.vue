@@ -1,6 +1,6 @@
 <template>
   <section
-    class="h-screen flex flex-col overflow-hidden relative"
+    class="h-screen flex flex-col overflow-hidden xl:overflow-visible relative"
     :class="around ? 'justify-around' : 'justify-center'"
   >
     <GraphicBlob
