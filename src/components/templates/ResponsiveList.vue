@@ -18,8 +18,8 @@
           <slot name="cards" :loading="loading"></slot>
         </template>
         <template v-else>
-          <div class="lg:row-span-2 lg:col-span-2">
-            <GraphicPlants class="absolute left-0 bottom-0 w-full md:px-4 md:h-20" />
+          <div class="row-span-2 lg:col-span-2 lg:relative">
+            <GraphicPlants class="absolute left-0 bottom-0 lg:-bottom-4 w-full md:px-4 md:h-20" />
             <GraphicLeaves class="w-full md:h-40" />
             <GraphicWind class="absolute bottom-1/3 right-0 md:h-32 md:w-32" />
             <div class="text-center max-w-md mx-auto">
