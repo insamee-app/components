@@ -1,6 +1,6 @@
 {
   "name": "@insamee-app/components",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Components lib to create others insamee-app plateformes !",
   "scripts": {
     "storybook": "start-storybook -p 6006",
