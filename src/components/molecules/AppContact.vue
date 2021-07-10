@@ -3,6 +3,7 @@
     <li v-for="value in keys" :key="value" class="text-center">
       <component
         :is="links[value] ? 'AppLink' : 'div'"
+        class="p-1 text-lg"
         :link="href(value)"
         :variant="links[value] ? variant : undefined"
       >

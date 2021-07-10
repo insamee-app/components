@@ -1,5 +1,5 @@
 <template>
-  <AppContainer class="max-w-4xl mx-auto">
+  <AppContainer class="mx-auto" small>
     <InsameeProfile
       :last-name="lastName"
       :first-name="firstName"

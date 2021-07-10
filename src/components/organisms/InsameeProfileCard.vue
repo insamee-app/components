@@ -22,7 +22,12 @@
     <template v-if="associations" #associations>
       <ul class="flex flex-row overflow-x-auto space-x-2">
         <li v-for="association in associations" :key="association.name" class="flex-shrink-0">
-          <AppImg class="h-8" :link="association.image_id" :alt="association.name" />
+          <AppImg
+            class="h-8"
+            :class="classAssociation(association)"
+            :link="association.image_url"
+            :alt="association.name"
+          />
         </li>
       </ul>
     </template>
@@ -46,7 +51,13 @@ import AppProfileAvatar from '../molecules/AppProfileAvatar'
 
 export default {
   name: 'InsameeProfileCard',
-  components: { AppInsameeProfileCard, AppChips, AppCardTitle, AppProfileAvatar, AppImg },
+  components: {
+    AppInsameeProfileCard,
+    AppChips,
+    AppCardTitle,
+    AppProfileAvatar,
+    AppImg,
+  },
   props: {
     userId: {
       type: Number,
@@ -98,6 +109,13 @@ export default {
     username() {
       const name = `${this.profile.first_name ?? ''} ${this.profile.last_name}`
       return name
+    },
+  },
+  methods: {
+    classAssociation(association) {
+      if (!association.image_url) return 'w-8'
+
+      return ''
     },
   },
 }
