@@ -79,7 +79,10 @@ export default {
       if (!this.disabled && !this.loading) classNames.push('cursor-pointer')
       else classNames.push('cursor-not-allowed')
 
-      if (this.href) classNames.push('flex flex-row items-center')
+      if (this.inline) classNames.push('inline-flex')
+      else classNames.push('flex')
+
+      if (this.href) classNames.push('flex-row items-center')
 
       if (this.empty) {
         if (this.isPrimary) {
@@ -118,9 +121,7 @@ export default {
 
       if (this.shadow) classNames.push('shadow-xl')
 
-      if (this.inline) classNames.push('inline')
-
-      classNames.push('flex justify-center rounded')
+      classNames.push('justify-center rounded')
 
       return classNames.join(' ')
     },
