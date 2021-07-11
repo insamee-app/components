@@ -12,6 +12,7 @@
         translate-x-1/2
         rotate-[153deg]
         md:w-[120%] md:h-[120%] md:-bottom-96
+        pointer-events-none
       "
     />
     <slot

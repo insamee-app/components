@@ -14,7 +14,7 @@
             <slot name="filters-full" class-names="w-full"></slot>
           </div>
         </div>
-        <template v-if="totalPagination">
+        <template v-if="loading || (!loading && totalPagination)">
           <slot name="cards" :loading="loading"></slot>
         </template>
         <template v-else>

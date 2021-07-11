@@ -80,7 +80,6 @@ export default {
       else classNames.push('cursor-not-allowed')
 
       if (this.inline) classNames.push('inline-flex')
-      else classNames.push('flex')
 
       if (this.href) classNames.push('flex-row items-center')
 
@@ -94,6 +93,8 @@ export default {
         }
         return classNames.join(' ')
       }
+
+      if (!this.inline) classNames.push('flex')
 
       if (this.large) classNames.push('p-2 text-lg')
       else classNames.push('py-1 px-2 text-base')
