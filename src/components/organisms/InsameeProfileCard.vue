@@ -35,7 +35,7 @@
       <AppChips :texts="focusInterests" />
     </template>
     <template #text>
-      <div>
+      <div v-if="text">
         {{ text }}
       </div>
     </template>
