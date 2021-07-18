@@ -31,8 +31,8 @@
         </li>
       </ul>
     </template>
-    <template v-if="skills" #chips>
-      <AppChips :texts="skills" />
+    <template v-if="focusInterests" #chips>
+      <AppChips :texts="focusInterests" />
     </template>
     <template #text>
       <div>
@@ -75,7 +75,7 @@ export default {
       type: String,
       default: undefined,
     },
-    skills: {
+    focusInterests: {
       type: Array,
       default: undefined,
     },

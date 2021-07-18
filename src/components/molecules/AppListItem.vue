@@ -48,7 +48,7 @@ export default {
       const classNames = []
 
       if (this.row) classNames.push('py-1 px-2 border-r-2 inline')
-      else classNames.push('border-b-2 p-4 block')
+      else classNames.push('border-b-2 p-4 w-full')
 
       classNames.push('border-grey-light')
 
