@@ -1,5 +1,5 @@
 <template>
-  <AppCard class="animate-pulse">
+  <AppCard class="animate-pulse" shadow>
     <div class="flex flex-col space-y-4">
       <div class="flex" :class="classHeader">
         <div class="bg-grey-base rounded-full" :class="classAvatar"></div>
@@ -7,6 +7,10 @@
           <div class="bg-grey-base w-1/2 h-6 rounded-sm"></div>
           <div class="bg-grey-base w-2/5 h-6 rounded-sm mt-2"></div>
         </div>
+      </div>
+      <div v-if="isTutorat" class="flex flex-row space-x-2">
+        <div class="w-20 h-4 rounded-full bg-grey-base"></div>
+        <div class="w-20 h-4 rounded-full bg-grey-base"></div>
       </div>
       <div class="w-full h-4 bg-grey-base rounded-sm"></div>
       <div class="flex flex-row justify-end">
@@ -27,7 +31,7 @@ export default {
       type: String,
       default: 'profile',
       validator(value) {
-        return ['profile', 'association'].includes(value)
+        return ['profile', 'association', 'tutorat'].includes(value)
       },
     },
   },
@@ -38,11 +42,15 @@ export default {
     isProfile() {
       return this.variant === 'profile'
     },
+    isTutorat() {
+      return this.variant === 'tutorat'
+    },
     classAvatar() {
       const classNames = []
 
       if (this.isProfile) classNames.push('w-32 h-32 mr-6')
       else if (this.isAssociation) classNames.push('w-16 h-16 ml-6')
+      else if (this.isTutorat) classNames.push('w-16 h-16 mr-6')
 
       return classNames.join(' ')
     },
