@@ -3,6 +3,7 @@ module.exports = {
   mode: 'jit',
   theme: {
     colors: {
+      'transparent': 'transparent',
       'primary': {
         base: '#0073E6',
         dark: '#0049B3',

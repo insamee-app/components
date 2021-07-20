@@ -74,6 +74,7 @@
     ]
   },
   "dependencies": {
+    "@linusborg/vue-simple-portal": "^0.1.5",
     "v-scroll-lock": "^1.3.1"
   }
 }

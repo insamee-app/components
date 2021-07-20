@@ -66,7 +66,7 @@ export default {
       required: true,
     },
     dismissValue: {
-      type: String,
+      type: [String, Number],
       default: undefined,
     },
     border: {

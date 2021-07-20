@@ -99,8 +99,9 @@ export default {
       if (this.large) classNames.push('p-2 text-lg')
       else classNames.push('py-1 px-2 text-base')
 
+      classNames.push('border')
       if (this.border) {
-        classNames.push('border bg-white-base')
+        classNames.push('bg-white-base')
         if (this.isPrimary) {
           classNames.push('border-primary-dark text-primary-base')
         } else if (this.isSecondary) {
@@ -119,6 +120,8 @@ export default {
       } else if (this.isNegative) {
         classNames.push('bg-negative text-white-base')
       }
+
+      if (!this.border) classNames.push('border-transparent')
 
       if (this.shadow) classNames.push('shadow-xl')
 

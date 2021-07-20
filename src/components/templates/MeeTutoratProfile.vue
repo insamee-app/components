@@ -1,40 +1,45 @@
 <template>
-  <div>
-    <AppContainer class="space-y-4 max-w-4xl mx-auto">
-      <ProfileBasic
-        :last-name="lastName"
-        :first-name="firstName"
-        :current-role="currentRole"
-        :graduation-year="graduationYear"
-        :email="email"
-        :school-name="schoolName"
-        :avatar-url="avatarUrl"
-      />
-      <LabeledItem label="Matières préférées">
-        <AppChips :texts="preferredSubjects" />
-      </LabeledItem>
-      <LabeledItem label="Matières en difficultés">
-        <AppChips :texts="difficultiesSubjects" />
-      </LabeledItem>
-      <LabeledItem label="Description" class="text-justify">
-        {{ text }}
-      </LabeledItem>
-      <div class="flex flex-row justify-end sticky bottom-4" @click="dialog = true">
-        <AppButton large> Contacter </AppButton>
-      </div>
-    </AppContainer>
-    <AppModal v-slot="{ size }" :value="dialog" @outside="dialog = false">
-      <AppCard :class="size">
-        <AppCardHeader closable @close="dialog = false">
-          <AppCardTitle> Contacter </AppCardTitle>
-        </AppCardHeader>
-        <AppContact :links="socials" />
-      </AppCard>
-    </AppModal>
-  </div>
+  <AppContainer class="space-y-4 mx-auto" small>
+    <ProfileBasic
+      :last-name="lastName"
+      :first-name="firstName"
+      :current-role="currentRole"
+      :graduation-year="graduationYear"
+      :email="email"
+      :school-name="schoolName"
+      :avatar-url="avatarUrl"
+    />
+    <LabeledItem v-if="preferredSubjects" label="Matières préférées">
+      <AppChips :texts="preferredSubjects" />
+    </LabeledItem>
+    <LabeledItem v-if="difficultiesSubjects" label="Matières en difficultés">
+      <AppChips :texts="difficultiesSubjects" />
+    </LabeledItem>
+    <LabeledItem v-if="text" label="Description" class="text-justify">
+      {{ text }}
+    </LabeledItem>
+    <div class="flex flex-row justify-center sticky bottom-4">
+      <AppButton shadow large @click="dialog = true">
+        <span class="text-white-base">
+          {{ contact }}
+        </span>
+      </AppButton>
+    </div>
+    <Portal>
+      <AppModal :value="dialog" @outside="dialog = false">
+        <AppCard>
+          <AppCardHeader closable @close="dialog = false">
+            <AppCardTitle> Contacter </AppCardTitle>
+          </AppCardHeader>
+          <AppContact :links="socials" />
+        </AppCard>
+      </AppModal>
+    </Portal>
+  </AppContainer>
 </template>
 
 <script>
+import { Portal } from '@linusborg/vue-simple-portal'
 import AppModal from '../atoms/AppModal'
 import AppChips from '../molecules/AppChips'
 import AppCard from '../molecules/AppCard'
@@ -59,6 +64,7 @@ export default {
     AppButton,
     LabeledItem,
     ProfileBasic,
+    Portal,
   },
   props: {
     lastName: {
@@ -110,6 +116,11 @@ export default {
     return {
       dialog: false,
     }
+  },
+  computed: {
+    contact() {
+      return this.firstName ? `Contacter ${this.firstName}` : 'Contacter'
+    },
   },
 }
 </script>

@@ -21,18 +21,21 @@
         </AppButton>
       </div>
     </InsameeProfile>
-    <AppModal :value="dialog" @outside="dialog = false">
-      <AppCard>
-        <AppCardHeader closable @close="dialog = false">
-          <AppCardTitle> Contacter </AppCardTitle>
-        </AppCardHeader>
-        <AppContact :links="socials" />
-      </AppCard>
-    </AppModal>
+    <Portal>
+      <AppModal :value="dialog" @outside="dialog = false">
+        <AppCard>
+          <AppCardHeader closable @close="dialog = false">
+            <AppCardTitle> Contacter </AppCardTitle>
+          </AppCardHeader>
+          <AppContact :links="socials" />
+        </AppCard>
+      </AppModal>
+    </Portal>
   </AppContainer>
 </template>
 
 <script>
+import { Portal } from '@linusborg/vue-simple-portal'
 import AppModal from '../atoms/AppModal'
 import AppCard from '../molecules/AppCard'
 import AppCardHeader from '../molecules/AppCardHeader'
@@ -53,11 +56,7 @@ export default {
     AppCardTitle,
     AppButton,
     InsameeProfile,
-  },
-  filters: {
-    handleUndefined(value) {
-      return value || 'Non renseigné'
-    },
+    Portal,
   },
   props: {
     lastName: {
