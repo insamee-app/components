@@ -8,10 +8,10 @@
     :school-name="schoolName"
     :avatar-url="avatarUrl"
   >
-    <LabeledItem label="Matières préférées">
+    <LabeledItem v-if="preferredSubjects.length" label="Matières préférées">
       <AppChips :texts="preferredSubjects" />
     </LabeledItem>
-    <LabeledItem label="Matières en difficultés">
+    <LabeledItem v-if="difficultiesSubjects.length" label="Matières en difficultés">
       <AppChips :texts="difficultiesSubjects" />
     </LabeledItem>
     <LabeledItem class="text-justify" label="Description">
@@ -78,10 +78,6 @@ export default {
     difficultiesSubjects: {
       type: Array,
       default: undefined,
-    },
-    socials: {
-      type: Object,
-      default: () => {},
     },
   },
   data() {

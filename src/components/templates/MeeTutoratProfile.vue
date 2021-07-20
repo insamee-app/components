@@ -1,6 +1,6 @@
 <template>
   <AppContainer class="space-y-4 mx-auto" small>
-    <ProfileBasic
+    <TutoratProfile
       :last-name="lastName"
       :first-name="firstName"
       :current-role="currentRole"
@@ -8,23 +8,18 @@
       :email="email"
       :school-name="schoolName"
       :avatar-url="avatarUrl"
-    />
-    <LabeledItem v-if="preferredSubjects.length !== 0" label="Matières préférées">
-      <AppChips :texts="preferredSubjects" />
-    </LabeledItem>
-    <LabeledItem v-if="difficultiesSubjects.length !== 0" label="Matières en difficultés">
-      <AppChips :texts="difficultiesSubjects" />
-    </LabeledItem>
-    <LabeledItem v-if="text" label="Description" class="text-justify">
-      {{ text }}
-    </LabeledItem>
-    <div class="flex flex-row justify-center sticky bottom-4">
-      <AppButton shadow large @click="dialog = true">
-        <span class="text-white-base">
-          {{ contact }}
-        </span>
-      </AppButton>
-    </div>
+      :preferred-subjects="preferredSubjects"
+      :difficulties-subjects="difficultiesSubjects"
+      :text="text"
+    >
+      <div class="flex flex-row justify-center sticky bottom-4">
+        <AppButton shadow large @click="dialog = true">
+          <span class="text-white-base">
+            {{ contact }}
+          </span>
+        </AppButton>
+      </div>
+    </TutoratProfile>
     <Portal>
       <AppModal :value="dialog" @outside="dialog = false">
         <AppCard>
@@ -41,29 +36,25 @@
 <script>
 import { Portal } from '@linusborg/vue-simple-portal'
 import AppModal from '../atoms/AppModal'
-import AppChips from '../molecules/AppChips'
 import AppCard from '../molecules/AppCard'
 import AppCardHeader from '../molecules/AppCardHeader'
 import AppCardTitle from '../molecules/AppCardTitle'
 import AppButton from '../atoms/AppButton'
-import LabeledItem from '../molecules/LabeledItem'
-import ProfileBasic from '../organisms/ProfileBasic'
 import AppContainer from '../organisms/AppContainer'
 import AppContact from '../molecules/AppContact'
+import TutoratProfile from '../organisms/TutoratProfile'
 
 export default {
   name: 'MeeTutoratProfile',
   components: {
+    TutoratProfile,
     AppContact,
-    AppChips,
     AppContainer,
     AppModal,
     AppCard,
     AppCardHeader,
     AppCardTitle,
     AppButton,
-    LabeledItem,
-    ProfileBasic,
     Portal,
   },
   props: {
