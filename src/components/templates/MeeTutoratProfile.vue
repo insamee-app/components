@@ -9,10 +9,10 @@
       :school-name="schoolName"
       :avatar-url="avatarUrl"
     />
-    <LabeledItem v-if="preferredSubjects" label="Matières préférées">
+    <LabeledItem v-if="preferredSubjects.length !== 0" label="Matières préférées">
       <AppChips :texts="preferredSubjects" />
     </LabeledItem>
-    <LabeledItem v-if="difficultiesSubjects" label="Matières en difficultés">
+    <LabeledItem v-if="difficultiesSubjects.length !== 0" label="Matières en difficultés">
       <AppChips :texts="difficultiesSubjects" />
     </LabeledItem>
     <LabeledItem v-if="text" label="Description" class="text-justify">
