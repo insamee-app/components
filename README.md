@@ -99,6 +99,8 @@ colors: {
 },
 ```
 
+You will have an access to `@linusborg/vue-simple-portal` in your components.
+
 ## FAQ
 
 You can use the **discussions** tab to ask for help or to suggest an idea.
