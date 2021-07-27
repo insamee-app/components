@@ -5,15 +5,21 @@
     </AppCardHeader>
     <AppCardContent class="space-y-4">
       <LabeledItem variant="secondary" label="Motif" class-name="text-base">
-        <AppRadio :items="items" :selected="report" variant="secondary" @select="report = $event" />
+        <AppRadio
+          :items="items"
+          :selected="$v.form.report.$model"
+          variant="secondary"
+          :error-message="reportMessage"
+          @select="$v.form.report.$model = $event"
+        />
       </LabeledItem>
       <LabeledInput
-        v-model="details"
+        v-model="$v.form.details.$model"
         variant="secondary"
         label="Détails"
         name="details"
         placeholder="Détails sur le signalement"
-        :error-message="errorMessageDetails"
+        :error-message="detailsMessage"
       ></LabeledInput>
     </AppCardContent>
     <div class="flex justify-between">
@@ -34,6 +40,7 @@
 </template>
 
 <script>
+import { required, maxLength } from 'vuelidate/lib/validators'
 import AppCard from '../molecules/AppCard'
 import AppCardTitle from '../molecules/AppCardTitle'
 import AppCardHeader from '../molecules/AppCardHeader'
@@ -65,14 +72,39 @@ export default {
       required: true,
     },
   },
+  validations: {
+    form: {
+      details: {
+        maxLength: maxLength(256),
+      },
+      report: {
+        required,
+      },
+    },
+  },
   data() {
     return {
-      from: {
+      form: {
         report: {},
         details: '',
       },
-      errorMessageDetails: '',
     }
+  },
+  computed: {
+    reportMessage() {
+      if (!this.$v.form.report.$dirty) return ''
+
+      if (!this.$v.form.report.required) return 'Il faut choisir un motif'
+
+      return ''
+    },
+    detailsMessage() {
+      if (!this.$v.form.details.$dirty) return ''
+
+      if (!this.$v.form.details.maxLength) return 'Le message est trop long'
+
+      return ''
+    },
   },
   methods: {
     send() {

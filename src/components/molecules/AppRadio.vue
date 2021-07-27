@@ -11,16 +11,18 @@
         <slot :item="item">{{ item.text }}</slot>
       </label>
     </div>
+    <AppError :error-message="errorMessage" />
   </div>
 </template>
 
 <script>
 import AppCheck from '../atoms/AppCheck'
+import AppError from '../atoms/AppError'
 import { variant } from '../../mixins'
 
 export default {
   name: 'AppRadio',
-  components: { AppCheck },
+  components: { AppCheck, AppError },
   mixins: [variant],
   props: {
     items: {
@@ -30,6 +32,10 @@ export default {
     selected: {
       type: Object,
       required: true,
+    },
+    errorMessage: {
+      type: String,
+      default: '',
     },
   },
   methods: {
