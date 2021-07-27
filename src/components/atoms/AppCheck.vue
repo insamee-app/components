@@ -5,7 +5,7 @@
       type="checkbox"
       :name="name"
       class="w-4 h-4 absolute opacity-0"
-      @change="$emit('change', $event.target.checked)"
+      @change="$emit('change', $event.target.checked, name)"
     />
     <div
       class="w-4 h-4 rounded border border-primary-dark flex flex-col justify-center items-center"
