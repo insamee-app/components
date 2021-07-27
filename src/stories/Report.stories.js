@@ -14,8 +14,8 @@ const Template = (args, { argTypes }) => ({
     closeAction: action('close'),
     sendAction: action('send'),
   },
-  template: `<Report @close="closeAction" @send="sendAction" :items="items"/>`,
+  template: `<Report @close="closeAction" @send="sendAction" :items="items" :loading="loading" />`,
 })
 
 export const Default = Template.bind({})
-Default.args = { ...RadioDefault.args }
+Default.args = { ...RadioDefault.args, loading: false }

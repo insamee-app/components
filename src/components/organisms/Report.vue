@@ -20,7 +20,15 @@
       <AppButton border shadow variant="secondary" @click="$emit('close', true)">
         Annuler
       </AppButton>
-      <AppButton shadow variant="secondary" @click="send"> Envoyer </AppButton>
+      <AppButton
+        shadow
+        variant="secondary"
+        :loading="loading"
+        :disabled="$v.$invalid"
+        @click="send"
+      >
+        Envoyer
+      </AppButton>
     </div>
   </AppCard>
 </template>
@@ -52,19 +60,25 @@ export default {
       type: Array,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      required: true,
+    },
   },
   data() {
     return {
-      report: {},
-      details: '',
+      from: {
+        report: {},
+        details: '',
+      },
       errorMessageDetails: '',
     }
   },
   methods: {
     send() {
       this.$emit('send', {
-        report: this.report,
-        details: this.details,
+        report: this.form.report,
+        details: this.form.details,
       })
     },
   },
