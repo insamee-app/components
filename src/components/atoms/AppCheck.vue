@@ -8,7 +8,7 @@
       @change="$emit('change', $event.target.checked, name)"
     />
     <div
-      class="w-4 h-4 rounded border border-primary-dark flex flex-col justify-center items-center"
+      class="w-4 h-4 rounded border flex flex-col justify-center items-center"
       :class="classCheckBox"
     >
       <IconCheck v-if="value" class="w-3 h-3 text-grey-light fill-current" />
@@ -18,10 +18,13 @@
 
 <script>
 import IconCheck from '../atoms/icons/IconCheck'
+import { variant } from '../../mixins'
 
 export default {
   name: 'AppCheck',
   components: { IconCheck },
+  mixins: [variant],
+
   props: {
     value: {
       type: Boolean,
@@ -36,7 +39,14 @@ export default {
     classCheckBox() {
       const classNames = []
 
-      if (this.value) classNames.push('bg-primary-dark')
+      if (this.isPrimary) {
+        classNames.push('border-primary-dark')
+      } else if (this.isSecondary) {
+        classNames.push('border-secondary-dark')
+      }
+
+      if (this.value && this.isPrimary) classNames.push('bg-primary-dark')
+      else if (this.value && this.isSecondary) classNames.push('bg-secondary-dark')
       else classNames.push('bg-grey-light')
 
       return classNames.join(' ')

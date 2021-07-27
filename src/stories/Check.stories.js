@@ -15,7 +15,7 @@ const Template = (args, { argTypes }) => ({
   methods: {
     action: action('change'),
   },
-  template: "<AppCheck :value='value' :name='name' @change='action' />",
+  template: "<AppCheck :value='value' :name='name' @change='action' :variant='variant' />",
 })
 
 export const Unchecked = Template.bind({})
@@ -23,3 +23,9 @@ Unchecked.args = { name: 'name', value: false }
 
 export const Checked = Template.bind({})
 Checked.args = { name: 'name', value: true }
+
+export const Primary = Template.bind({})
+Primary.args = { name: 'name', value: true, variant: 'primary' }
+
+export const Secondary = Template.bind({})
+Secondary.args = { name: 'name', value: true, variant: 'secondary' }

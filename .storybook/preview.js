@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VScrollLock from 'v-scroll-lock'
+import Vuelidate from 'vuelidate'
 import { configure } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
@@ -25,6 +26,7 @@ export const parameters = {
   },
 }
 
+Vue.use(Vuelidate)
 Vue.use(VScrollLock)
 
 Vue.component('NuxtLink', {

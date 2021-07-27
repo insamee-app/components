@@ -51,11 +51,20 @@ import VScrollLock from 'v-scroll-lock'
 Vue.use(VScrollLock)
 ```
 
+add plugin for `Vuelidate` in `plugins/vuelidate.js` :
+
+```js
+import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+
+Vue.use(Vuelidate)
+```
+
 and in `nuxt.config.js` :
 
 ```js
 export default {
-  plugins: ['~/plugins/vue-scroll-lock.js'],
+  plugins: ['~/plugins/vue-scroll-lock.js', '~/plugins/vuelidate.js'],
 }
 ```
 

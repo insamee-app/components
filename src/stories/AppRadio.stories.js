@@ -20,11 +20,11 @@ const Template = (args, { argTypes }) => ({
       this.item = item
     },
   },
-  template: `<AppRadio :selected="item" :items="items" @select="action"/>`,
+  template: `<AppRadio :selected="item" :items="items" @select="action" variant="variant"/>`,
 })
 
-export const Default = Template.bind({})
-Default.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   items: [
     {
       text: 'text 1',
@@ -39,4 +39,10 @@ Default.args = {
       value: 'value 3',
     },
   ],
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+  ...Primary.args,
+  variant: 'secondary',
 }
