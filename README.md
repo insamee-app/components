@@ -72,7 +72,7 @@ and add a minimal setup for colors:
 
 ```js
 colors: {
-      transparent: 'transparent',
+    'transparent': 'transparent',
     'primary': {
       base: '#0073E6',
       dark: '#0049B3',
