@@ -36,6 +36,9 @@
         Envoyer
       </AppButton>
     </div>
+    <div v-if="errorMessage" class="flex justify-end">
+      <AppError :error-message="errorMessage" />
+    </div>
   </AppCard>
 </template>
 
@@ -48,6 +51,7 @@ import AppCardContent from '../molecules/AppCardContent'
 import LabeledInput from '../molecules/LabeledInput'
 import AppRadio from '../molecules/AppRadio'
 import AppButton from '../atoms/AppButton'
+import AppError from '../atoms/AppError.vue'
 import LabeledItem from '../molecules/LabeledItem.vue'
 
 export default {
@@ -61,6 +65,7 @@ export default {
     LabeledInput,
     AppButton,
     LabeledItem,
+    AppError,
   },
   props: {
     items: {
@@ -70,6 +75,10 @@ export default {
     loading: {
       type: Boolean,
       required: true,
+    },
+    errorMessage: {
+      type: String,
+      default: '',
     },
   },
   validations: {

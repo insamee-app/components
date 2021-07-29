@@ -14,8 +14,11 @@ const Template = (args, { argTypes }) => ({
     closeAction: action('close'),
     sendAction: action('send'),
   },
-  template: `<Report @close="closeAction" @send="sendAction" :items="items" :loading="loading" />`,
+  template: `<Report @close="closeAction" @send="sendAction" :items="items" :loading="loading" :error-message="errorMessage" />`,
 })
 
 export const Default = Template.bind({})
 Default.args = { ...RadioDefault.args, loading: false }
+
+export const Error = Template.bind({})
+Error.args = { ...Default.args, errorMessage: 'There is an error' }
