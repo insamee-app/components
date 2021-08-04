@@ -20,6 +20,7 @@
           </span>
         </AppButton>
       </div>
+      <slot name="report"></slot>
     </InsameeProfile>
     <Portal>
       <AppModal :value="dialog" @outside="dialog = false">
