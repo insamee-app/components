@@ -21,6 +21,9 @@
         :placeholder="placeholder"
       />
     </div>
+    <template #selectItem="{ item }">
+      <slot name="selectItem" :item="item"></slot>
+    </template>
   </Select>
 </template>
 

@@ -16,7 +16,14 @@
         :border="border"
         :item="item"
         @removed="remove"
-      />
+      >
+        <template #item="props">
+          <slot name="item" :item="props.item"></slot>
+        </template>
+      </ComboboxMultipleItem>
+    </template>
+    <template #selectItem="{ item }">
+      <slot name="selectItem" :item="item"></slot>
     </template>
   </Combobox>
 </template>

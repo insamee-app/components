@@ -34,11 +34,14 @@
         <SelectItem
           v-for="item in items"
           :key="item.value"
+          v-slot="props"
           :variant="variant"
           :border="border"
           :item="item"
           @selected="selected"
-        />
+        >
+          <slot name="selectItem" :item="props.item"></slot>
+        </SelectItem>
       </template>
       <template v-else>Il n'y a rien à afficher</template>
     </SelectItems>

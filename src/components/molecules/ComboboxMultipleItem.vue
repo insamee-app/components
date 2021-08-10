@@ -4,7 +4,9 @@
     :class="classComboboxMultipleItem"
   >
     <span class="whitespace-nowrap">
-      {{ item.text }}
+      <slot name="item" :item="item">
+        {{ item.text }}
+      </slot>
     </span>
     <span
       class="ml-1 flex justify-center items-center rounded-sm cursor-pointer"
