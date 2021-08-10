@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     href(value) {
-      return value === 'phone' ? 'tel:' + this.links[value] : this.links[value]
+      return value === 'mobile' ? 'tel:' + this.links[value] : this.links[value]
     },
     content(value) {
       return this.links[value] ? value : `${value}: non renseigné`
