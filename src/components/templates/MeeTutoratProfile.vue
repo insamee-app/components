@@ -20,7 +20,7 @@
         </AppButton>
       </div>
     </TutoratProfile>
-    <Portal>
+    <Portal v-if="dialog">
       <AppModal :value="dialog" @outside="dialog = false">
         <AppCard>
           <AppCardHeader closable @close="dialog = false">

@@ -22,7 +22,7 @@
       </div>
       <slot name="report"></slot>
     </InsameeProfile>
-    <Portal>
+    <Portal v-if="dialog">
       <AppModal :value="dialog" @outside="dialog = false">
         <AppCard>
           <AppCardHeader closable @close="dialog = false">
