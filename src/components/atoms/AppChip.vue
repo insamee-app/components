@@ -34,7 +34,7 @@ export default {
       if (this.isPrimary) {
         classNames.push('bg-grey-base')
       } else if (this.isSecondary) {
-        classNames.push('bg-grey-secondary-base')
+        classNames.push('bg-grey-base')
       }
 
       if (this.small) {
