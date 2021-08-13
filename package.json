@@ -11,7 +11,8 @@
     "commitlint": "commitlint",
     "prepare": "husky install",
     "commit": "cz",
-    "release": "np"
+    "release": "np",
+    "chromatic": "npx chromatic --project-token=dc55a493e07a"
   },
   "files": [
     "src/mixins",
