@@ -17,7 +17,7 @@ const Template = (args, { argTypes }) => ({
     InsameeProfileCard,
   },
   props: Object.keys(argTypes),
-  template: `<InsameeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :focus-interests="focusInterests" :current-role="currentRole" :associations="associations" :link="link" :type="type"> </InsameeProfileCard>`,
+  template: `<InsameeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :skills="skills" :current-role="currentRole" :associations="associations" :link="link" :type="type"> </InsameeProfileCard>`,
 })
 
 export const Primary = Template.bind({})
@@ -41,7 +41,7 @@ PrimaryLongText.args = {
 export const PrimarySkills = Template.bind({})
 PrimarySkills.args = {
   ...Primary.args,
-  focusInterests: ['text 1', 'text 2', 'text 3', 'text 4'],
+  skills: ['text 1', 'text 2', 'text 3', 'text 4'],
 }
 
 export const PrimaryAssociations = Template.bind({})
