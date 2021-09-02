@@ -21,7 +21,7 @@
       <AppAssociation
         v-for="association in associations"
         :key="association.id"
-        :link="association.image_url"
+        :link="association.url_picture"
         :name="association.name"
       >
         <span class="uppercase">

@@ -25,7 +25,7 @@
           <AppImg
             class="h-8"
             :class="classAssociation(association)"
-            :link="association.image_url"
+            :link="association.url_picture"
             :alt="association.name"
           />
         </li>
