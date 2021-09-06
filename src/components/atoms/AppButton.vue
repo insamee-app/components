@@ -123,7 +123,7 @@ export default {
 
       if (!this.border) classNames.push('border-transparent')
 
-      if (this.shadow) classNames.push('shadow-xl')
+      if (this.shadow) classNames.push('shadow-md')
 
       classNames.push('justify-center rounded')
 
