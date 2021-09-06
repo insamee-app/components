@@ -90,6 +90,8 @@ export default {
           classNames.push('text-secondary-base')
         } else if (this.isNegative) {
           classNames.push('text-negative')
+        } else if (this.isGreySecondary) {
+          classNames.push('text-grey-secondary-base')
         }
         return classNames.join(' ')
       }
@@ -123,7 +125,7 @@ export default {
 
       if (!this.border) classNames.push('border-transparent')
 
-      if (this.shadow) classNames.push('shadow-md')
+      if (this.shadow) classNames.push('shadow-xl')
 
       classNames.push('justify-center rounded')
 
