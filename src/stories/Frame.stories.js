@@ -22,8 +22,11 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: '<AppFrame> {{ args.default }} </AppFrame>',
+  template: '<AppFrame :variant="variant"> {{ args.default }} </AppFrame>',
 })
 
 export const Default = Template.bind({})
 Default.args = { default: slotValue }
+
+export const SecondaryDefault = Template.bind({})
+SecondaryDefault.args = { default: slotValue, variant: 'secondary' }
