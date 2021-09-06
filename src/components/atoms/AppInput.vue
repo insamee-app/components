@@ -50,8 +50,8 @@ export default {
         else if (this.isSecondary) classNames.push('bg-secondary-base')
       }
 
-      if (this.isPrimary) classNames.push('placeholder-grey-light')
-      else if (this.isSecondary) classNames.push('placeholder-grey-secondary-light')
+      if (this.isPrimary) classNames.push('placeholder-grey-base')
+      else if (this.isSecondary) classNames.push('placeholder-grey-secondary-base')
 
       return classNames.join(' ')
     },
