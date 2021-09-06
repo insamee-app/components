@@ -14,9 +14,6 @@
     <LabeledItem v-if="skills.length" label="Compétences">
       <AppChips :texts="skills" />
     </LabeledItem>
-    <LabeledItem class="text-justify" label="Description">
-      {{ text | handleUndefined }}
-    </LabeledItem>
     <LabeledItem v-if="associations.length" label="Associations" class-name="space-y-2">
       <AppAssociation
         v-for="association in associations"
@@ -28,6 +25,9 @@
           {{ association.name }}
         </span>
       </AppAssociation>
+    </LabeledItem>
+    <LabeledItem class="text-justify" label="Description">
+      {{ text | handleUndefined }}
     </LabeledItem>
     <slot></slot>
   </ProfileBasic>
