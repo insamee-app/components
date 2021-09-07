@@ -13,7 +13,7 @@
       :focus-interests="focusInterests"
       :associations="associations"
     >
-      <div class="flex flex-row justify-center sticky bottom-4">
+      <div class="flex flex-row justify-center sticky bottom-4 md:mt-8">
         <AppButton shadow large @click="dialog = true">
           <span class="text-white-base">
             {{ contact }}
