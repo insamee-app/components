@@ -4,7 +4,13 @@
       <AppCardTitle>Signalement</AppCardTitle>
     </AppCardHeader>
     <AppCardContent class="space-y-4">
-      <LabeledItem variant="secondary" label="Motif" class-name="text-base">
+      <div v-if="items === undefined">
+        <h2>Une erreur est survenue</h2>
+      </div>
+      <div v-else-if="items.length === 0" class="flex w-full justify-center">
+        <IconSpinner class="h-6 w-6 text-secondary-base fill-current animate-spin" />
+      </div>
+      <LabeledItem v-else variant="secondary" label="Motif" class-name="text-base">
         <AppRadio
           :items="items"
           :selected="$v.form.report.$model"
@@ -52,6 +58,7 @@ import LabeledInput from '../molecules/LabeledInput'
 import AppRadio from '../molecules/AppRadio'
 import AppButton from '../atoms/AppButton'
 import AppError from '../atoms/AppError.vue'
+import IconSpinner from '../atoms/icons/IconSpinner.vue'
 import LabeledItem from '../molecules/LabeledItem.vue'
 
 export default {
@@ -66,11 +73,12 @@ export default {
     AppButton,
     LabeledItem,
     AppError,
+    IconSpinner,
   },
   props: {
     items: {
       type: Array,
-      required: true,
+      default: () => [],
     },
     loading: {
       type: Boolean,
