@@ -48,10 +48,12 @@ export default {
       if (!this.border) {
         if (this.isPrimary) classNames.push('bg-primary-base')
         else if (this.isSecondary) classNames.push('bg-secondary-base')
+      } else {
+        classNames.push('bg-white-base')
       }
 
-      if (this.isPrimary) classNames.push('placeholder-grey-light')
-      else if (this.isSecondary) classNames.push('placeholder-grey-secondary-light')
+      if (this.isPrimary) classNames.push('placeholder-grey-base')
+      else if (this.isSecondary) classNames.push('placeholder-grey-secondary-base')
 
       return classNames.join(' ')
     },
@@ -59,7 +61,7 @@ export default {
       const classNames = []
 
       if (this.border) {
-        classNames.push('border text-black')
+        classNames.push('border text-black bg-white-base')
         if (this.isPrimary) classNames.push('border-primary-dark')
         else if (this.isSecondary) classNames.push('border-secondary-dark')
       } else {

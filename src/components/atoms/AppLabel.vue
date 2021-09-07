@@ -28,13 +28,12 @@ export default {
       const classNames = []
 
       if (this.input) {
-        classNames.push('font-normal')
+        classNames.push('font-normal text-black')
       } else {
         classNames.push('font-light')
+        if (this.isPrimary) classNames.push('text-grey-base')
+        else if (this.isSecondary) classNames.push('text-grey-secondary-base')
       }
-
-      if (this.isPrimary) classNames.push('text-grey-base')
-      else if (this.isSecondary) classNames.push('text-grey-secondary-base')
 
       return classNames.join(' ')
     },
