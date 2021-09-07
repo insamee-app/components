@@ -1,14 +1,18 @@
 <template>
   <div>
     <client-only>
-      <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-8 relative">
+      <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
         <div v-if="fullFilters" class="lg:row-span-2">
           <div
             class="
+              flex
+              lg:items-start
               space-y-4
-              flex flex-row
+              lg:top-4
               items-center
-              lg:items-start lg:flex-col lg:sticky lg:top-4
+              lg:flex-col
+              flex-row
+              lg:sticky
             "
           >
             <slot name="filters-full" class-names="w-full"></slot>
