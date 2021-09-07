@@ -103,3 +103,6 @@ SecondaryLoadingLarge.args = {
   loading: true,
   variant: 'secondary',
 }
+
+export const GreySecondaryEmpty = Template.bind({})
+GreySecondaryEmpty.args = { empty: true, default: slotValue, variant: 'grey-secondary' }
