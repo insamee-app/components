@@ -46,14 +46,14 @@ export default {
       const classNames = []
 
       if (!this.border) {
-        if (this.isPrimary) classNames.push('bg-primary-base')
-        else if (this.isSecondary) classNames.push('bg-secondary-base')
+        if (this.isPrimary) classNames.push('bg-primary-base placeholder-grey-light')
+        else if (this.isSecondary)
+          classNames.push('bg-secondary-base placeholder-grey-secondary-light')
       } else {
         classNames.push('bg-white-base')
+        if (this.isPrimary) classNames.push('placeholder-grey-base')
+        else if (this.isSecondary) classNames.push('placeholder-grey-secondary-base')
       }
-
-      if (this.isPrimary) classNames.push('placeholder-grey-base')
-      else if (this.isSecondary) classNames.push('placeholder-grey-secondary-base')
 
       return classNames.join(' ')
     },
