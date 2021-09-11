@@ -27,7 +27,7 @@ const Template = (args, { argTypes }) => ({
     ResponsiveList,
   },
   props: Object.keys(argTypes),
-  template: `<ResponsiveList> ${args.title} ${args.cards} ${args.filter} ${args.modal} </ResponsiveList>`,
+  template: `<ResponsiveList :fullFilters="fillFilters" :loading="loading" :totalPagination="totalPagination" :actionFilters="actionsFilters"> ${args.title} ${args.cards} ${args.filter} ${args.modal} </ResponsiveList>`,
 })
 
 export const Default = Template.bind({})
