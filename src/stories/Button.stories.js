@@ -55,6 +55,9 @@ PrimaryShadow.args = { default: slotValue, shadow: true }
 export const PrimaryDisabled = Template.bind({})
 PrimaryDisabled.args = { default: slotValue, disabled: true }
 
+export const PrimaryDisabledBorder = Template.bind({})
+PrimaryDisabledBorder.args = { default: slotValue, disabled: true, border: true }
+
 export const PrimaryDisabledLarge = Template.bind({})
 PrimaryDisabledLarge.args = { default: slotValue, large: true, disabled: true }
 
@@ -84,6 +87,14 @@ SecondaryShadow.args = { default: slotValue, shadow: true, variant: 'secondary' 
 
 export const SecondaryDisabled = Template.bind({})
 SecondaryDisabled.args = { default: slotValue, disabled: true, variant: 'secondary' }
+
+export const SecondaryDisabledBorder = Template.bind({})
+SecondaryDisabledBorder.args = {
+  default: slotValue,
+  disabled: true,
+  variant: 'secondary',
+  border: true,
+}
 
 export const SecondaryDisabledLarge = Template.bind({})
 SecondaryDisabledLarge.args = {

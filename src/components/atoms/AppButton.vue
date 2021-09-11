@@ -102,18 +102,25 @@ export default {
       else classNames.push('py-1 px-2 text-base')
 
       classNames.push('border')
-      if (this.border) {
+      if (this.disabled || this.loading) {
+        if (this.border) {
+          classNames.push('bg-white-base')
+          if (this.isPrimary) {
+            classNames.push('border-grey-light text-grey-base')
+          } else if (this.isSecondary) {
+            classNames.push('border-grey-secondary-light text-grey-secondary-base')
+          }
+        } else if (this.isPrimary) {
+          classNames.push('bg-grey-base text-white-base')
+        } else if (this.isSecondary) {
+          classNames.push('bg-grey-secondary-base text-white-base')
+        }
+      } else if (this.border) {
         classNames.push('bg-white-base')
         if (this.isPrimary) {
           classNames.push('border-primary-dark text-primary-base')
         } else if (this.isSecondary) {
           classNames.push('border-secondary-dark text-secondary-base')
-        }
-      } else if (this.disabled || this.loading) {
-        if (this.isPrimary) {
-          classNames.push('bg-grey-base text-white-base')
-        } else if (this.isSecondary) {
-          classNames.push('bg-grey-secondary-base text-white-base')
         }
       } else if (this.isPrimary) {
         classNames.push('bg-primary-base text-white-base')
