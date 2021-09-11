@@ -27,11 +27,12 @@ const Template = (args, { argTypes }) => ({
     ResponsiveList,
   },
   props: Object.keys(argTypes),
-  template: `<ResponsiveList> ${args.cards} ${args.filter} ${args.modal} </ResponsiveList>`,
+  template: `<ResponsiveList> ${args.title} ${args.cards} ${args.filter} ${args.modal} </ResponsiveList>`,
 })
 
 export const Default = Template.bind({})
 Default.args = {
+  title: '<template #title> <h1>For the title</h1> </template>',
   cards: '<template #cards> For the cards </template>',
   filter: '<template #filter> For the filter </template>',
   modal: '<template #modal> For the modal </template>',

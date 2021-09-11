@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative place-content-start">
+    <slot name="title"></slot>
     <client-only>
-      <AppContainer class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+      <section>
         <div v-if="fullFilters" class="lg:row-span-2">
           <div
             class="
@@ -40,9 +41,9 @@
         <template v-if="totalPagination && !loading">
           <slot name="pagination" classNames="col-span-2"></slot>
         </template>
-      </AppContainer>
+      </section>
     </client-only>
-  </div>
+  </AppContainer>
 </template>
 
 <script>
