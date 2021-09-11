@@ -17,7 +17,6 @@
     <LabeledItem class="text-justify" label="Description">
       {{ text | handleUndefined }}
     </LabeledItem>
-    <slot></slot>
   </ProfileBasic>
 </template>
 
