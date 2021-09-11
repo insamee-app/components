@@ -15,12 +15,12 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { MeeInsameeProfile },
   props: Object.keys(argTypes),
-  template:
-    '<MeeInsameeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations"   :socials="socials"   :avatar-url="avatarUrl"  />',
+  template: `<MeeInsameeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations"   :socials="socials"   :avatar-url="avatarUrl"> ${args.report} </MeeInsameeProfile>`,
 })
 
 export const Default = Template.bind({})
 Default.args = {
+  report: '<template #report><div> Report a mee </div></template>',
   lastName: 'a last name',
   firstName: 'a first name',
   currentRole: 'student',

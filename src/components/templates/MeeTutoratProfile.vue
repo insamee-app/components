@@ -1,5 +1,5 @@
 <template>
-  <AppContainer class="space-y-4 mx-auto" small>
+  <AppContainer class="space-y-8 mx-auto" small>
     <TutoratProfile
       :last-name="lastName"
       :first-name="firstName"
@@ -12,14 +12,15 @@
       :difficulties-subjects="difficultiesSubjects"
       :text="text"
     >
-      <div class="flex flex-row justify-center sticky bottom-4">
-        <AppButton shadow large @click="dialog = true">
-          <span class="text-white-base">
-            {{ contact }}
-          </span>
-        </AppButton>
-      </div>
     </TutoratProfile>
+    <div class="flex flex-row justify-center sticky bottom-4">
+      <AppButton shadow large @click="dialog = true">
+        <span class="text-white-base">
+          {{ contact }}
+        </span>
+      </AppButton>
+    </div>
+    <slot name="report"></slot>
     <Portal v-if="dialog">
       <AppModal :value="dialog" @outside="dialog = false">
         <AppCard>

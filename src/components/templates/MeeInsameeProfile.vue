@@ -1,5 +1,5 @@
 <template>
-  <AppContainer class="mx-auto" small>
+  <AppContainer class="mx-auto space-y-8" small>
     <InsameeProfile
       :last-name="lastName"
       :first-name="firstName"
@@ -13,15 +13,15 @@
       :focus-interests="focusInterests"
       :associations="associations"
     >
-      <div class="flex flex-row justify-center sticky bottom-4 md:mt-8">
-        <AppButton shadow large @click="dialog = true">
-          <span class="text-white-base">
-            {{ contact }}
-          </span>
-        </AppButton>
-      </div>
-      <slot name="report"></slot>
     </InsameeProfile>
+    <div class="flex flex-row justify-center sticky bottom-4">
+      <AppButton shadow large @click="dialog = true">
+        <span class="text-white-base">
+          {{ contact }}
+        </span>
+      </AppButton>
+    </div>
+    <slot name="report"></slot>
     <Portal v-if="dialog">
       <AppModal :value="dialog" @outside="dialog = false">
         <AppCard>
