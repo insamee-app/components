@@ -1,7 +1,8 @@
 <template>
   <textarea
     :id="name"
-    class="w-full border border-primary-dark rounded p-2 placeholder-grey-base focus:outline-none"
+    class="w-full border rounded p-2 focus:outline-none"
+    :class="classTextArea"
     :value="value"
     name="text"
     cols="30"
@@ -12,8 +13,11 @@
 </template>
 
 <script>
+import { variant } from '../../mixins'
+
 export default {
   name: 'AppTextarea',
+  mixins: [variant],
   props: {
     value: {
       type: String,
@@ -26,6 +30,19 @@ export default {
     placeholder: {
       type: String,
       default: '',
+    },
+  },
+  computed: {
+    classTextArea() {
+      const classNames = []
+
+      if (this.isPrimary) {
+        classNames.push('placeholder-grey-base border-primary-dark')
+      } else if (this.isSecondary) {
+        classNames.push('placeholder-grey-secondary-base border-secondary-dark')
+      }
+
+      return classNames.join(' ')
     },
   },
 }
