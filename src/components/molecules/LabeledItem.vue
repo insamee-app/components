@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppLabel :label="label" :variant="variant" />
+    <AppLabel :label="label" :variant="variant" :input="input" />
     <div :class="className">
       <slot></slot>
     </div>
@@ -16,6 +16,10 @@ export default {
   components: { AppLabel },
   mixins: [variant],
   props: {
+    input: {
+      type: Boolean,
+      default: false,
+    },
     label: {
       type: String,
       required: true,

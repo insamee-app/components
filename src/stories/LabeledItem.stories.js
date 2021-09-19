@@ -20,8 +20,11 @@ const Template = (args, { argTypes }) => ({
       args,
     }
   },
-  template: `<LabeledItem :label="label"> {{ args.default }} </LabeledItem>`,
+  template: `<LabeledItem :label="label" :input="input"> {{ args.default }} </LabeledItem>`,
 })
 
 export const Default = Template.bind({})
 Default.args = { label: 'this is a label', default: 'this is the content' }
+
+export const Input = Template.bind({})
+Input.args = { ...Default.args, input: true }
