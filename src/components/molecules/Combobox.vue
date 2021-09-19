@@ -10,17 +10,21 @@
     <template #prepend="{ classIcon }">
       <IconSearch class="fill-current" :class="classIcon" />
     </template>
-    <div class="flex flex-wrap space-x-1 w-full">
-      <slot name="selected"></slot>
-      <input
-        ref="input"
-        v-model="search"
-        type="text"
-        class="focus:outline-none rounded-none flex-1"
-        :class="classInput"
-        :placeholder="placeholder"
-      />
-    </div>
+    <template #default="{ on, ref }">
+      <div class="flex flex-wrap space-x-1 w-full">
+        <slot name="selected"></slot>
+        <input
+          :ref="ref"
+          v-model="search"
+          tabindex="1"
+          type="text"
+          class="rounded-none flex-1"
+          :class="classInput"
+          :placeholder="placeholder"
+          v-on="on"
+        />
+      </div>
+    </template>
     <template #selectItem="{ item }">
       <slot name="selectItem" :item="item"></slot>
     </template>
@@ -91,7 +95,6 @@ export default {
         this.$emit('selected', item)
       } else {
         this.search = ''
-        this.$refs.input.focus()
         this.$emit('selected', {})
       }
     },

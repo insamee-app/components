@@ -1,5 +1,9 @@
 <template>
-  <component :is="name ? 'label' : 'div'" :for="name ? name : undefined" :class="classNames"
+  <component
+    :is="name ? 'label' : 'div'"
+    :id="name"
+    :for="name ? name : undefined"
+    :class="classNames"
     ><slot>{{ label }}</slot></component
   >
 </template>

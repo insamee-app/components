@@ -11,7 +11,9 @@
     <span
       class="ml-1 flex justify-center items-center rounded-sm cursor-pointer"
       :class="classIcon"
+      tabindex="1"
       @click.stop="$emit('removed', item)"
+      @keydown.enter="$emit('removed', item)"
     >
       <IconDismiss class="h-3 w-3 fill-current" :class="classDismiss" />
     </span>

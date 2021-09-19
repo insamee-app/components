@@ -1,9 +1,9 @@
 <template>
   <div>
-    <AppLabel :label="label" :variant="variant" :input="input" />
-    <div :class="className">
-      <slot></slot>
-    </div>
+    <AppLabel :label="label" :variant="variant" :input="input" :name="name" />
+    <!-- <div :class="className"> -->
+    <slot></slot>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -16,6 +16,10 @@ export default {
   components: { AppLabel },
   mixins: [variant],
   props: {
+    name: {
+      type: String,
+      default: '',
+    },
     input: {
       type: Boolean,
       default: false,
@@ -24,10 +28,10 @@ export default {
       type: String,
       required: true,
     },
-    className: {
-      type: String,
-      default: 'text-xl',
-    },
+    // className: {
+    //   type: String,
+    //   default: 'text-xl',
+    // },
   },
 }
 </script>

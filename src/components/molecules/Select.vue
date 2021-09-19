@@ -1,15 +1,16 @@
 <template>
-  <div v-clickoutside="() => (isVisible = false)" class="relative">
+  <div v-clickoutside="() => (isVisible = false)" :aria-labelledby="name" class="relative">
     <div
       class="px-2 py-1 flex flex-row items-center w-full border"
       :class="classSelect"
       @click="isVisible = true"
     >
-      <div class="flex flex-row items-center flex-1 mr-1 space-x-1">
+      <div ref="focus" class="flex flex-row items-center flex-1 mr-1 space-x-1">
         <slot name="prepend" :classIcon="classIcon"></slot>
-        <slot>
-          <div v-if="!value.text" :class="classPlaceholder">{{ placeholder }}</div>
-          <div v-else :class="classText">{{ value.text }}</div>
+        <slot :ref="content" :on="keyboardActions">
+          <div ref="content" tabindex="1" :class="classContent" v-on="keyboardActions">
+            {{ content }}
+          </div>
         </slot>
       </div>
       <div v-if="!dismissValue">
@@ -17,14 +18,17 @@
       </div>
       <div
         v-else
-        class="rounded cursor-pointer focus:outline-none"
+        class="rounded cursor-pointer"
         :class="[classDismiss, classIcon].join(' ')"
+        tabindex="1"
         @click="clear"
+        @keydown.enter="clearKey"
       >
         <IconDismiss class="fill-current" />
       </div>
     </div>
     <SelectItems
+      ref="items"
       :is-visible="isVisible"
       :border="border"
       :variant="variant"
@@ -32,12 +36,13 @@
     >
       <template v-if="items.length">
         <SelectItem
-          v-for="item in items"
+          v-for="(item, index) in items"
           :key="item.value"
           v-slot="props"
           :variant="variant"
           :border="border"
           :item="item"
+          :is-selected="isSelected(index)"
           @selected="selected"
         >
           <slot name="selectItem" :item="props.item"></slot>
@@ -64,6 +69,10 @@ export default {
   },
   mixins: [variant],
   props: {
+    name: {
+      type: String,
+      default: '',
+    },
     value: {
       type: Object,
       required: true,
@@ -88,9 +97,23 @@ export default {
   data() {
     return {
       isVisible: false,
+      select: -1,
     }
   },
   computed: {
+    keyboardActions() {
+      return {
+        focus: this.focus,
+        blur: this.blur,
+        keydown: this.keydown,
+      }
+    },
+    content() {
+      return this.value.text ?? this.placeholder
+    },
+    classContent() {
+      return this.value.text ? this.classText : this.classPlaceholder
+    },
     reverseCaret() {
       return this.isVisible ? 'transform rotate-180' : ''
     },
@@ -165,7 +188,68 @@ export default {
     },
     clear() {
       this.isVisible = true
+      this.select = -1
       this.$emit('selected', {})
+    },
+    clearKey() {
+      this.clear()
+      this.$refs.content.focus()
+    },
+    focus() {
+      this.isVisible = true
+    },
+    blur() {
+      this.select = -1
+      this.isVisible = false
+    },
+    isSelected(index) {
+      return index === this.select
+    },
+    scrollItem() {
+      const el = this.$refs.items.$children[this.select].$el
+      el.scrollIntoView({ block: 'nearest' })
+    },
+    keydown(e) {
+      if (e.key === 'ArrowUp') this.up()
+
+      if (e.key === 'ArrowDown') this.down()
+
+      if (e.key === 'Enter') this.enter()
+
+      if (e.key === 'Escape') this.blur()
+    },
+    down() {
+      if (this.select < this.items.length - 1) {
+        this.select++
+        this.scrollItem()
+      }
+
+      if (this.select === -1) {
+        this.select = 0
+      }
+    },
+    up() {
+      if (this.select > 0) {
+        this.select--
+        this.scrollItem()
+      }
+
+      if (this.select === -1) {
+        this.select = this.items.length - 1
+      }
+    },
+    enter() {
+      if (!this.isVisible) {
+        this.isVisible = true
+        return
+      }
+
+      if (this.select === -1) {
+        this.focus()
+        return
+      }
+
+      this.selected(this.items[this.select])
     },
   },
 }

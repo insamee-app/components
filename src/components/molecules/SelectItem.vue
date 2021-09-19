@@ -23,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isSelected: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classSelectItem() {
@@ -34,6 +38,16 @@ export default {
       } else if (this.isSecondary) {
         if (this.border) classNames.push('hover:bg-grey-secondary-light hover:text-secondary-dark')
         else classNames.push('hover:bg-grey-secondary-dark')
+      }
+
+      if (this.isSelected) {
+        if (this.isPrimary) {
+          if (this.border) classNames.push('bg-grey-light text-primary-dark')
+          else classNames.push('bg-grey-dark')
+        } else if (this.isSecondary) {
+          if (this.border) classNames.push('bg-grey-secondary-light text-secondary-dark')
+          else classNames.push('bg-grey-secondary-dark')
+        }
       }
 
       return classNames.join(' ')
