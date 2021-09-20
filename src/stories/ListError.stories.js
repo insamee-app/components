@@ -13,7 +13,11 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-  errors: [{ message: 'This is error 1' }, { message: 'This is error 2' }],
+  errors: [
+    { message: 'This is error 1' },
+    { message: 'This is error 2' },
+    { message: 'This is error 1' },
+  ],
 }
 
 export const Full = Template.bind({})

@@ -1,6 +1,6 @@
 <template>
   <ul v-if="errors.length" class="text-center">
-    <li v-for="error in list" :key="error.message"><AppError :error-message="error.message" /></li>
+    <li v-for="(error, index) in list" :key="index"><AppError :error-message="error.message" /></li>
   </ul>
 </template>
 
