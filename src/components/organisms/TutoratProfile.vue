@@ -14,8 +14,10 @@
     <LabeledItem v-if="difficultiesSubjects.length" label="Matières en difficultés">
       <AppChips :texts="difficultiesSubjects" />
     </LabeledItem>
-    <LabeledItem class="text-justify" label="Description">
-      {{ text | handleUndefined }}
+    <LabeledItem label="Description">
+      <span class="text-xl text-justify">
+        {{ text | handleUndefined }}
+      </span>
     </LabeledItem>
   </ProfileBasic>
 </template>

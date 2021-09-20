@@ -1,9 +1,7 @@
 <template>
   <div>
     <AppLabel :label="label" :variant="variant" :input="input" :name="name" />
-    <!-- <div :class="className"> -->
     <slot></slot>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -28,10 +26,6 @@ export default {
       type: String,
       required: true,
     },
-    // className: {
-    //   type: String,
-    //   default: 'text-xl',
-    // },
   },
 }
 </script>

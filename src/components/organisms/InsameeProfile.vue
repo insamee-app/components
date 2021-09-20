@@ -21,13 +21,15 @@
         :link="association.url_picture"
         :name="association.name"
       >
-        <span class="uppercase">
+        <span class="uppercase text-xl">
           {{ association.name }}
         </span>
       </AppAssociation>
     </LabeledItem>
-    <LabeledItem class="text-justify" label="Description">
-      {{ text | handleUndefined }}
+    <LabeledItem label="Description">
+      <span class="text-justify text-xl">
+        {{ text | handleUndefined }}
+      </span>
     </LabeledItem>
   </ProfileBasic>
 </template>

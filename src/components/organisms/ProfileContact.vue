@@ -1,6 +1,6 @@
 <template>
   <LabeledItem :variant="variant" label="Me Contacter">
-    <AppContact :links="links" :variant="variant" />
+    <AppContact :links="links" :variant="variant" class="text-xl" />
   </LabeledItem>
 </template>
 

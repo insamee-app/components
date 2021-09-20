@@ -1,9 +1,9 @@
 <template>
-  <ul class="grid grid-cols-2 gap-2 capitalize">
+  <ul class="grid grid-cols-2 gap-4 capitalize">
     <li v-for="value in keys" :key="value" class="text-center">
       <component
         :is="links[value] ? 'AppLink' : 'div'"
-        class="p-1 text-lg"
+        class="block"
         :link="href(value)"
         :variant="links[value] ? variant : undefined"
       >
