@@ -10,7 +10,7 @@
       <div v-else-if="items.length === 0" class="flex w-full justify-center">
         <IconSpinner class="h-6 w-6 text-secondary-base fill-current animate-spin" />
       </div>
-      <LabeledItem v-else variant="secondary" label="Motif" class-name="text-base">
+      <LabeledItem v-else variant="secondary" label="Motif" class-name="text-base" input>
         <AppRadio
           :items="items"
           :selected="$v.form.report.$model"
