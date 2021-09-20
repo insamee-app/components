@@ -35,7 +35,7 @@ const Template = (args, { argTypes }) => ({
       action('selected')(value)
     },
   },
-  template: `<Select :placeholder="placeholder" :items="items" :border="border" :variant="variant" @selected="action" :value="selectedItem" :dismiss-value="dismiss"/>`,
+  template: `<Select :placeholder="placeholder" :items="items" :border="border" :variant="variant" @selected="action" :value="selectedItem" :dismiss-value="dismiss" :disabled="disabled"/>`,
 })
 
 export const Primary = Template.bind({})
@@ -71,5 +71,42 @@ Secondary.args = {
 export const SecondaryBorder = Template.bind({})
 SecondaryBorder.args = {
   ...Secondary.args,
+  border: true,
+}
+
+export const DisabledPrimary = Template.bind({})
+DisabledPrimary.args = {
+  disabled: true,
+  border: false,
+  placeholder: 'This is the placeholder',
+  items: [
+    { text: 'lorem 1', value: '1' },
+    { text: 'ipsum 2', value: '2' },
+    { text: 'dolor 3', value: '3' },
+    { text: 'it 4', value: '4' },
+    { text: 'are 5', value: '5' },
+    { text: 'lorem 6', value: '6' },
+    { text: 'ipsum 7', value: '7' },
+    { text: 'dolor 8', value: '8' },
+    { text: 'it 9', value: '9' },
+    { text: 'are 10', value: '10' },
+  ],
+}
+
+export const DisabledPrimaryBorder = Template.bind({})
+DisabledPrimaryBorder.args = {
+  ...DisabledPrimary.args,
+  border: true,
+}
+
+export const DisabledSecondary = Template.bind({})
+DisabledSecondary.args = {
+  ...DisabledPrimary.args,
+  variant: 'secondary',
+}
+
+export const DisabledSecondaryBorder = Template.bind({})
+DisabledSecondaryBorder.args = {
+  ...DisabledSecondary.args,
   border: true,
 }

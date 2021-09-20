@@ -3,12 +3,17 @@
     <div
       class="px-2 py-1 flex flex-row items-center w-full border"
       :class="classSelect"
-      @click="isVisible = true"
+      @click="open"
     >
-      <div ref="focus" class="flex flex-row items-center flex-1 mr-1 space-x-1">
+      <div class="flex flex-row items-center flex-1 mr-1 space-x-1">
         <slot name="prepend" :classIcon="classIcon"></slot>
         <slot :ref="content" :on="keyboardActions">
-          <div ref="content" tabindex="1" :class="classContent" v-on="keyboardActions">
+          <div
+            ref="content"
+            :tabindex="disabled ? '-1' : '1'"
+            :class="classContent"
+            v-on="keyboardActions"
+          >
             {{ content }}
           </div>
         </slot>
@@ -18,9 +23,9 @@
       </div>
       <div
         v-else
-        class="rounded cursor-pointer"
+        class="rounded"
         :class="[classDismiss, classIcon].join(' ')"
-        tabindex="1"
+        :tabindex="disabled ? '-1' : '1'"
         @click="clear"
         @keydown.enter="clearKey"
       >
@@ -93,6 +98,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -119,7 +128,15 @@ export default {
     },
     classSelect() {
       const classNames = []
-      if (this.isPrimary) {
+      if (this.disabled) {
+        if (this.isPrimary) {
+          if (this.border) classNames.push('border-grey-light')
+          else classNames.push('bg-grey-base border-grey-base')
+        } else if (this.isSecondary) {
+          if (this.border) classNames.push('border-grey-secondary-light')
+          else classNames.push('bg-grey-secondary-base border-grey-secondary-base')
+        }
+      } else if (this.isPrimary) {
         if (this.border) classNames.push('border-primary-dark')
         else classNames.push('bg-primary-base border-primary-base')
       } else if (this.isSecondary) {
@@ -134,8 +151,13 @@ export default {
     },
     classPlaceholder() {
       const classNames = []
-
-      if (this.isPrimary) {
+      if (this.border) {
+        if (this.isPrimary) {
+          classNames.push('text-grey-base')
+        } else if (this.isSecondary) {
+          classNames.push('text-grey-secondary-base')
+        }
+      } else if (this.isPrimary) {
         classNames.push('text-grey-light')
       } else if (this.isSecondary) {
         classNames.push('text-grey-secondary-light')
@@ -146,15 +168,28 @@ export default {
     classText() {
       const classNames = []
 
-      if (this.border) classNames.push('text-black')
+      if (this.disabled) {
+        if (this.isPrimary) {
+          if (this.border) classNames.push('text-grey-base')
+          else classNames.push('text-grey-light')
+        } else if (this.isSecondary) {
+          if (this.border) classNames.push('text-grey-secondary-base')
+          else classNames.push('text-grey-secondary-light')
+        }
+      } else if (this.border) classNames.push('text-black')
       else classNames.push('text-white-base')
 
       return classNames.join(' ')
     },
     classIcon() {
       const classNames = []
-
-      if (this.border) {
+      if (this.disabled) {
+        if (this.border) {
+          if (this.isPrimary) classNames.push('text-grey-base')
+          else if (this.isSecondary) classNames.push('text-grey-secondary-base')
+        } else if (this.isPrimary) classNames.push('text-grey-light')
+        else if (this.isSecondary) classNames.push('text-grey-secondary-light')
+      } else if (this.border) {
         if (this.isPrimary) classNames.push('text-primary-base')
         else if (this.isSecondary) classNames.push('text-secondary-base')
       } else classNames.push('text-white-base')
@@ -163,6 +198,9 @@ export default {
     },
     classDismiss() {
       const classNames = []
+
+      if (this.disabled) return ''
+      else classNames.push('cursor-pointer')
 
       if (this.isPrimary) {
         if (this.border)
@@ -182,11 +220,18 @@ export default {
     },
   },
   methods: {
+    open() {
+      if (this.disabled) return
+
+      this.isVisible = true
+    },
     selected(item) {
       this.isVisible = false
       this.$emit('selected', item)
     },
     clear() {
+      if (this.disabled) return
+
       this.isVisible = true
       this.select = -1
       this.$emit('selected', {})
@@ -196,6 +241,8 @@ export default {
       this.$refs.content.focus()
     },
     focus() {
+      if (this.disabled) return
+
       this.isVisible = true
     },
     blur() {
