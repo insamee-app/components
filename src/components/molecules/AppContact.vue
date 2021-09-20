@@ -34,7 +34,13 @@ export default {
   },
   methods: {
     href(value) {
-      return value === 'mobile' ? 'tel:' + this.links[value] : this.links[value]
+      if (value === 'email') {
+        return `mailto:${this.links[value]}`
+      } else if (value === 'mobile') {
+        return `tel:${this.links[value]}`
+      } else {
+        return this.links[value]
+      }
     },
     content(value) {
       return this.links[value] ? value : `${value}: non renseigné`

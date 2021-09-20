@@ -12,7 +12,9 @@ const Template = (args, { argTypes }) => ({
 })
 
 export const Primary = Template.bind({})
-Primary.args = { links: { facebook: undefined, instagram: 'https://instagram.com' } }
+Primary.args = {
+  links: { facebook: undefined, instagram: 'https://instagram.com', email: 'test@test.fr' },
+}
 
 export const Secondary = Template.bind({})
 Secondary.args = {
