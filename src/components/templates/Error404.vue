@@ -7,11 +7,15 @@
         fill-current
         absolute
         right-1/4
+        md:w-[120%]
         -bottom-32
+        md:h-[120%]
         transform
+        md:right-1/2
         rotate-[153deg]
-        md:w-[120%] md:h-[120%] md:right-1/2 md:translate-x-1/2 md:-bottom-96
+        md:translate-x-1/2
         pointer-events-none
+        md:-bottom-96
       "
     />
     <GraphicWind class="absolute top-1/4 right-4 md:h-40 md:w-40" />
@@ -35,7 +39,7 @@ import GraphicWind from '../atoms/graphics/GraphicWind'
 import GraphicLeaves from '../atoms/graphics/GraphicLeaves'
 
 export default {
-  name: '404',
+  name: 'Error404',
   components: { AppButton, GraphicBlob, GraphicWind, GraphicPlants, GraphicLeaves },
   props: {
     to: {

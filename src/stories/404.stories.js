@@ -1,8 +1,8 @@
-import Error from '../components/templates/404'
+import Error404 from '../components/templates/Error404'
 
 export default {
-  component: Error,
-  title: 'Templates/404',
+  component: Error404,
+  title: 'Templates/Error404',
   decorators: [
     () => ({
       template: '<div class="relative w-full h-screen overflow-hidden"><story/></div>',
@@ -19,10 +19,10 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: {
-    Error,
+    Error404,
   },
   props: Object.keys(argTypes),
-  template: `<Error :to='to'> ${args.default} </Error>`,
+  template: `<Error404 :to='to'> ${args.default} </Error404>`,
 })
 
 export const Primary = Template.bind({})
