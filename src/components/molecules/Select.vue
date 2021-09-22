@@ -257,22 +257,26 @@ export default {
     },
     keydown(e) {
       if (e.key === 'ArrowUp') {
+        // Prevent to move the scroll bar from the page
         e.preventDefault()
         this.up()
       }
 
       if (e.key === 'ArrowDown') {
+        // Prevent to move the scroll bar from the page
         e.preventDefault()
         this.down()
       }
 
       if (e.key === 'Enter') {
-        e.preventDefault()
+        // Stop propagation to a form
+        e.stopPropagation()
         this.enter()
       }
 
       if (e.key === 'Escape') this.blur()
 
+      // Close the select when tab is pressed
       if (e.key === 'Tab') this.blur()
     },
     down() {
