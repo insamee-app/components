@@ -113,7 +113,6 @@ export default {
     keyboardActions() {
       return {
         focus: this.focus,
-        blur: this.blur,
         keydown: this.keydown,
       }
     },
@@ -257,13 +256,24 @@ export default {
       el.scrollIntoView({ block: 'nearest' })
     },
     keydown(e) {
-      if (e.key === 'ArrowUp') this.up()
+      if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        this.up()
+      }
 
-      if (e.key === 'ArrowDown') this.down()
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        this.down()
+      }
 
-      if (e.key === 'Enter') this.enter()
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        this.enter()
+      }
 
       if (e.key === 'Escape') this.blur()
+
+      if (e.key === 'Tab') this.blur()
     },
     down() {
       if (this.select < this.items.length - 1) {
