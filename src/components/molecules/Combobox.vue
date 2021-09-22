@@ -16,7 +16,7 @@
         <input
           :ref="ref"
           v-model="search"
-          tabindex="1"
+          tabindex="0"
           type="text"
           class="rounded-none flex-1"
           :class="classInput"

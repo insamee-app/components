@@ -24,18 +24,24 @@ const Template = (args, { argTypes }) => ({
   methods: {
     action: action('input'),
   },
-  template: `<LabeledTextarea :value="value" @input="action" :label="label" :name="name" :placeholder="placeholder" :error-message="errorMessage" />`,
+  template: `<LabeledTextarea :value="value" @input="action" :label="label" :name="name" :placeholder="placeholder" :error-message="errorMessage" :variant="variant" />`,
 })
 
-export const Default = Template.bind({})
-Default.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   value: 'This is the text from the textarea',
   label: 'Label from a textarea',
   name: 'textarea',
 }
 
+export const Secondary = Template.bind({})
+Secondary.args = {
+  ...Primary.args,
+  variant: 'secondary',
+}
+
 export const Placeholder = Template.bind({})
-Placeholder.args = { ...Default.args, value: '', placeholder: 'This is the placeholder' }
+Placeholder.args = { ...Primary.args, value: '', placeholder: 'This is the placeholder' }
 
 export const Error = Template.bind({})
-Error.args = { ...Default.args, errorMessage: 'this is an error' }
+Error.args = { ...Primary.args, errorMessage: 'this is an error' }

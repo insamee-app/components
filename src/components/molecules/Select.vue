@@ -10,7 +10,7 @@
         <slot :ref="content" :on="keyboardActions">
           <div
             ref="content"
-            :tabindex="disabled ? '-1' : '1'"
+            :tabindex="disabled ? '-1' : '0'"
             :class="classContent"
             v-on="keyboardActions"
           >
@@ -25,7 +25,7 @@
         v-else
         class="rounded"
         :class="[classDismiss, classIcon].join(' ')"
-        :tabindex="disabled ? '-1' : '1'"
+        :tabindex="disabled ? '-1' : '0'"
         @click="clear"
         @keydown.enter="clearKey"
       >
