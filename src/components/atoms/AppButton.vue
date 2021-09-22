@@ -76,6 +76,9 @@ export default {
     classButton() {
       const classNames = []
 
+      if (this.isPrimary) classNames.push('focus:ring-2 focus:ring-primary-light')
+      else if (this.isSecondary) classNames.push('focus:ring-2 focus:ring-secondary-light')
+
       if (!this.disabled && !this.loading) classNames.push('cursor-pointer')
       else classNames.push('cursor-not-allowed')
 
@@ -84,6 +87,7 @@ export default {
       if (this.href) classNames.push('flex-row items-center')
 
       if (this.empty) {
+        classNames.push('rounded')
         if (this.isPrimary) {
           classNames.push('text-primary-base')
         } else if (this.isSecondary) {
