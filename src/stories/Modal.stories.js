@@ -37,14 +37,15 @@ const Template = (args, { argTypes }) => ({
       action('outside')(value)
     },
   },
-  template: `<AppModal @outside="action" :value="value" v-slot="{ size }"> ${args.default} </AppModal>`,
+  template: `<AppModal @outside="action" :value="value" v-slot="{ size }" :overflow="overflow"> ${args.default} </AppModal>`,
 })
 
 export const Default = Template.bind({})
-Default.args = { value: true, default: slotValue }
+Default.args = { value: false, default: slotValue }
 
 export const Large = Template.bind({})
 Large.args = {
-  value: true,
+  value: false,
+  overflow: true,
   default: `<AppCard style="height: 200vh;" :class="size"> Hello from the large modal </AppCard>`,
 }

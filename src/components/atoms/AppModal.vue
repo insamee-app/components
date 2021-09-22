@@ -43,8 +43,22 @@ export default {
       default: false,
     },
   },
+  watch: {
+    value(v) {
+      if (v) window.addEventListener('keydown', this.onKeydown)
+    },
+  },
   methods: {
+    onKeydown(event) {
+      if (event && event.key === 'Escape') {
+        this.close()
+      }
+    },
     clickOutside() {
+      this.close()
+    },
+    close() {
+      window.removeEventListener('keydown', this.onKeydown)
       this.$emit('outside', false)
     },
   },
