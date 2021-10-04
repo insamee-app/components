@@ -108,7 +108,7 @@ colors: {
 },
 ```
 
-You will have an access to `@linusborg/vue-simple-portal` in your components.
+You will have an access to `@linusborg/vue-simple-portal` and `focus-trap-vue` in your components.
 
 ## FAQ
 
