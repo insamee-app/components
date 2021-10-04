@@ -3,7 +3,7 @@
   "version": "0.1.16",
   "description": "Components lib to create others insamee-app plateformes !",
   "scripts": {
-     "preinstall": "npx only-allow pnpm",
+    "preinstall": "npx only-allow pnpm",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
@@ -70,10 +70,10 @@
   },
   "lint-staged": {
     "*.vue": [
-      "yarn lint"
+      "pnpm lint"
     ],
     "*.js": [
-      "yarn lint"
+      "pnpm lint"
     ]
   },
   "dependencies": {
