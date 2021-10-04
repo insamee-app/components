@@ -23,3 +23,11 @@ Checked.args = { value: true, name: 'name', label: 'a check box' }
 
 export const Unchecked = Template.bind({})
 Unchecked.args = { value: false, name: 'name', label: 'a check box' }
+
+export const Long = Template.bind({})
+Long.args = {
+  value: false,
+  name: 'name',
+  label:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus laoreet enim quis sagittis. Nunc tempor elit sed sagittis suscipit.',
+}

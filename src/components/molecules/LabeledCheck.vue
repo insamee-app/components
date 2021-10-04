@@ -1,6 +1,6 @@
 <template>
-  <div class="relative flex flex-row items-center">
-    <AppCheck :value="value" :name="name" @change="$emit('change', $event)" />
+  <div class="relative flex flex-row items-start">
+    <AppCheck :value="value" :name="name" class="mt-1" @change="$emit('change', $event)" />
     <AppLabel :name="name" :label="label" class="ml-2 text-black font-normal" />
   </div>
 </template>
