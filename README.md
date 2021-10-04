@@ -8,20 +8,20 @@ This lib a set of components design for the app from **insamee**.
 
 ## Installation
 
-This project uses `yarn`.
+This project uses `pnpm`.
 
 ```bash
     # install dependencies
-    yarn
+    pnpm
 
     # develop components
-    yarn storybook
+    pnpm storybook
 
     # build storybook website
-    yarn build
+    pnpm build
 
     # lint files
-    yarn lint
+    pnpm lint
 ```
 
 This project is designed to be used in Nuxtjs project using Nuxt/Components and TailwindCSS. In fact, it uses the _library authors_ feature from Nuxt/Components.
