@@ -6,7 +6,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js",
+    "lint": "pnpm lint:js",
     "format": "prettier --write .",
     "commitlint": "commitlint",
     "prepare": "husky install",
