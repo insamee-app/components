@@ -31,6 +31,7 @@
         {{ text | handleUndefined }}
       </span>
     </LabeledItem>
+    <slot></slot>
   </ProfileBasic>
 </template>
 
