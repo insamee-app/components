@@ -40,7 +40,7 @@ Vue.component('NuxtLink', {
 })
 
 Vue.component('ClientOnly', {
-  template: '<slot></slot>',
+  template: '<div><slot></slot></div>',
 })
 
 configure(require.context('../src/components', true, /\.stories\.js$/), module)
