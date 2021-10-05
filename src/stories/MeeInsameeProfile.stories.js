@@ -40,6 +40,11 @@ Default.args = {
       id: 1,
       image_url: null,
     },
+    {
+      name: 'lorem',
+      id: 2,
+      image_url: null,
+    },
   ],
   avatarUrl: undefined,
 }

@@ -14,7 +14,7 @@
     <LabeledItem v-if="skills.length" label="Compétences">
       <AppChips :texts="skills" />
     </LabeledItem>
-    <LabeledItem v-if="associations.length" label="Associations" class-name="space-y-2">
+    <LabeledItem v-if="associations.length" label="Associations" class="space-y-2">
       <AppAssociation
         v-for="association in associations"
         :key="association.id"
