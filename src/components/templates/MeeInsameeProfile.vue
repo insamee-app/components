@@ -25,7 +25,7 @@
     <AppModal :value="dialog" @outside="dialog = false">
       <AppCard>
         <AppCardHeader closable @close="dialog = false">
-          <AppCardTitle> Contacter </AppCardTitle>
+          <AppCardTitle> {{ contact }} </AppCardTitle>
         </AppCardHeader>
         <AppContact :links="socials" />
       </AppCard>

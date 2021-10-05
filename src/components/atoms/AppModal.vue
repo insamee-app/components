@@ -58,7 +58,10 @@ export default {
   },
   watch: {
     value(v) {
-      if (v) window.addEventListener('keydown', this.onKeydown)
+      if (v) {
+        this.disablePortal = false
+        window.addEventListener('keydown', this.onKeydown)
+      }
     },
   },
   methods: {
