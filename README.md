@@ -1,6 +1,6 @@
 # Components
 
-This lib a set of components design for the app from **insamee**.
+This lib a set of components design for the app from **InsameeApp**.
 
 ## Tech Stack
 

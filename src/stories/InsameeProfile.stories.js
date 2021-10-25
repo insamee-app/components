@@ -1,8 +1,8 @@
-import InsameeProfile from '../components/organisms/InsameeProfile'
+import MeeProfile from '../components/organisms/MeeProfile'
 
 export default {
-  component: InsameeProfile,
-  title: 'Organisms/InsameeProfile',
+  component: MeeProfile,
+  title: 'Organisms/MeeProfile',
   argTypes: {
     default: {
       control: 'text',
@@ -13,10 +13,10 @@ export default {
 }
 
 const Template = (args, { argTypes }) => ({
-  components: { InsameeProfile },
+  components: { MeeProfile },
   props: Object.keys(argTypes),
   template:
-    '<InsameeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations" :avatar-url="avatarUrl"  />',
+    '<MeeProfile   :last-name="lastName"   :first-name="firstName"   :current-role="currentRole"   :graduation-year="graduationYear"   :email="email"   :school-name="schoolName"   :text="text"   :skills="skills"   :focus-interests="focusInterests" :associations="associations" :avatar-url="avatarUrl"  />',
 })
 
 export const Default = Template.bind({})

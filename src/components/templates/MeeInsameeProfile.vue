@@ -1,6 +1,6 @@
 <template>
   <AppContainer class="mx-auto space-y-8" small>
-    <InsameeProfile
+    <MeeProfile
       :last-name="lastName"
       :first-name="firstName"
       :current-role="currentRole"
@@ -13,7 +13,7 @@
       :focus-interests="focusInterests"
       :associations="associations"
     >
-    </InsameeProfile>
+    </MeeProfile>
     <div class="flex flex-row justify-center sticky bottom-4">
       <AppButton shadow large @click="dialog = true">
         <span class="text-white-base">
@@ -39,7 +39,7 @@ import AppCard from '../molecules/AppCard'
 import AppCardHeader from '../molecules/AppCardHeader'
 import AppCardTitle from '../molecules/AppCardTitle'
 import AppButton from '../atoms/AppButton'
-import InsameeProfile from '../organisms/InsameeProfile'
+import MeeProfile from '../organisms/MeeProfile'
 import AppContainer from '../organisms/AppContainer'
 import AppContact from '../molecules/AppContact'
 
@@ -53,7 +53,7 @@ export default {
     AppCardHeader,
     AppCardTitle,
     AppButton,
-    InsameeProfile,
+    MeeProfile,
   },
   props: {
     lastName: {

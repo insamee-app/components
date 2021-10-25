@@ -3,7 +3,7 @@
     <header class="mx-auto w-full max-w-7xl flex flex-row justify-between p-4 xl:px-0">
       <div class="flex flex-row">
         <AppButton empty :to="nameLink" class="flex items-center text-primary-base">
-          <slot name="name"> Insamee </slot>
+          <slot name="name"> Mee </slot>
         </AppButton>
         <slot name="nav"></slot>
       </div>

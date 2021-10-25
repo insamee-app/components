@@ -42,7 +42,7 @@ import ProfileBasic from '../organisms/ProfileBasic'
 import AppAssociation from '../molecules/AppAssociation'
 
 export default {
-  name: 'InsameeProfile',
+  name: 'MeeProfile',
   components: {
     AppChips,
     LabeledItem,

@@ -29,7 +29,7 @@ import AppButton from '../atoms/AppButton'
 import AppCard from './AppCard'
 
 export default {
-  name: 'AppInsameeProfileCard',
+  name: 'AppMeeProfileCard',
   components: { AppCard, AppButton },
   props: {
     to: {

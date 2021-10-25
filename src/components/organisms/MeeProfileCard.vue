@@ -1,9 +1,5 @@
 <template>
-  <AppInsameeProfileCard
-    class="w-full"
-    :to="{ name: 'mee-id', params: { id: userId } }"
-    :type="type"
-  >
+  <AppMeeProfileCard class="w-full" :to="{ name: 'mee-id', params: { id: userId } }" :type="type">
     <template #avatar>
       <AppProfileAvatar
         :link="link"
@@ -39,20 +35,20 @@
         {{ text }}
       </div>
     </template>
-  </AppInsameeProfileCard>
+  </AppMeeProfileCard>
 </template>
 
 <script>
-import AppInsameeProfileCard from '../molecules/AppInsameeProfileCard'
+import AppMeeProfileCard from '../molecules/AppMeeProfileCard'
 import AppChips from '../molecules/AppChips'
 import AppImg from '../atoms/AppImg'
 import AppCardTitle from '../molecules/AppCardTitle'
 import AppProfileAvatar from '../molecules/AppProfileAvatar'
 
 export default {
-  name: 'InsameeProfileCard',
+  name: 'MeeProfileCard',
   components: {
-    AppInsameeProfileCard,
+    AppMeeProfileCard,
     AppChips,
     AppCardTitle,
     AppProfileAvatar,

@@ -8,7 +8,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   components: { AppTeam },
   props: Object.keys(argTypes),
-  template: `<AppTeam :linkTutorat="linkTutorat" :linkEvenements="linkEvenements" :linkAssociations="linkAssociations" :linkInsamee="linkInsamee" />`,
+  template: `<AppTeam :linkTutorat="linkTutorat" :linkEvenements="linkEvenements" :linkAssociations="linkAssociations" :linkMee="linkMee" />`,
 })
 
 export const Default = Template.bind({})
@@ -16,5 +16,5 @@ Default.args = {
   linkTutorat: 'https://example.com',
   linkEvenements: { name: 'index' },
   linkAssociations: { name: 'index' },
-  linkInsamee: { name: 'index' },
+  linkMee: { name: 'index' },
 }

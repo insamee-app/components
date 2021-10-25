@@ -9,7 +9,7 @@
     <AppButton empty :to="to(linkAssociations)" :href="href(linkAssociations)">
       <slot name="associations" :classIcon="classIcon" />
     </AppButton>
-    <AppButton empty :to="to(linkInsamee)" :href="href(linkInsamee)">
+    <AppButton empty :to="to(linkMee)" :href="href(linkMee)">
       <slot name="mee" :classIcon="classIcon" />
     </AppButton>
   </div>
@@ -34,7 +34,7 @@ export default {
       type: [String, Object],
       default: undefined,
     },
-    linkInsamee: {
+    linkMee: {
       type: [String, Object],
       default: undefined,
     },

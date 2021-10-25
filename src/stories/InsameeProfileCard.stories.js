@@ -1,8 +1,8 @@
-import InsameeProfileCard from '../components/organisms/InsameeProfileCard'
+import MeeProfileCard from '../components/organisms/MeeProfileCard'
 
 export default {
-  component: InsameeProfileCard,
-  title: 'Organisms/InsameeProfileCard',
+  component: MeeProfileCard,
+  title: 'Organisms/MeeProfileCard',
   argTypes: {
     default: {
       control: 'text',
@@ -14,10 +14,10 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: {
-    InsameeProfileCard,
+    MeeProfileCard,
   },
   props: Object.keys(argTypes),
-  template: `<InsameeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :skills="skills" :current-role="currentRole" :associations="associations" :link="link" :type="type"> </InsameeProfileCard>`,
+  template: `<MeeProfileCard :lastName="lastName" :firstName="firstName" :userId="userId" :text="text" :skills="skills" :current-role="currentRole" :associations="associations" :link="link" :type="type"> </MeeProfileCard>`,
 })
 
 export const Primary = Template.bind({})
