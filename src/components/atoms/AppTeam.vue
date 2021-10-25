@@ -1,30 +1,26 @@
 <template>
   <div class="flex flex-row space-x-1">
     <AppButton empty :to="to(linkTutorat)" :href="href(linkTutorat)">
-      <IconTutorat :class="classIcon" />
+      <slot name="tutorat" :classIcon="classIcon" />
     </AppButton>
     <AppButton empty :to="to(linkEvenements)" :href="href(linkEvenements)">
-      <IconEvenements :class="classIcon" />
+      <slot name="evenements" :classIcon="classIcon" />
     </AppButton>
     <AppButton empty :to="to(linkAssociations)" :href="href(linkAssociations)">
-      <IconAssociations :class="classIcon" />
+      <slot name="associations" :classIcon="classIcon" />
     </AppButton>
     <AppButton empty :to="to(linkInsamee)" :href="href(linkInsamee)">
-      <IconInsamee :class="classIcon" />
+      <slot name="mee" :classIcon="classIcon" />
     </AppButton>
   </div>
 </template>
 
 <script>
-import IconTutorat from './icons/IconTutorat.vue'
-import IconEvenements from './icons/IconEvenements.vue'
-import IconAssociations from './icons/IconAssociations.vue'
-import IconInsamee from './icons/IconInsamee.vue'
 import AppButton from './AppButton'
 
 export default {
   name: 'AppTeam',
-  components: { IconTutorat, IconEvenements, IconAssociations, IconInsamee, AppButton },
+  components: { AppButton },
   props: {
     linkTutorat: {
       type: [String, Object],
