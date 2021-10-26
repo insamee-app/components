@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     classIcon() {
-      return 'w-6 h-6'
+      return 'h-6'
     },
   },
   methods: {
