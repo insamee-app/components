@@ -16,6 +16,16 @@ module.exports = {
   ],
   webpackFinal: async (config) => ({
     ...config,
+    module: {
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: 'javascript/auto',
+        },
+      ],
+    },
     resolve: {
       ...config.resolve,
       alias: {
