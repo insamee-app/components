@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VScrollLock from 'v-scroll-lock'
 import Vuelidate from 'vuelidate'
+import VueCompositionAPI from '@vue/composition-api'
 import { configure } from '@storybook/vue'
 import { action } from '@storybook/addon-actions'
 
@@ -28,6 +29,7 @@ export const parameters = {
 
 Vue.use(Vuelidate)
 Vue.use(VScrollLock)
+Vue.use(VueCompositionAPI)
 
 Vue.component('NuxtLink', {
   props: ['to'],
