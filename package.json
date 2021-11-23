@@ -6,7 +6,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "pnpm lint:js",
+    "lint": "yarn lint:js",
     "format": "prettier --write .",
     "commitlint": "commitlint",
     "prepare": "husky install",
@@ -69,10 +69,10 @@
   },
   "lint-staged": {
     "*.vue": [
-      "pnpm lint"
+      "yarn lint"
     ],
     "*.js": [
-      "pnpm lint"
+      "yarn lint"
     ]
   },
   "dependencies": {
