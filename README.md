@@ -4,7 +4,7 @@ This lib a set of components design for the app from **InsameeApp**.
 
 ## Tech Stack
 
-**Client:** Nuxtjs, Nuxt/Components, TailwindCSS, Storybook
+**Client:** Nuxtjs, Nuxt/Components, Composition API, VueUse TailwindCSS, Storybook
 
 ## Installation
 
@@ -108,7 +108,7 @@ colors: {
 },
 ```
 
-You will have an access to `@linusborg/vue-simple-portal` and `focus-trap-vue` in your components.
+You will have an access to `@linusborg/vue-simple-portal`, `focus-trap-vue`, `@vue/composition-api` and `@vueuse/core` in your components.
 
 ## FAQ
 
